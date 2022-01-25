@@ -1,2 +1,2 @@
 import * as React from "react";
-export * from "./Navbar";
+export * from "navbar/components/Navbar";
