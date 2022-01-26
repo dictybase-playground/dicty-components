@@ -1,6 +1,7 @@
 import { makeStyles, Theme } from "@material-ui/core";
 
 const navHeight = "50px";
+const stdTransition = "0.2s all ease-in-out";
 
 export const navbarStyles = makeStyles((theme: Theme) => ({
   navbar: {
@@ -36,6 +37,67 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
     "&&:hover, &&:focus, &&:active": {
       background: theme.palette.secondary.main,
     },
+  },
+
+  // Mobile nav
+  mobileMenuButtonContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: navHeight,
+  },
+  mobileMenuButton: {
+    height: "15px",
+    width: "20px",
+    display: "flex",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    flexDirection: "column",
+    cursor: "pointer",
+
+    "&& > span": {
+      height: "1px",
+      transition: stdTransition,
+      background: "#fff",
+      display: "block",
+      width: "100%",
+    },
+  },
+  hamOpen: {
+    "&& :nth-child(1)": {
+      transform: "rotate(45deg)",
+    },
+    "&& :nth-child(2)": {
+      opacity: "0",
+    },
+    "&& :nth-child(3)": {
+      transform: "rotate(-45deg)",
+    },
+  },
+  mobileMenuContainer: {
+    height: "550px",
+    background: theme.palette.primary.main,
+    transition: stdTransition,
+    "&& > div": {
+      background: theme.palette.primary.main,
+      color: "#fff",
+      boxShadow: "none",
+      "&:not(:last-child)": {
+        borderBottom: 0,
+      },
+      "&:before": {
+        display: "none",
+      },
+      "&$expanded": {
+        margin: "auto",
+      },
+      transition: stdTransition,
+    },
+  },
+  menuHidden: {
+    height: "0px",
+    overflow: "hidden",
+    transition: stdTransition,
   },
 
   // Utils
