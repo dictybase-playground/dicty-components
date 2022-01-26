@@ -1,14 +1,7 @@
-import {
-  ClickAwayListener,
-  Grow,
-  MenuItem,
-  MenuList,
-  Paper,
-  Popper,
-} from "@material-ui/core";
 import { navbarStyles } from "navbar/styles/Navbar";
 import { NavItem } from "navbar/types/index";
 import React from "react";
+import { DesktopNavSubmenu } from "./DesktopNavSubmenu";
 
 export interface DesktopNavItemProps {
   item: NavItem["attributes"];
@@ -31,7 +24,7 @@ export const DesktopNavItem = ({ item }: DesktopNavItemProps) => {
   };
 
   // return focus to the button when we transitioned from !open -> open
-  const prevOpen = React.useRef(open);
+  const prevOpen = React.useRef<boolean>(open);
   React.useEffect(() => {
     if (prevOpen.current === true && open === false) anchorRef.current.focus();
     prevOpen.current = open;
@@ -51,27 +44,12 @@ export const DesktopNavItem = ({ item }: DesktopNavItemProps) => {
         {item.display}
       </li>
 
-      <Popper
+      <DesktopNavSubmenu
         open={open}
-        anchorEl={anchorRef.current}
-        transition
-        disablePortal
-        placement="bottom-start"
-      >
-        {({ TransitionProps }) => (
-          <Grow {...TransitionProps}>
-            <Paper elevation={0} variant="outlined" square>
-              <ClickAwayListener onClickAway={handleClose}>
-                <MenuList autoFocusItem={open} id="menu-list-grow">
-                  {item.items.map((subItem, i) => (
-                    <MenuItem key={i}>{subItem.label}</MenuItem>
-                  ))}
-                </MenuList>
-              </ClickAwayListener>
-            </Paper>
-          </Grow>
-        )}
-      </Popper>
+        subItems={item.items}
+        anchorRef={anchorRef}
+        handleClose={handleClose}
+      />
     </div>
   );
 };
