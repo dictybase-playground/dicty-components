@@ -1,4 +1,5 @@
 import { SubNavItem } from "navbar/types";
+import { navbarStyles } from "navbar/styles/Navbar";
 import {
   ClickAwayListener,
   Grow,
@@ -21,6 +22,8 @@ export const DesktopNavSubmenu = ({
   anchorRef,
   handleClose,
 }: DesktopNavSubmenuProps) => {
+  const styles = navbarStyles();
+
   return (
     <Popper
       open={open}
@@ -36,7 +39,9 @@ export const DesktopNavSubmenu = ({
               <MenuList autoFocusItem={open}>
                 {subItems.map(({ link, label }, i) => (
                   <a href={link}>
-                    <MenuItem key={i}>{label}</MenuItem>
+                    <MenuItem className={styles.desktopMenuItem} key={i}>
+                      {label}
+                    </MenuItem>
                   </a>
                 ))}
               </MenuList>

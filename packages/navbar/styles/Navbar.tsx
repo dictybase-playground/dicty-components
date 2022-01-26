@@ -12,7 +12,7 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
 
     "&& a": {
       textDecoration: "none",
-      color: theme.palette.secondary.main,
+      color: theme.palette.primary.main,
     },
   },
 
@@ -38,9 +38,18 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
     justifyContent: "center",
     position: "relative",
     cursor: "pointer",
+    transition: stdTransition,
 
     "&&:hover, &&:focus, &&:active": {
       background: theme.palette.secondary.main,
+      transition: stdTransition,
+    },
+  },
+  desktopMenuItem: {
+    "&&:hover": {
+      color: "#fff",
+      background: theme.palette.primary.main,
+      transition: stdTransition,
     },
   },
 
