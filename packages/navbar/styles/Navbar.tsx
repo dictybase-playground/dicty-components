@@ -1,17 +1,22 @@
 import { makeStyles, Theme } from "@material-ui/core";
 
+const navHeight = "50px";
+
 export const navbarStyles = makeStyles((theme: Theme) => ({
   navbar: {
     background: theme.palette.primary.main,
     color: "#fff",
     fontFamily: theme.typography.fontFamily,
+    minHeight: navHeight,
   },
+
+  // Desktop nav
   desktopNavContainer: {
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-start",
     listStyle: "none",
-    height: "50px",
+    height: navHeight,
     margin: "0px",
     padding: "0px",
   },
@@ -31,6 +36,11 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
     "&&:hover, &&:focus, &&:active": {
       background: theme.palette.secondary.main,
     },
+  },
+
+  // Utils
+  focused: {
+    background: theme.palette.secondary.main,
   },
   caretDown: {
     position: "relative",

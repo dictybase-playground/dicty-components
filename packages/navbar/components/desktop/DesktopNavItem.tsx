@@ -31,11 +31,14 @@ export const DesktopNavItem = ({ item }: DesktopNavItemProps) => {
   }, [open]);
 
   const caret = open ? styles.caretUp : styles.caretDown;
+  const navItem = open
+    ? `${styles.desktopNavItem} ${styles.focused}`
+    : styles.desktopNavItem;
 
   return (
     <div className={`${styles.desktopNavItemRoot} ${caret}`}>
       <li
-        className={styles.desktopNavItem}
+        className={navItem}
         ref={anchorRef}
         aria-controls={open ? "menu-list-grow" : undefined}
         aria-haspopup="true"
