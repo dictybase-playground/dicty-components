@@ -3,6 +3,16 @@ import { makeStyles, Theme } from "@material-ui/core";
 const navHeight = "50px";
 const stdTransition = "0.2s all ease-in-out";
 
+const caretBase = {
+  content: "''",
+  width: "0px",
+  height: "0px",
+  position: "absolute",
+  top: "0",
+  bottom: "0",
+  margin: "auto",
+};
+
 export const navbarStyles = makeStyles((theme: Theme) => ({
   navbar: {
     background: theme.palette.primary.main,
@@ -121,6 +131,19 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
     overflow: "hidden",
     transition: stdTransition,
   },
+  mobileCaret: {
+    width: "24px",
+    height: "24px",
+    display: "relative",
+    "&&:after": {
+      ...caretBase,
+      borderTop: "5px solid #fff",
+      borderLeft: "5px solid transparent",
+      borderRight: "5px solid transparent",
+      right: 0,
+      left: 0,
+    },
+  },
 
   // Utils
   focused: {
@@ -129,33 +152,21 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
   caretDown: {
     position: "relative",
     "&&:after": {
-      content: "''",
-      width: "0px",
-      height: "0px",
+      ...caretBase,
       borderTop: "5px solid #fff",
       borderLeft: "5px solid transparent",
       borderRight: "5px solid transparent",
-      position: "absolute",
       right: "4px",
-      top: "0",
-      bottom: "0",
-      margin: "auto",
     },
   },
   caretUp: {
     position: "relative",
     "&&:after": {
-      content: "''",
-      width: "0px",
-      height: "0px",
+      ...caretBase,
       borderBottom: "5px solid #fff",
       borderLeft: "5px solid transparent",
       borderRight: "5px solid transparent",
-      position: "absolute",
       right: "4px",
-      top: "0",
-      bottom: "0",
-      margin: "auto",
     },
   },
 }));

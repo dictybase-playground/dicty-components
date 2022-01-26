@@ -1,7 +1,7 @@
 import { NavItem } from "navbar/types";
 import { navbarStyles } from "navbar/styles/Navbar";
 import { useState } from "react";
-import { MobileNavItem } from "./MobileNavItem";
+import { MobileNavItem } from "navbar/components/mobile/MobileNavItem";
 
 export interface MobileNavMenuProps {
   open: boolean;

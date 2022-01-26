@@ -25,7 +25,7 @@ export const MobileNavItem = ({
 
   return (
     <Accordion expanded={expanded === cur} onChange={selectOption(cur)} square>
-      <AccordionSummary expandIcon={<span className={styles.caretDown} />}>
+      <AccordionSummary expandIcon={<div className={styles.mobileCaret} />}>
         {item.display}
       </AccordionSummary>
       <AccordionDetails>
