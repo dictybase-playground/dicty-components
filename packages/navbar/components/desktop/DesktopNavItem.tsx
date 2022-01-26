@@ -7,5 +7,5 @@ export interface DesktopNavItemProps {
 
 export const DesktopNavItem = ({ item }: DesktopNavItemProps) => {
   const styles = navbarStyles();
-  return <li>{item.display}</li>;
+  return <li className={styles.desktopNavItem}>{item.display}</li>;
 };
