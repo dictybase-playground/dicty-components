@@ -3,7 +3,7 @@
   "include": [
     ".",
     "styles",
-    "components"
+    "components/**/*"
   ],
   "exclude": ["dist", "build", "node_modules"]
 }

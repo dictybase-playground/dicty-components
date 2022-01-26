@@ -2,6 +2,7 @@ import { Box, MuiThemeProvider, Theme, useMediaQuery } from "@material-ui/core";
 import { navbarStyles } from "navbar/styles/Navbar";
 import { NavItem } from "navbar/types/index";
 import { muiTheme } from "navbar/styles/customTheme";
+import { DesktopNav } from "navbar/components/desktop/DesktopNav";
 
 export interface NavbarProps {
   items: Array<NavItem>;
@@ -16,7 +17,13 @@ export const Navbar = ({ items, brand, theme }: NavbarProps) => {
 
   return (
     <MuiThemeProvider theme={customTheme}>
-      <Box bgcolor="primary">Nav item</Box>
+      <Box className={styles.navbar}>
+        {mobileScreen ? (
+          "Mobile screen"
+        ) : (
+          <DesktopNav items={items} theme={customTheme} />
+        )}
+      </Box>
     </MuiThemeProvider>
   );
 };
