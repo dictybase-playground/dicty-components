@@ -68,6 +68,7 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
     justifyContent: "space-between",
     flexDirection: "column",
     cursor: "pointer",
+    position: "relative",
 
     "&& > span": {
       height: "1px",
@@ -75,21 +76,28 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
       background: "#fff",
       display: "block",
       width: "100%",
+      transform: "rotate(0deg)",
     },
   },
   hamOpen: {
     "&& :nth-child(1)": {
       transform: "rotate(45deg)",
+      position: "absolute",
+      top: "50%",
     },
     "&& :nth-child(2)": {
+      position: "absolute",
+      top: "50%",
       opacity: "0",
     },
     "&& :nth-child(3)": {
       transform: "rotate(-45deg)",
+      position: "absolute",
+      bottom: "50%",
     },
   },
   mobileMenuContainer: {
-    height: "550px",
+    height: "auto",
     background: theme.palette.primary.main,
     transition: stdTransition,
     "&& > div": {
