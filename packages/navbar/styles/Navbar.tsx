@@ -14,8 +14,5 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
     height: "50px",
     margin: "0px",
     padding: "0px",
-    "&& li": {
-      marginRight: "20px",
-    },
   },
 }));
