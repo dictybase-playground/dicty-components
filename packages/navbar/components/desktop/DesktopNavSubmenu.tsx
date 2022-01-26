@@ -1,4 +1,4 @@
-import { SubNavItem } from "../../types/index";
+import { SubNavItem } from "navbar/types";
 import {
   ClickAwayListener,
   Grow,

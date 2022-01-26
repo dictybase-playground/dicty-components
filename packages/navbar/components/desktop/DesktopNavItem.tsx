@@ -1,5 +1,5 @@
 import { navbarStyles } from "navbar/styles/Navbar";
-import { NavItem } from "navbar/types/index";
+import { NavItem } from "navbar/types";
 import React from "react";
 import { DesktopNavSubmenu } from "./DesktopNavSubmenu";
 
