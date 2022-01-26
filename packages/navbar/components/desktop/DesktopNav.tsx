@@ -1,19 +1,18 @@
 import { navbarStyles } from "navbar/styles/Navbar";
 import { NavItem } from "navbar/types";
-import { Theme } from "@material-ui/core";
+import { DesktopNavItem } from "navbar/components/desktop/DesktopNavItem";
 
 export interface DesktopNavProps {
   items: Array<NavItem>;
-  theme: Partial<Theme>;
 }
 
-export const DesktopNav = ({ theme, items }: DesktopNavProps) => {
-  const styles = navbarStyles(theme);
+export const DesktopNav = ({ items }: DesktopNavProps) => {
+  const styles = navbarStyles();
 
   return (
     <ul className={styles.desktopNavContainer}>
       {items.map(({ attributes }, i) => (
-        <li key={i}>{attributes.display}</li>
+        <DesktopNavItem item={attributes} key={i} />
       ))}
     </ul>
   );

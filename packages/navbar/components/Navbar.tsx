@@ -10,19 +10,15 @@ export interface NavbarProps {
   brand?: any;
 }
 
-export const Navbar = ({ items, brand, theme }: NavbarProps) => {
+export const Navbar = ({ items, theme }: NavbarProps) => {
   const customTheme = theme ? theme : muiTheme;
-  const styles = navbarStyles(customTheme);
+  const styles = navbarStyles();
   const mobileScreen = useMediaQuery("(max-width: 768px)");
 
   return (
     <MuiThemeProvider theme={customTheme}>
       <Box className={styles.navbar}>
-        {mobileScreen ? (
-          "Mobile screen"
-        ) : (
-          <DesktopNav items={items} theme={customTheme} />
-        )}
+        {mobileScreen ? "Mobile screen" : <DesktopNav items={items} />}
       </Box>
     </MuiThemeProvider>
   );
