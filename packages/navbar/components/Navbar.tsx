@@ -1,15 +1,21 @@
-import { Button, Theme } from "@material-ui/core";
+import { Box, MuiThemeProvider, Theme, useMediaQuery } from "@material-ui/core";
 import { navbarStyles } from "navbar/styles/Navbar";
 import { NavItem } from "navbar/types/index";
+import { muiTheme } from "navbar/styles/customTheme";
 
 export interface NavbarProps {
   items: Array<NavItem>;
+  theme?: Partial<Theme>;
   brand?: any;
-  theme?: Theme;
 }
 
 export const Navbar = ({ items, brand, theme }: NavbarProps) => {
   const styles = navbarStyles(theme);
+  const mobileScreen = useMediaQuery("(max-width: 768px)");
 
-  return <Button className={styles.bgRed}>Navbar</Button>;
+  return (
+    <MuiThemeProvider theme={theme ? theme : muiTheme}>
+      <Box className={styles.navbar}>Nav item</Box>
+    </MuiThemeProvider>
+  );
 };
