@@ -33,9 +33,11 @@ export const DesktopNavSubmenu = ({
         <Grow {...TransitionProps}>
           <Paper elevation={0} variant="outlined" square>
             <ClickAwayListener onClickAway={handleClose}>
-              <MenuList autoFocusItem={open} id="menu-list-grow">
-                {subItems.map((subItem, i) => (
-                  <MenuItem key={i}>{subItem.label}</MenuItem>
+              <MenuList autoFocusItem={open}>
+                {subItems.map(({ link, label }, i) => (
+                  <a href={link}>
+                    <MenuItem key={i}>{label}</MenuItem>
+                  </a>
                 ))}
               </MenuList>
             </ClickAwayListener>

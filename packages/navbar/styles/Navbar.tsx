@@ -9,6 +9,11 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
     color: "#fff",
     fontFamily: theme.typography.fontFamily,
     minHeight: navHeight,
+
+    "&& a": {
+      textDecoration: "none",
+      color: theme.palette.secondary.main,
+    },
   },
 
   // Desktop nav
