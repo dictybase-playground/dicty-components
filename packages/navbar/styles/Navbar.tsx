@@ -125,6 +125,9 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
       },
       transition: stdTransition,
     },
+    "&& a": {
+      color: "#fff!important",
+    },
   },
   menuHidden: {
     height: "0px",
@@ -143,6 +146,16 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
       right: 0,
       left: 0,
     },
+  },
+  mobileNavContainer: {
+    width: "100%",
+    padding: "0px",
+  },
+  mobileSelectedItem: {
+    background: `${theme.palette.primary.dark}!important`,
+  },
+  mobileNavSubItem: {
+    paddingLeft: "25px",
   },
 
   // Utils
