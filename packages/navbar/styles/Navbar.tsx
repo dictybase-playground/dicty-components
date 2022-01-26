@@ -81,7 +81,7 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
     position: "relative",
 
     "&& > span": {
-      height: "1px",
+      height: "2px",
       transition: stdTransition,
       background: "#fff",
       display: "block",
@@ -103,7 +103,7 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
     "&& :nth-child(3)": {
       transform: "rotate(-45deg)",
       position: "absolute",
-      bottom: "50%",
+      top: "50%",
     },
   },
   mobileMenuContainer: {
