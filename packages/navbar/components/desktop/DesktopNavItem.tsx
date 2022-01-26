@@ -18,7 +18,7 @@ export const DesktopNavItem = ({ item }: DesktopNavItemProps) => {
     setOpen((prevOpen) => !prevOpen);
   };
 
-  const handleClose = (event: { target: any }) => {
+  const handleClose = (event: React.MouseEvent<EventTarget>) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) return;
     setOpen(false);
   };

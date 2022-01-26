@@ -12,7 +12,7 @@ export interface DesktopNavSubmenuProps {
   open: boolean;
   subItems: Array<SubNavItem>;
   anchorRef: React.MutableRefObject<any>;
-  handleClose: (event: { target: any }) => void;
+  handleClose: (event: React.MouseEvent<EventTarget>) => void;
 }
 
 export const DesktopNavSubmenu = ({
