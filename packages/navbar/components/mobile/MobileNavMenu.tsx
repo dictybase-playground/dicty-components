@@ -1,11 +1,7 @@
 import { NavItem } from "navbar/types";
 import { navbarStyles } from "navbar/styles/Navbar";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-} from "@material-ui/core";
 import { useState } from "react";
+import { MobileNavItem } from "./MobileNavItem";
 
 export interface MobileNavMenuProps {
   open: boolean;
@@ -28,21 +24,12 @@ export const MobileNavMenu = ({ open, items }: MobileNavMenuProps) => {
   return (
     <div className={navClass}>
       {items.map(({ attributes }, i) => (
-        <Accordion
-          expanded={expanded === i}
-          onChange={handleChange(i)}
-          square
-          key={i}
-        >
-          <AccordionSummary>{attributes.display}</AccordionSummary>
-          <AccordionDetails>
-            <ul>
-              {attributes.items.map((subNavItem, j) => (
-                <li>{subNavItem.label}</li>
-              ))}
-            </ul>
-          </AccordionDetails>
-        </Accordion>
+        <MobileNavItem
+          expanded={expanded}
+          cur={i}
+          selectOption={handleChange}
+          item={attributes}
+        />
       ))}
     </div>
   );
