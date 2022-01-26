@@ -17,12 +17,9 @@ export const MobileNavMenu = ({ open, items }: MobileNavMenuProps) => {
     };
 
   const styles = navbarStyles();
-  const navClass = open
-    ? styles.mobileMenuContainer
-    : `${styles.mobileMenuContainer} ${styles.menuHidden}`;
 
   return (
-    <div className={navClass}>
+    <div className={styles.mobileMenuContainer}>
       {items.map(({ attributes }, i) => (
         <MobileNavItem
           expanded={expanded}

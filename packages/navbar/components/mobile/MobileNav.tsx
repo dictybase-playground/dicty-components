@@ -13,8 +13,12 @@ export const MobileNav = ({ items }: DesktopNavProps) => {
   const styles = navbarStyles();
   const [open, setOpen] = useState(false);
 
+  const mainNavClasses = open
+    ? `${styles.navbar} ${styles.menuShow}`
+    : `${styles.navbar} ${styles.menuHide}`;
+
   return (
-    <Box className={styles.navbar}>
+    <Box className={mainNavClasses}>
       <MobileMenuButton open={open} setOpen={setOpen} />
       <MobileNavMenu items={items} open={open} />
     </Box>

@@ -18,7 +18,7 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
     background: theme.palette.primary.main,
     color: "#fff",
     fontFamily: theme.typography.fontFamily,
-    minHeight: navHeight,
+    height: navHeight,
 
     "&& a": {
       textDecoration: "none",
@@ -107,7 +107,6 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
     },
   },
   mobileMenuContainer: {
-    height: "auto",
     background: theme.palette.primary.main,
     transition: stdTransition,
     "&& > div": {
@@ -129,8 +128,13 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
       color: "#fff!important",
     },
   },
-  menuHidden: {
-    height: "0px",
+  menuShow: {
+    height: "auto",
+    overflow: "auto",
+    transition: stdTransition,
+  },
+  menuHide: {
+    height: navHeight,
     overflow: "hidden",
     transition: stdTransition,
   },
