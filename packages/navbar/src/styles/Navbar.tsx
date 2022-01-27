@@ -121,9 +121,6 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
       "&:before": {
         display: "none",
       },
-      "&$expanded": {
-        margin: "auto",
-      },
       transition: stdTransition,
     },
     "&& a": {

@@ -153,9 +153,6 @@ var navbarStyles = makeStyles((theme) => ({
       "&:before": {
         display: "none"
       },
-      "&$expanded": {
-        margin: "auto"
-      },
       transition: stdTransition
     },
     "&& a": {
@@ -412,7 +409,8 @@ var MobileNavMenu = ({ items }) => {
     expanded,
     cur: i,
     selectOption: handleChange,
-    item: attributes
+    item: attributes,
+    key: i
   })));
 };
 

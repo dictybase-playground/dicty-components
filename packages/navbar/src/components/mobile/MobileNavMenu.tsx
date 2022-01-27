@@ -22,6 +22,7 @@ export const MobileNavMenu = ({ items }: MobileNavMenuProps) => {
           cur={i}
           selectOption={handleChange}
           item={attributes}
+          key={i}
         />
       ))}
     </div>
