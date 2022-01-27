@@ -3,11 +3,10 @@ import {
   AccordionDetails,
   AccordionSummary,
   List,
-  ListItem,
-  ListItemText,
 } from "@material-ui/core";
 import { MobileNavItemProps } from "navbar/types";
 import { navbarStyles } from "navbar/styles/Navbar";
+import { MobileNavSubitem } from "navbar/components/mobile/MobileNavSubitem";
 
 export const MobileNavItem = ({
   expanded,
@@ -28,20 +27,12 @@ export const MobileNavItem = ({
       <AccordionSummary expandIcon={<div className={styles.mobileCaret} />}>
         <b>{item.display}</b>
       </AccordionSummary>
+
       <AccordionDetails className={styles.mobileNavContainer}>
         <List className={styles.mobileNavContainer}>
-          {item.items.map(({ link, label }, j) => {
-            return (
-              <a href={link}>
-                <ListItem button>
-                  <ListItemText
-                    className={styles.mobileNavSubItem}
-                    primary={label}
-                  />
-                </ListItem>
-              </a>
-            );
-          })}
+          {item.items.map((subItem, i) => (
+            <MobileNavSubitem item={subItem} key={i} />
+          ))}
         </List>
       </AccordionDetails>
     </Accordion>

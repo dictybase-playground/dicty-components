@@ -60,3 +60,7 @@ export interface MobileNavItemProps {
 export interface MobileNavMenuProps {
   items: Array<NavItem>;
 }
+
+export interface MobileNavSubitemProps {
+  item: SubNavItem;
+}
