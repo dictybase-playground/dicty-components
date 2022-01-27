@@ -35,5 +35,11 @@
   },
   "jest": {
     "preset": "scripts/jest/node"
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css}": [
+      "prettier --no-semi --trailing-comma all --jsx-bracket-same-line true --write",
+      "git add"
+    ]
   }
 }
