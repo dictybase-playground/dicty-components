@@ -75,7 +75,8 @@ var navbarStyles = makeStyles((theme) => ({
   },
   desktopNavItemRoot: {
     display: "flex",
-    height: "inherit"
+    height: "inherit",
+    cursor: "pointer"
   },
   desktopNavItem: {
     height: "inherit",
@@ -283,13 +284,13 @@ var DesktopNavItem = ({ item }) => {
   const caret = open ? styles.caretUp : styles.caretDown;
   const navItem = open ? `${styles.desktopNavItem} ${styles.focused}` : styles.desktopNavItem;
   return /* @__PURE__ */ React3.createElement("div", {
-    className: `${styles.desktopNavItemRoot} ${caret}`
+    className: `${styles.desktopNavItemRoot} ${caret}`,
+    onClick: handleToggle
   }, /* @__PURE__ */ React3.createElement("li", {
     className: navItem,
     ref: anchorRef,
     "aria-controls": open ? "menu-list-grow" : void 0,
-    "aria-haspopup": "true",
-    onClick: handleToggle
+    "aria-haspopup": "true"
   }, item.display), /* @__PURE__ */ React3.createElement(DesktopNavSubmenu, {
     open,
     subItems: item.items,

@@ -32,13 +32,14 @@ export const DesktopNavItem = ({ item }: DesktopNavItemProps) => {
     : styles.desktopNavItem
 
   return (
-    <div className={`${styles.desktopNavItemRoot} ${caret}`}>
+    <div
+      className={`${styles.desktopNavItemRoot} ${caret}`}
+      onClick={handleToggle}>
       <li
         className={navItem}
         ref={anchorRef}
         aria-controls={open ? "menu-list-grow" : undefined}
-        aria-haspopup="true"
-        onClick={handleToggle}>
+        aria-haspopup="true">
         {item.display}
       </li>
 

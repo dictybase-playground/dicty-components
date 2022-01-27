@@ -40,6 +40,7 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
   desktopNavItemRoot: {
     display: "flex",
     height: "inherit",
+    cursor: "pointer",
   },
   desktopNavItem: {
     height: "inherit",
