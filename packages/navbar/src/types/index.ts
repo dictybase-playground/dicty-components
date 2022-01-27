@@ -48,6 +48,10 @@ export interface DesktopNavProps {
   items: Array<NavItem>
 }
 
+export interface DesktopNavSubitemProps {
+  item: SubNavItem
+}
+
 export interface MobileNavMenuitemProps {
   expanded: number | false
   cur: number
