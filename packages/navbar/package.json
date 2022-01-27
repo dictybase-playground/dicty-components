@@ -1,9 +1,7 @@
 {
   "name": "navbar",
   "version": "0.0.0",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
-  "license": "MIT",
+  "license": "BSD-2-Clause",
   "scripts": {
     "test": "jest",
     "build": "tsup index.tsx --format esm,cjs --dts --external react",
