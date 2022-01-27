@@ -1,4 +1,5 @@
 import { Theme } from "@material-ui/core"
+import { TransitionProps } from "@material-ui/core/transitions/transition"
 import { Dispatch, SetStateAction } from "react"
 
 export interface NavItem {
@@ -37,6 +38,12 @@ export interface DesktopNavSubmenuProps {
   subItems: Array<SubNavItem>
   anchorRef: React.MutableRefObject<any>
   handleClose: (event: React.MouseEvent<EventTarget>) => void
+}
+
+export interface CustomMenuProps {
+  subItems: Array<SubNavItem>
+  handleClose: (event: React.MouseEvent<EventTarget>) => void
+  TransitionProps?: TransitionProps
 }
 
 export interface MobileMenuButtonProps {
