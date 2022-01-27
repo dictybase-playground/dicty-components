@@ -1,12 +1,13 @@
+import React from "react"
 import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
   List,
 } from "@material-ui/core"
-import { MobileNavMenuitemProps } from "navbar/types"
-import { navbarStyles } from "navbar/styles/Navbar"
-import { MobileNavSubitem } from "navbar/components/mobile/MobileNavSubitem"
+import { MobileNavMenuitemProps } from "navbar/src/types"
+import { navbarStyles } from "navbar/src/styles/Navbar"
+import { MobileNavSubitem } from "navbar/src/components/mobile/MobileNavSubitem"
 
 export const MobileNavMenuitem = ({
   expanded,

@@ -1,8 +1,9 @@
+import React from "react"
 import { MuiThemeProvider, useMediaQuery } from "@material-ui/core"
-import { NavbarProps } from "navbar/types/index"
-import { muiTheme } from "navbar/styles/customTheme"
-import { DesktopNav } from "navbar/components/desktop/DesktopNav"
-import { MobileNav } from "navbar/components/mobile/MobileNav"
+import { NavbarProps } from "navbar/src/types/index"
+import { muiTheme } from "navbar/src/styles/customTheme"
+import { DesktopNav } from "navbar/src/components/desktop/DesktopNav"
+import { MobileNav } from "navbar/src/components/mobile/MobileNav"
 
 export const Navbar = ({ items, theme }: NavbarProps) => {
   const customTheme = theme ? theme : muiTheme

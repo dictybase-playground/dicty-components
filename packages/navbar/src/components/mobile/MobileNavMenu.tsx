@@ -1,7 +1,8 @@
-import { MobileNavMenuProps } from "navbar/types"
-import { navbarStyles } from "navbar/styles/Navbar"
+import React from "react"
+import { MobileNavMenuProps } from "navbar/src/types"
+import { navbarStyles } from "navbar/src/styles/Navbar"
 import { useState } from "react"
-import { MobileNavMenuitem } from "navbar/components/mobile/MobileNavMenuitem"
+import { MobileNavMenuitem } from "navbar/src/components/mobile/MobileNavMenuitem"
 
 export const MobileNavMenu = ({ items }: MobileNavMenuProps) => {
   const [expanded, setExpanded] = useState<number | false>(false)

@@ -18,10 +18,11 @@ var __spreadValues = (a, b) => {
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 
-// components/Navbar.tsx
+// src/components/Navbar.tsx
+import React9 from "react";
 import { MuiThemeProvider, useMediaQuery } from "@material-ui/core";
 
-// styles/customTheme.ts
+// src/styles/customTheme.ts
 import { createTheme } from "@material-ui/core";
 var primaryColor = "#004080";
 var blueSecondaryColor = "#001b53";
@@ -36,7 +37,10 @@ var muiTheme = createTheme({
   }
 });
 
-// styles/Navbar.tsx
+// src/components/desktop/DesktopNav.tsx
+import React3 from "react";
+
+// src/styles/Navbar.tsx
 import { makeStyles } from "@material-ui/core";
 var navHeight = "50px";
 var stdTransition = "0.2s all ease-in-out";
@@ -212,10 +216,11 @@ var navbarStyles = makeStyles((theme) => ({
   }
 }));
 
-// components/desktop/DesktopNavItem.tsx
+// src/components/desktop/DesktopNavItem.tsx
 import React2 from "react";
 
-// components/desktop/DesktopNavSubmenu.tsx
+// src/components/desktop/DesktopNavSubmenu.tsx
+import React from "react";
 import {
   ClickAwayListener,
   Grow,
@@ -253,7 +258,7 @@ var DesktopNavSubmenu = ({
   }, label))))))));
 };
 
-// components/desktop/DesktopNavItem.tsx
+// src/components/desktop/DesktopNavItem.tsx
 var DesktopNavItem = ({ item }) => {
   const styles = navbarStyles();
   const [open, setOpen] = React2.useState(false);
@@ -290,40 +295,44 @@ var DesktopNavItem = ({ item }) => {
   }));
 };
 
-// components/desktop/DesktopNav.tsx
+// src/components/desktop/DesktopNav.tsx
 import { Box } from "@material-ui/core";
 var DesktopNav = ({ items }) => {
   const styles = navbarStyles();
-  return /* @__PURE__ */ React.createElement(Box, {
+  return /* @__PURE__ */ React3.createElement(Box, {
     className: styles.navbar
-  }, /* @__PURE__ */ React.createElement("ul", {
+  }, /* @__PURE__ */ React3.createElement("ul", {
     className: styles.desktopNavContainer
-  }, items.map(({ attributes }, i) => /* @__PURE__ */ React.createElement(DesktopNavItem, {
+  }, items.map(({ attributes }, i) => /* @__PURE__ */ React3.createElement(DesktopNavItem, {
     item: attributes,
     key: i
   }))));
 };
 
-// components/mobile/MobileNav.tsx
+// src/components/mobile/MobileNav.tsx
+import React8 from "react";
 import { Box as Box2 } from "@material-ui/core";
 import { useState as useState2 } from "react";
 
-// components/mobile/MobileMenuButton.tsx
+// src/components/mobile/MobileMenuButton.tsx
+import React4 from "react";
 var MobileMenuButton = ({ open, setOpen }) => {
   const styles = navbarStyles();
   const hamburgerMenu = open ? `${styles.mobileMenuButton} ${styles.hamOpen}` : styles.mobileMenuButton;
-  return /* @__PURE__ */ React.createElement("div", {
+  return /* @__PURE__ */ React4.createElement("div", {
     className: styles.mobileMenuButtonContainer
-  }, /* @__PURE__ */ React.createElement("div", {
+  }, /* @__PURE__ */ React4.createElement("div", {
     className: hamburgerMenu,
     onClick: () => setOpen(!open)
-  }, /* @__PURE__ */ React.createElement("span", null), /* @__PURE__ */ React.createElement("span", null), /* @__PURE__ */ React.createElement("span", null)));
+  }, /* @__PURE__ */ React4.createElement("span", null), /* @__PURE__ */ React4.createElement("span", null), /* @__PURE__ */ React4.createElement("span", null)));
 };
 
-// components/mobile/MobileNavMenu.tsx
+// src/components/mobile/MobileNavMenu.tsx
+import React7 from "react";
 import { useState } from "react";
 
-// components/mobile/MobileNavMenuitem.tsx
+// src/components/mobile/MobileNavMenuitem.tsx
+import React6 from "react";
 import {
   Accordion,
   AccordionDetails,
@@ -331,21 +340,22 @@ import {
   List
 } from "@material-ui/core";
 
-// components/mobile/MobileNavSubitem.tsx
+// src/components/mobile/MobileNavSubitem.tsx
+import React5 from "react";
 import { ListItem, ListItemText } from "@material-ui/core";
 var MobileNavSubitem = ({ item }) => {
   const styles = navbarStyles();
-  return /* @__PURE__ */ React.createElement("a", {
+  return /* @__PURE__ */ React5.createElement("a", {
     href: item.link
-  }, /* @__PURE__ */ React.createElement(ListItem, {
+  }, /* @__PURE__ */ React5.createElement(ListItem, {
     button: true
-  }, /* @__PURE__ */ React.createElement(ListItemText, {
+  }, /* @__PURE__ */ React5.createElement(ListItemText, {
     className: styles.mobileNavSubItem,
     primary: item.label
   })));
 };
 
-// components/mobile/MobileNavMenuitem.tsx
+// src/components/mobile/MobileNavMenuitem.tsx
 var MobileNavMenuitem = ({
   expanded,
   cur,
@@ -354,35 +364,35 @@ var MobileNavMenuitem = ({
 }) => {
   const styles = navbarStyles();
   const selected = expanded === cur;
-  return /* @__PURE__ */ React.createElement(Accordion, {
+  return /* @__PURE__ */ React6.createElement(Accordion, {
     className: selected ? styles.mobileSelectedItem : "",
     expanded: selected,
     onChange: selectOption(cur),
     square: true
-  }, /* @__PURE__ */ React.createElement(AccordionSummary, {
-    expandIcon: /* @__PURE__ */ React.createElement("div", {
+  }, /* @__PURE__ */ React6.createElement(AccordionSummary, {
+    expandIcon: /* @__PURE__ */ React6.createElement("div", {
       className: styles.mobileCaret
     })
-  }, /* @__PURE__ */ React.createElement("b", null, item.display)), /* @__PURE__ */ React.createElement(AccordionDetails, {
+  }, /* @__PURE__ */ React6.createElement("b", null, item.display)), /* @__PURE__ */ React6.createElement(AccordionDetails, {
     className: styles.mobileNavContainer
-  }, /* @__PURE__ */ React.createElement(List, {
+  }, /* @__PURE__ */ React6.createElement(List, {
     className: styles.mobileNavContainer
-  }, item.items.map((subItem, i) => /* @__PURE__ */ React.createElement(MobileNavSubitem, {
+  }, item.items.map((subItem, i) => /* @__PURE__ */ React6.createElement(MobileNavSubitem, {
     item: subItem,
     key: i
   })))));
 };
 
-// components/mobile/MobileNavMenu.tsx
+// src/components/mobile/MobileNavMenu.tsx
 var MobileNavMenu = ({ items }) => {
   const [expanded, setExpanded] = useState(false);
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
   const styles = navbarStyles();
-  return /* @__PURE__ */ React.createElement("div", {
+  return /* @__PURE__ */ React7.createElement("div", {
     className: styles.mobileMenuContainer
-  }, items.map(({ attributes }, i) => /* @__PURE__ */ React.createElement(MobileNavMenuitem, {
+  }, items.map(({ attributes }, i) => /* @__PURE__ */ React7.createElement(MobileNavMenuitem, {
     expanded,
     cur: i,
     selectOption: handleChange,
@@ -390,32 +400,32 @@ var MobileNavMenu = ({ items }) => {
   })));
 };
 
-// components/mobile/MobileNav.tsx
+// src/components/mobile/MobileNav.tsx
 import SlideDown from "react-slidedown";
 var MobileNav = ({ items }) => {
   const styles = navbarStyles();
   const [open, setOpen] = useState2(false);
-  return /* @__PURE__ */ React.createElement(Box2, {
+  return /* @__PURE__ */ React8.createElement(Box2, {
     className: styles.navbar
-  }, /* @__PURE__ */ React.createElement(MobileMenuButton, {
+  }, /* @__PURE__ */ React8.createElement(MobileMenuButton, {
     open,
     setOpen
-  }), /* @__PURE__ */ React.createElement(SlideDown, {
+  }), /* @__PURE__ */ React8.createElement(SlideDown, {
     className: styles.reactSlidedown
-  }, open ? /* @__PURE__ */ React.createElement(MobileNavMenu, {
+  }, open ? /* @__PURE__ */ React8.createElement(MobileNavMenu, {
     items
   }) : null));
 };
 
-// components/Navbar.tsx
+// src/components/Navbar.tsx
 var Navbar = ({ items, theme }) => {
   const customTheme = theme ? theme : muiTheme;
   const mobileScreen = useMediaQuery("(max-width: 768px)");
-  return /* @__PURE__ */ React.createElement(MuiThemeProvider, {
+  return /* @__PURE__ */ React9.createElement(MuiThemeProvider, {
     theme: customTheme
-  }, mobileScreen ? /* @__PURE__ */ React.createElement(MobileNav, {
+  }, mobileScreen ? /* @__PURE__ */ React9.createElement(MobileNav, {
     items
-  }) : /* @__PURE__ */ React.createElement(DesktopNav, {
+  }) : /* @__PURE__ */ React9.createElement(DesktopNav, {
     items
   }));
 };

@@ -1,5 +1,6 @@
-import { DesktopNavSubmenuProps } from "navbar/types"
-import { navbarStyles } from "navbar/styles/Navbar"
+import React from "react"
+import { DesktopNavSubmenuProps } from "navbar/src/types"
+import { navbarStyles } from "navbar/src/styles/Navbar"
 import {
   ClickAwayListener,
   Grow,

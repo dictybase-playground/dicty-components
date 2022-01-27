@@ -1,9 +1,10 @@
-import { navbarStyles } from "navbar/styles/Navbar"
-import { DesktopNavProps } from "navbar/types"
+import React from "react"
+import { navbarStyles } from "navbar/src/styles/Navbar"
+import { DesktopNavProps } from "navbar/src/types"
 import { Box } from "@material-ui/core"
 import { useState } from "react"
-import { MobileMenuButton } from "navbar/components/mobile/MobileMenuButton"
-import { MobileNavMenu } from "navbar/components/mobile/MobileNavMenu"
+import { MobileMenuButton } from "navbar/src/components/mobile/MobileMenuButton"
+import { MobileNavMenu } from "navbar/src/components/mobile/MobileNavMenu"
 import SlideDown from "react-slidedown"
 
 export const MobileNav = ({ items }: DesktopNavProps) => {

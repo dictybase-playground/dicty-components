@@ -1,6 +1,7 @@
-import { navbarStyles } from "navbar/styles/Navbar"
-import { DesktopNavProps } from "navbar/types"
-import { DesktopNavItem } from "navbar/components/desktop/DesktopNavItem"
+import React from "react"
+import { navbarStyles } from "navbar/src/styles/Navbar"
+import { DesktopNavProps } from "navbar/src/types"
+import { DesktopNavItem } from "navbar/src/components/desktop/DesktopNavItem"
 import { Box } from "@material-ui/core"
 
 export const DesktopNav = ({ items }: DesktopNavProps) => {
