@@ -48,7 +48,7 @@ export interface DesktopNavProps {
   items: Array<NavItem>;
 }
 
-export interface MobileNavItemProps {
+export interface MobileNavMenuitemProps {
   expanded: number | false;
   cur: number;
   selectOption: (

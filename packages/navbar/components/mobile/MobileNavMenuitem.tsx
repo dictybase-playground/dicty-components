@@ -4,16 +4,16 @@ import {
   AccordionSummary,
   List,
 } from "@material-ui/core";
-import { MobileNavItemProps } from "navbar/types";
+import { MobileNavMenuitemProps } from "navbar/types";
 import { navbarStyles } from "navbar/styles/Navbar";
 import { MobileNavSubitem } from "navbar/components/mobile/MobileNavSubitem";
 
-export const MobileNavItem = ({
+export const MobileNavMenuitem = ({
   expanded,
   cur,
   selectOption,
   item,
-}: MobileNavItemProps) => {
+}: MobileNavMenuitemProps) => {
   const styles = navbarStyles();
   const selected = expanded === cur;
 
