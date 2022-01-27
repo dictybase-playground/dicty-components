@@ -1,9 +1,9 @@
-import { ListItem, ListItemText } from "@material-ui/core";
-import { MobileNavSubitemProps } from "navbar/types";
-import { navbarStyles } from "navbar/styles/Navbar";
+import { ListItem, ListItemText } from "@material-ui/core"
+import { MobileNavSubitemProps } from "navbar/types"
+import { navbarStyles } from "navbar/styles/Navbar"
 
 export const MobileNavSubitem = ({ item }: MobileNavSubitemProps) => {
-  const styles = navbarStyles();
+  const styles = navbarStyles()
 
   return (
     <a href={item.link}>
@@ -14,5 +14,5 @@ export const MobileNavSubitem = ({ item }: MobileNavSubitemProps) => {
         />
       </ListItem>
     </a>
-  );
-};
+  )
+}

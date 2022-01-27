@@ -3,10 +3,10 @@ import {
   AccordionDetails,
   AccordionSummary,
   List,
-} from "@material-ui/core";
-import { MobileNavMenuitemProps } from "navbar/types";
-import { navbarStyles } from "navbar/styles/Navbar";
-import { MobileNavSubitem } from "navbar/components/mobile/MobileNavSubitem";
+} from "@material-ui/core"
+import { MobileNavMenuitemProps } from "navbar/types"
+import { navbarStyles } from "navbar/styles/Navbar"
+import { MobileNavSubitem } from "navbar/components/mobile/MobileNavSubitem"
 
 export const MobileNavMenuitem = ({
   expanded,
@@ -14,16 +14,15 @@ export const MobileNavMenuitem = ({
   selectOption,
   item,
 }: MobileNavMenuitemProps) => {
-  const styles = navbarStyles();
-  const selected = expanded === cur;
+  const styles = navbarStyles()
+  const selected = expanded === cur
 
   return (
     <Accordion
       className={selected ? styles.mobileSelectedItem : ""}
       expanded={selected}
       onChange={selectOption(cur)}
-      square
-    >
+      square>
       <AccordionSummary expandIcon={<div className={styles.mobileCaret} />}>
         <b>{item.display}</b>
       </AccordionSummary>
@@ -36,5 +35,5 @@ export const MobileNavMenuitem = ({
         </List>
       </AccordionDetails>
     </Accordion>
-  );
-};
+  )
+}

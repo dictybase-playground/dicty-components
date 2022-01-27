@@ -1,7 +1,7 @@
-import { createTheme } from "@material-ui/core";
+import { createTheme } from "@material-ui/core"
 
-const primaryColor = "#004080";
-const blueSecondaryColor = "#001b53";
+const primaryColor = "#004080"
+const blueSecondaryColor = "#001b53"
 
 export const muiTheme = createTheme({
   palette: {
@@ -12,4 +12,4 @@ export const muiTheme = createTheme({
       main: blueSecondaryColor,
     },
   },
-});
+})

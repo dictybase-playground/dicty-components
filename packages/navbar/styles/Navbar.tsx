@@ -1,7 +1,7 @@
-import { makeStyles, Theme } from "@material-ui/core";
+import { makeStyles, Theme } from "@material-ui/core"
 
-const navHeight = "50px";
-const stdTransition = "0.2s all ease-in-out";
+const navHeight = "50px"
+const stdTransition = "0.2s all ease-in-out"
 
 const caretBase = {
   content: "''",
@@ -11,7 +11,7 @@ const caretBase = {
   top: "0",
   bottom: "0",
   margin: "auto",
-};
+}
 
 export const navbarStyles = makeStyles((theme: Theme) => ({
   navbar: {
@@ -188,4 +188,4 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
       right: "4px",
     },
   },
-}));
+}))

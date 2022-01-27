@@ -1,66 +1,66 @@
-import { Theme } from "@material-ui/core";
-import { Dispatch, SetStateAction } from "react";
+import { Theme } from "@material-ui/core"
+import { Dispatch, SetStateAction } from "react"
 
 export interface NavItem {
-  type: string;
-  id: string;
+  type: string
+  id: string
   attributes: {
-    display: string;
-    items: Array<SubNavItem>;
-  };
+    display: string
+    items: Array<SubNavItem>
+  }
 }
 
 export interface SubNavItem {
-  label: string;
-  link: string;
+  label: string
+  link: string
 }
 
 /**
  * Component props
  */
 export interface NavbarProps {
-  items: Array<NavItem>;
-  theme?: Partial<Theme>;
-  brand?: any;
+  items: Array<NavItem>
+  theme?: Partial<Theme>
+  brand?: any
 }
 
 export interface DesktopNavProps {
-  items: Array<NavItem>;
+  items: Array<NavItem>
 }
 
 export interface DesktopNavItemProps {
-  item: NavItem["attributes"];
+  item: NavItem["attributes"]
 }
 
 export interface DesktopNavSubmenuProps {
-  open: boolean;
-  subItems: Array<SubNavItem>;
-  anchorRef: React.MutableRefObject<any>;
-  handleClose: (event: React.MouseEvent<EventTarget>) => void;
+  open: boolean
+  subItems: Array<SubNavItem>
+  anchorRef: React.MutableRefObject<any>
+  handleClose: (event: React.MouseEvent<EventTarget>) => void
 }
 
 export interface MobileMenuButtonProps {
-  open: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
+  open: boolean
+  setOpen: Dispatch<SetStateAction<boolean>>
 }
 
 export interface DesktopNavProps {
-  items: Array<NavItem>;
+  items: Array<NavItem>
 }
 
 export interface MobileNavMenuitemProps {
-  expanded: number | false;
-  cur: number;
+  expanded: number | false
+  cur: number
   selectOption: (
-    panel: number
-  ) => (event: React.ChangeEvent<{}>, isExpanded: boolean) => void;
-  item: NavItem["attributes"];
+    panel: number,
+  ) => (event: React.ChangeEvent<{}>, isExpanded: boolean) => void
+  item: NavItem["attributes"]
 }
 
 export interface MobileNavMenuProps {
-  items: Array<NavItem>;
+  items: Array<NavItem>
 }
 
 export interface MobileNavSubitemProps {
-  item: SubNavItem;
+  item: SubNavItem
 }

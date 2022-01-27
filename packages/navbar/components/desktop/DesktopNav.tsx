@@ -1,10 +1,10 @@
-import { navbarStyles } from "navbar/styles/Navbar";
-import { DesktopNavProps } from "navbar/types";
-import { DesktopNavItem } from "navbar/components/desktop/DesktopNavItem";
-import { Box } from "@material-ui/core";
+import { navbarStyles } from "navbar/styles/Navbar"
+import { DesktopNavProps } from "navbar/types"
+import { DesktopNavItem } from "navbar/components/desktop/DesktopNavItem"
+import { Box } from "@material-ui/core"
 
 export const DesktopNav = ({ items }: DesktopNavProps) => {
-  const styles = navbarStyles();
+  const styles = navbarStyles()
 
   return (
     <Box className={styles.navbar}>
@@ -14,5 +14,5 @@ export const DesktopNav = ({ items }: DesktopNavProps) => {
         ))}
       </ul>
     </Box>
-  );
-};
+  )
+}

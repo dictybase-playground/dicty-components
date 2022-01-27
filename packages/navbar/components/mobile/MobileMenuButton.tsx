@@ -1,11 +1,11 @@
-import { navbarStyles } from "navbar/styles/Navbar";
-import { MobileMenuButtonProps } from "navbar/types";
+import { navbarStyles } from "navbar/styles/Navbar"
+import { MobileMenuButtonProps } from "navbar/types"
 
 export const MobileMenuButton = ({ open, setOpen }: MobileMenuButtonProps) => {
-  const styles = navbarStyles();
+  const styles = navbarStyles()
   const hamburgerMenu = open
     ? `${styles.mobileMenuButton} ${styles.hamOpen}`
-    : styles.mobileMenuButton;
+    : styles.mobileMenuButton
 
   return (
     <div className={styles.mobileMenuButtonContainer}>
@@ -15,5 +15,5 @@ export const MobileMenuButton = ({ open, setOpen }: MobileMenuButtonProps) => {
         <span></span>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,5 +1,5 @@
-import { DesktopNavSubmenuProps } from "navbar/types";
-import { navbarStyles } from "navbar/styles/Navbar";
+import { DesktopNavSubmenuProps } from "navbar/types"
+import { navbarStyles } from "navbar/styles/Navbar"
 import {
   ClickAwayListener,
   Grow,
@@ -7,7 +7,7 @@ import {
   MenuList,
   Paper,
   Popper,
-} from "@material-ui/core";
+} from "@material-ui/core"
 
 export const DesktopNavSubmenu = ({
   open,
@@ -15,7 +15,7 @@ export const DesktopNavSubmenu = ({
   anchorRef,
   handleClose,
 }: DesktopNavSubmenuProps) => {
-  const styles = navbarStyles();
+  const styles = navbarStyles()
 
   return (
     <Popper
@@ -23,8 +23,7 @@ export const DesktopNavSubmenu = ({
       anchorEl={anchorRef.current}
       transition
       disablePortal
-      placement="bottom-start"
-    >
+      placement="bottom-start">
       {({ TransitionProps }) => (
         <Grow {...TransitionProps}>
           <Paper elevation={0} variant="outlined" square>
@@ -43,5 +42,5 @@ export const DesktopNavSubmenu = ({
         </Grow>
       )}
     </Popper>
-  );
-};
+  )
+}
