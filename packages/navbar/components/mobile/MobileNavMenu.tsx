@@ -3,7 +3,7 @@ import { navbarStyles } from "navbar/styles/Navbar";
 import { useState } from "react";
 import { MobileNavItem } from "navbar/components/mobile/MobileNavItem";
 
-export const MobileNavMenu = ({ open, items }: MobileNavMenuProps) => {
+export const MobileNavMenu = ({ items }: MobileNavMenuProps) => {
   const [expanded, setExpanded] = useState<number | false>(false);
 
   const handleChange =

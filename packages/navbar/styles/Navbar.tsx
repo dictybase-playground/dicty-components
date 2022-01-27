@@ -128,15 +128,17 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
       color: "#fff!important",
     },
   },
-  menuShow: {
-    height: "auto",
-    overflow: "auto",
+  // Styles from "react-slidedown". See: https://github.com/frankwallis/react-slidedown/blob/master/lib/slidedown.css
+  reactSlidedown: {
+    height: "0",
     transition: stdTransition,
-  },
-  menuHide: {
-    height: navHeight,
-    overflow: "hidden",
-    transition: stdTransition,
+
+    "&&.transitioning": {
+      overflowY: "hidden",
+    },
+    "&&.closed": {
+      display: "none",
+    },
   },
   mobileCaret: {
     width: "24px",

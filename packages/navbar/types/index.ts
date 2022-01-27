@@ -58,6 +58,5 @@ export interface MobileNavItemProps {
 }
 
 export interface MobileNavMenuProps {
-  open: boolean;
   items: Array<NavItem>;
 }
