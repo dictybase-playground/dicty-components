@@ -1,10 +1,5 @@
 import { navbarStyles } from "navbar/styles/Navbar";
-import { Dispatch, SetStateAction } from "react";
-
-export interface MobileMenuButtonProps {
-  open: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-}
+import { MobileMenuButtonProps } from "navbar/types";
 
 export const MobileMenuButton = ({ open, setOpen }: MobileMenuButtonProps) => {
   const styles = navbarStyles();

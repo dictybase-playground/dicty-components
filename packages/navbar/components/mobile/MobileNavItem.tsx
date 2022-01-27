@@ -6,17 +6,8 @@ import {
   ListItem,
   ListItemText,
 } from "@material-ui/core";
-import { NavItem } from "navbar/types";
+import { MobileNavItemProps } from "navbar/types";
 import { navbarStyles } from "navbar/styles/Navbar";
-
-export interface MobileNavItemProps {
-  expanded: number | false;
-  cur: number;
-  selectOption: (
-    panel: number
-  ) => (event: React.ChangeEvent<{}>, isExpanded: boolean) => void;
-  item: NavItem["attributes"];
-}
 
 export const MobileNavItem = ({
   expanded,

@@ -1,4 +1,4 @@
-import { SubNavItem } from "navbar/types";
+import { DesktopNavSubmenuProps } from "navbar/types";
 import { navbarStyles } from "navbar/styles/Navbar";
 import {
   ClickAwayListener,
@@ -8,13 +8,6 @@ import {
   Paper,
   Popper,
 } from "@material-ui/core";
-
-export interface DesktopNavSubmenuProps {
-  open: boolean;
-  subItems: Array<SubNavItem>;
-  anchorRef: React.MutableRefObject<any>;
-  handleClose: (event: React.MouseEvent<EventTarget>) => void;
-}
 
 export const DesktopNavSubmenu = ({
   open,

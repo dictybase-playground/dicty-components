@@ -1,11 +1,7 @@
 import { navbarStyles } from "navbar/styles/Navbar";
-import { NavItem } from "navbar/types";
+import { DesktopNavItemProps } from "navbar/types";
 import React from "react";
 import { DesktopNavSubmenu } from "navbar/components/desktop/DesktopNavSubmenu";
-
-export interface DesktopNavItemProps {
-  item: NavItem["attributes"];
-}
 
 export const DesktopNavItem = ({ item }: DesktopNavItemProps) => {
   const styles = navbarStyles();
