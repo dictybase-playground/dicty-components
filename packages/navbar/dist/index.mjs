@@ -64,6 +64,11 @@ var navbarStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main
     }
   },
+  desktopNavMenu: {
+    borderColor: theme.palette.primary.main,
+    borderTop: "0px",
+    boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.2)"
+  },
   desktopNavContainer: {
     display: "flex",
     alignItems: "center",
@@ -243,16 +248,19 @@ var CustomMenu = ({
   subItems,
   handleClose,
   TransitionProps
-}) => /* @__PURE__ */ React2.createElement(Grow, __spreadValues({}, TransitionProps), /* @__PURE__ */ React2.createElement(Paper, {
-  elevation: 0,
-  variant: "outlined",
-  square: true
-}, /* @__PURE__ */ React2.createElement(ClickAwayListener, {
-  onClickAway: handleClose
-}, /* @__PURE__ */ React2.createElement(MenuList, null, subItems.map((subItem, i) => /* @__PURE__ */ React2.createElement(DesktopNavSubitem, {
-  item: subItem,
-  key: i
-}))))));
+}) => {
+  const styles = navbarStyles();
+  return /* @__PURE__ */ React2.createElement(Grow, __spreadValues({}, TransitionProps), /* @__PURE__ */ React2.createElement(Paper, {
+    className: styles.desktopNavMenu,
+    variant: "outlined",
+    square: true
+  }, /* @__PURE__ */ React2.createElement(ClickAwayListener, {
+    onClickAway: handleClose
+  }, /* @__PURE__ */ React2.createElement(MenuList, null, subItems.map((subItem, i) => /* @__PURE__ */ React2.createElement(DesktopNavSubitem, {
+    item: subItem,
+    key: i
+  }))))));
+};
 
 // src/components/desktop/DesktopNavSubmenu.tsx
 var DesktopNavSubmenu = ({

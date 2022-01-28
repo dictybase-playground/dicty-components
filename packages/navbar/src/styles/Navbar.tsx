@@ -28,6 +28,11 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
   },
 
   // Desktop nav
+  desktopNavMenu: {
+    borderColor: theme.palette.primary.main,
+    borderTop: "0px",
+    boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.2)",
+  },
   desktopNavContainer: {
     display: "flex",
     alignItems: "center",

@@ -95,6 +95,11 @@ var navbarStyles = (0, import_core2.makeStyles)((theme) => ({
       color: theme.palette.primary.main
     }
   },
+  desktopNavMenu: {
+    borderColor: theme.palette.primary.main,
+    borderTop: "0px",
+    boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.2)"
+  },
   desktopNavContainer: {
     display: "flex",
     alignItems: "center",
@@ -274,16 +279,19 @@ var CustomMenu = ({
   subItems,
   handleClose,
   TransitionProps
-}) => /* @__PURE__ */ import_react2.default.createElement(import_core4.Grow, __spreadValues({}, TransitionProps), /* @__PURE__ */ import_react2.default.createElement(import_core4.Paper, {
-  elevation: 0,
-  variant: "outlined",
-  square: true
-}, /* @__PURE__ */ import_react2.default.createElement(import_core4.ClickAwayListener, {
-  onClickAway: handleClose
-}, /* @__PURE__ */ import_react2.default.createElement(import_core4.MenuList, null, subItems.map((subItem, i) => /* @__PURE__ */ import_react2.default.createElement(DesktopNavSubitem, {
-  item: subItem,
-  key: i
-}))))));
+}) => {
+  const styles = navbarStyles();
+  return /* @__PURE__ */ import_react2.default.createElement(import_core4.Grow, __spreadValues({}, TransitionProps), /* @__PURE__ */ import_react2.default.createElement(import_core4.Paper, {
+    className: styles.desktopNavMenu,
+    variant: "outlined",
+    square: true
+  }, /* @__PURE__ */ import_react2.default.createElement(import_core4.ClickAwayListener, {
+    onClickAway: handleClose
+  }, /* @__PURE__ */ import_react2.default.createElement(import_core4.MenuList, null, subItems.map((subItem, i) => /* @__PURE__ */ import_react2.default.createElement(DesktopNavSubitem, {
+    item: subItem,
+    key: i
+  }))))));
+};
 
 // src/components/desktop/DesktopNavSubmenu.tsx
 var DesktopNavSubmenu = ({
