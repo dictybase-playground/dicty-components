@@ -1,4 +1,4 @@
-import { NavItem } from "navbar/types"
+import { NavItem } from "navbar/src/types"
 
 export const data: Array<NavItem> = [
   {
