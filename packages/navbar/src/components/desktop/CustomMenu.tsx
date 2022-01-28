@@ -2,7 +2,7 @@ import React from "react"
 import { ClickAwayListener, Grow, MenuList, Paper } from "@material-ui/core"
 import { CustomMenuProps } from "navbar/src/types"
 import { DesktopNavSubitem } from "navbar/src/components/desktop/DesktopNavSubitem"
-import { navbarStyles } from "navbar/src/styles/Navbar"
+import { navbarStyles } from "navbar/src/styles/navbarStyles"
 
 export const CustomMenu = ({
   subItems,

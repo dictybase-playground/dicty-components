@@ -1,5 +1,5 @@
 import React from "react"
-import { navbarStyles } from "navbar/src/styles/Navbar"
+import { navbarStyles } from "navbar/src/styles/navbarStyles"
 import { MobileMenuButtonProps } from "navbar/src/types"
 
 export const MobileMenuButton = ({ open, setOpen }: MobileMenuButtonProps) => {

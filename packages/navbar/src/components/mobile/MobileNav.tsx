@@ -1,5 +1,5 @@
 import React from "react"
-import { navbarStyles } from "navbar/src/styles/Navbar"
+import { navbarStyles } from "navbar/src/styles/navbarStyles"
 import { DesktopNavProps } from "navbar/src/types"
 import { Box } from "@material-ui/core"
 import { useState } from "react"

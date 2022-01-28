@@ -40,7 +40,7 @@ var muiTheme = createTheme({
 // src/components/desktop/DesktopNav.tsx
 import React5 from "react";
 
-// src/styles/Navbar.tsx
+// src/styles/navbarStyles.ts
 import { makeStyles } from "@material-ui/core";
 var navHeight = "50px";
 var stdTransition = "0.2s all ease-in-out";

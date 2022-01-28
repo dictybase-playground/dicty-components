@@ -71,7 +71,7 @@ var muiTheme = (0, import_core.createTheme)({
 // src/components/desktop/DesktopNav.tsx
 var import_react5 = __toESM(require("react"));
 
-// src/styles/Navbar.tsx
+// src/styles/navbarStyles.ts
 var import_core2 = require("@material-ui/core");
 var navHeight = "50px";
 var stdTransition = "0.2s all ease-in-out";

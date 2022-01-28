@@ -1,6 +1,6 @@
 import React from "react"
 import { MobileNavMenuProps } from "navbar/src/types"
-import { navbarStyles } from "navbar/src/styles/Navbar"
+import { navbarStyles } from "navbar/src/styles/navbarStyles"
 import { useState } from "react"
 import { MobileNavMenuitem } from "navbar/src/components/mobile/MobileNavMenuitem"
 
