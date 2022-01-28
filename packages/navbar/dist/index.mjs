@@ -76,7 +76,8 @@ var navbarStyles = makeStyles((theme) => ({
   desktopNavItemRoot: {
     display: "flex",
     height: "inherit",
-    cursor: "pointer"
+    cursor: "pointer",
+    marginRight: "5px"
   },
   desktopNavItem: {
     height: "inherit",
