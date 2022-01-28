@@ -1,4 +1,3 @@
-import React from "react"
 import { MobileNavMenuProps } from "navbar/src/types"
 import { navbarStyles } from "navbar/src/styles/navbarStyles"
 import { useState } from "react"

@@ -1,4 +1,3 @@
-import React from "react"
 import { MuiThemeProvider, useMediaQuery } from "@material-ui/core"
 import { NavbarProps } from "navbar/src/types/index"
 import { muiTheme } from "navbar/src/styles/customTheme"

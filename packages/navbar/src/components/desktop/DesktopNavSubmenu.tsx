@@ -1,4 +1,3 @@
-import React from "react"
 import { DesktopNavSubmenuProps } from "navbar/src/types"
 import { Popper } from "@material-ui/core"
 import { CustomMenu } from "navbar/src/components/desktop/CustomMenu"

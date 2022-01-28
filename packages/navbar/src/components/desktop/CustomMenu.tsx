@@ -1,4 +1,3 @@
-import React from "react"
 import { ClickAwayListener, Grow, MenuList, Paper } from "@material-ui/core"
 import { CustomMenuProps } from "navbar/src/types"
 import { DesktopNavSubitem } from "navbar/src/components/desktop/DesktopNavSubitem"

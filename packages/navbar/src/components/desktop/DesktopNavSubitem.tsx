@@ -1,4 +1,3 @@
-import React from "react"
 import { MenuItem } from "@material-ui/core"
 import { navbarStyles } from "navbar/src/styles/navbarStyles"
 import { DesktopNavSubitemProps } from "navbar/src/types"

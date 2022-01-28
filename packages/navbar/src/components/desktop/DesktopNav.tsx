@@ -1,4 +1,3 @@
-import React from "react"
 import { navbarStyles } from "navbar/src/styles/navbarStyles"
 import { DesktopNavProps } from "navbar/src/types"
 import { DesktopNavItem } from "navbar/src/components/desktop/DesktopNavItem"
