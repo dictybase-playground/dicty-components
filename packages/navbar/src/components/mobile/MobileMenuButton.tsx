@@ -9,7 +9,10 @@ export const MobileMenuButton = ({ open, setOpen }: MobileMenuButtonProps) => {
 
   return (
     <div className={styles.mobileMenuButtonContainer}>
-      <div className={hamburgerMenu} onClick={() => setOpen(!open)}>
+      <div
+        className={hamburgerMenu}
+        onClick={() => setOpen(!open)}
+        role="mobile-nav-button">
         <span></span>
         <span></span>
         <span></span>
