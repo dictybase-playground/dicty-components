@@ -23,6 +23,7 @@ export interface NavbarProps {
   items: Array<NavItem>
   theme?: Partial<Theme>
   brand?: any
+  isMobile?: boolean
 }
 
 export interface DesktopNavProps {

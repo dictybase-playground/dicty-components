@@ -4,9 +4,9 @@ import { muiTheme } from "navbar/src/styles/customTheme"
 import { DesktopNav } from "navbar/src/components/desktop/DesktopNav"
 import { MobileNav } from "navbar/src/components/mobile/MobileNav"
 
-export const Navbar = ({ items, theme }: NavbarProps) => {
+export const Navbar = ({ items, theme, isMobile }: NavbarProps) => {
   const customTheme = theme ? theme : muiTheme
-  const mobileScreen = useMediaQuery("(max-width: 768px)")
+  const mobileScreen = isMobile ? isMobile : useMediaQuery("(max-width: 768px)")
 
   return (
     <MuiThemeProvider theme={customTheme}>

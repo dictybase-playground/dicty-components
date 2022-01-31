@@ -459,9 +459,9 @@ var MobileNav = ({ items }) => {
 };
 
 // src/components/Navbar.tsx
-var Navbar = ({ items, theme }) => {
+var Navbar = ({ items, theme, isMobile }) => {
   const customTheme = theme ? theme : muiTheme;
-  const mobileScreen = (0, import_core10.useMediaQuery)("(max-width: 768px)");
+  const mobileScreen = isMobile ? isMobile : (0, import_core10.useMediaQuery)("(max-width: 768px)");
   return /* @__PURE__ */ import_react.default.createElement(import_core10.MuiThemeProvider, {
     theme: customTheme
   }, mobileScreen ? /* @__PURE__ */ import_react.default.createElement(MobileNav, {
