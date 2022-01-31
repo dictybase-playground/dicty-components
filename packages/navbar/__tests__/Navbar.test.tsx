@@ -2,22 +2,7 @@ import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import React from "react"
 import { Navbar } from "navbar"
-
-const navData1 = [
-  {
-    type: "link1",
-    id: "1",
-    attributes: {
-      display: "Link 1",
-      items: [
-        {
-          label: "Sublink 1",
-          link: "/sublink1",
-        },
-      ],
-    },
-  },
-]
+import { navData1 } from "./navdata"
 
 describe("src/components/Navbar", () => {
   it("should render desktop navbar with 1 link, and 1 sublink", () => {
