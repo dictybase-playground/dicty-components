@@ -1,5 +1,5 @@
 import { Navbar } from "navbar"
-import { data } from "./navbar-items"
+import { data } from "navbar/src/data/navbarData"
 
 export default function Docs() {
   return (
