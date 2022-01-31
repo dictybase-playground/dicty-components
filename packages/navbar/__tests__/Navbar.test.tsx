@@ -20,7 +20,7 @@ const navData1 = [
 ]
 
 describe("src/components/Navbar", () => {
-  it("should render navbar with 1 link, and 1 sublink", () => {
+  it("should render desktop navbar with 1 link, and 1 sublink", () => {
     render(<Navbar items={navData1} />)
 
     const item1 = navData1[0].attributes
@@ -29,6 +29,7 @@ describe("src/components/Navbar", () => {
 
     // Click on link 1 to open up dropdown with sub link 1
     userEvent.click(link1)
-    expect(screen.getByText("Sublink 1")).not.toBeNull()
+    expect(screen.getByText(item1.items[0].label)).not.toBeNull()
+  })
   })
 })
