@@ -1,9 +1,10 @@
 module.exports = {
-  roots: ["./"],
-  transform: {
-    "^.+\\.tsx?$": "ts-jest",
+  globals: {
+    "ts-jest": {
+      tsConfig: "tsconfig.json",
+      diagnostics: false,
+    },
   },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
-  modulePathIgnorePatterns: ["test/__fixtures__", "node_modules", "dist"],
+  testEnvironment: "jsdom",
   preset: "ts-jest",
 }
