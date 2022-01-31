@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
-import React from "react"
 import { Navbar } from "navbar"
 import { navData1 } from "navbar/src/data/testData"
 
