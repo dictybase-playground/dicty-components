@@ -649,6 +649,7 @@ var import_react5 = require("react");
 var Navbar = ({
   dataUrl,
   initialData,
+  fallbackData,
   theme,
   isMobile
 }) => {
@@ -656,14 +657,13 @@ var Navbar = ({
   const mobileScreen = isMobile ? isMobile : (0, import_core10.useMediaQuery)("(max-width: 768px)");
   const [data, setData] = (0, import_react5.useState)(initialData ? initialData : []);
   (0, import_react5.useEffect)(() => {
-    console.log("use effect called");
     const fetchData = async () => {
       try {
         const res = await fetch(dataUrl);
         const json = await res.json();
         setData(json.data);
       } catch (error) {
-        setData(navbarData);
+        setData(fallbackData ? fallbackData : navbarData);
       }
     };
     fetchData();

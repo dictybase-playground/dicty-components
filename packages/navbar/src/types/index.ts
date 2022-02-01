@@ -22,6 +22,7 @@ export interface SubNavItem {
 export interface NavbarProps {
   dataUrl: string
   initialData?: Array<NavItem>
+  fallbackData?: Array<NavItem>
   theme?: Partial<Theme>
   brand?: any
   isMobile?: boolean

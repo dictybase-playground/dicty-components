@@ -9,6 +9,7 @@ import { useEffect, useState } from "react"
 export const Navbar = ({
   dataUrl,
   initialData,
+  fallbackData,
   theme,
   isMobile,
 }: NavbarProps) => {
@@ -18,14 +19,13 @@ export const Navbar = ({
   // Fetch navbar data
   const [data, setData] = useState<NavItem[]>(initialData ? initialData : [])
   useEffect(() => {
-    console.log("use effect called")
     const fetchData = async () => {
       try {
         const res = await fetch(dataUrl)
         const json = await res.json()
         setData(json.data)
       } catch (error) {
-        setData(navbarData)
+        setData(fallbackData ? fallbackData : navbarData)
       }
     }
 

@@ -623,6 +623,7 @@ import { useEffect, useState as useState3 } from "react";
 var Navbar = ({
   dataUrl,
   initialData,
+  fallbackData,
   theme,
   isMobile
 }) => {
@@ -630,14 +631,13 @@ var Navbar = ({
   const mobileScreen = isMobile ? isMobile : useMediaQuery("(max-width: 768px)");
   const [data, setData] = useState3(initialData ? initialData : []);
   useEffect(() => {
-    console.log("use effect called");
     const fetchData = async () => {
       try {
         const res = await fetch(dataUrl);
         const json = await res.json();
         setData(json.data);
       } catch (error) {
-        setData(navbarData);
+        setData(fallbackData ? fallbackData : navbarData);
       }
     };
     fetchData();
