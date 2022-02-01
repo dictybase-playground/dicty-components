@@ -20,7 +20,8 @@ export interface SubNavItem {
  * Component props
  */
 export interface NavbarProps {
-  items: Array<NavItem>
+  dataUrl: string
+  initialData?: Array<NavItem>
   theme?: Partial<Theme>
   brand?: any
   isMobile?: boolean

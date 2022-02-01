@@ -5,7 +5,7 @@ import { navData1 } from "navbar/src/data/testData"
 
 describe("src/components/Navbar", () => {
   it("should render desktop navbar with 1 link, and 1 sublink", () => {
-    render(<Navbar items={navData1} />)
+    render(<Navbar dataUrl="" />)
 
     const item1 = navData1[0].attributes
     const link1 = screen.getByText(item1.display)
@@ -17,7 +17,7 @@ describe("src/components/Navbar", () => {
   })
 
   it("should render mobile navbar with 1 link, and 1 sublink", () => {
-    render(<Navbar items={navData1} isMobile />)
+    render(<Navbar dataUrl="" isMobile />)
 
     const menuButton = screen.getByRole("mobile-nav-button")
     expect(menuButton).not.toBeNull()

@@ -1,6 +1,6 @@
 import { NavItem } from "navbar/src/types"
 
-export const data: Array<NavItem> = [
+export const navbarData: Array<NavItem> = [
   {
     type: "genomes",
     id: "1",

@@ -1,10 +1,13 @@
 import { Navbar } from "navbar"
-import { data } from "navbar/src/data/navbarData"
+import { navbarData } from "navbar/src/data/navbarData"
 
 export default function Docs() {
   return (
     <div>
-      <Navbar items={data} />
+      <Navbar
+        dataUrl="https://raw.githubusercontent.com/dictyBase/migration-data/master/navbar/navbar.json"
+        initialData={navbarData}
+      />
     </div>
   )
 }
