@@ -1,8 +1,9 @@
 import { test, expect } from "@playwright/test"
 
 test("test", async ({ page }) => {
-  // Go to http://localhost:3001/
-  await page.goto("http://localhost:3001/")
+  // Go to http://localhost:3001/navbar
+  await page.goto("http://localhost:3001/navbar")
+
   // Click text=Genomes
   await page.click("text=Genomes")
   // Click text=Tools
