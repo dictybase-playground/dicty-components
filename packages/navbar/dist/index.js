@@ -374,7 +374,8 @@ var MobileMenuButton = ({ open, setOpen }) => {
   }, /* @__PURE__ */ import_react.default.createElement("div", {
     className: hamburgerMenu,
     onClick: () => setOpen(!open),
-    role: "mobile-nav-button"
+    role: "mobile-nav-button",
+    id: "mobile-nav-button"
   }, /* @__PURE__ */ import_react.default.createElement("span", null), /* @__PURE__ */ import_react.default.createElement("span", null), /* @__PURE__ */ import_react.default.createElement("span", null)));
 };
 
