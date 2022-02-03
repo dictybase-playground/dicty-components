@@ -400,7 +400,7 @@ var MobileNavMenuitem = ({
 // src/components/mobile/MobileNavMenu.tsx
 var MobileNavMenu = ({ items }) => {
   const [expanded, setExpanded] = useState(false);
-  const handleChange = (panel) => (event, isExpanded) => {
+  const handleChange = (panel) => (_event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
   const styles = navbarStyles();
