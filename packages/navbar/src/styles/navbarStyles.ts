@@ -166,6 +166,9 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
   },
   mobileNavSubItem: {
     paddingLeft: "25px",
+    "& > span": {
+      fontSize: "0.95rem",
+    },
   },
 
   // Utils

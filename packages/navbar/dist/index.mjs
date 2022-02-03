@@ -194,7 +194,10 @@ var navbarStyles = makeStyles((theme) => ({
     background: `${theme.palette.primary.dark}!important`
   },
   mobileNavSubItem: {
-    paddingLeft: "25px"
+    paddingLeft: "25px",
+    "& > span": {
+      fontSize: "0.95rem"
+    }
   },
   focused: {
     background: theme.palette.secondary.main
