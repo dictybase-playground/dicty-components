@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test"
 
-test("src/components/Navbar", async ({ page }) => {
+test("src/components/Navbar (Desktop)", async ({ page }) => {
   // Go to http://localhost:3001/navbar
   await page.goto("http://localhost:3001/navbar")
 
