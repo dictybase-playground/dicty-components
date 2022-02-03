@@ -12,7 +12,8 @@ export const MobileMenuButton = ({ open, setOpen }: MobileMenuButtonProps) => {
       <div
         className={hamburgerMenu}
         onClick={() => setOpen(!open)}
-        role="mobile-nav-button">
+        role="mobile-nav-button"
+        id="mobile-nav-button">
         <span></span>
         <span></span>
         <span></span>

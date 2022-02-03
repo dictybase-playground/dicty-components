@@ -225,7 +225,10 @@ var navbarStyles = (0, import_core2.makeStyles)((theme) => ({
     background: `${theme.palette.primary.dark}!important`
   },
   mobileNavSubItem: {
-    paddingLeft: "25px"
+    paddingLeft: "25px",
+    "& > span": {
+      fontSize: "0.95rem"
+    }
   },
   focused: {
     background: theme.palette.secondary.main
@@ -371,7 +374,8 @@ var MobileMenuButton = ({ open, setOpen }) => {
   }, /* @__PURE__ */ import_react.default.createElement("div", {
     className: hamburgerMenu,
     onClick: () => setOpen(!open),
-    role: "mobile-nav-button"
+    role: "mobile-nav-button",
+    id: "mobile-nav-button"
   }, /* @__PURE__ */ import_react.default.createElement("span", null), /* @__PURE__ */ import_react.default.createElement("span", null), /* @__PURE__ */ import_react.default.createElement("span", null)));
 };
 
@@ -426,7 +430,7 @@ var MobileNavMenuitem = ({
 // src/components/mobile/MobileNavMenu.tsx
 var MobileNavMenu = ({ items }) => {
   const [expanded, setExpanded] = (0, import_react3.useState)(false);
-  const handleChange = (panel) => (event, isExpanded) => {
+  const handleChange = (panel) => (_event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
   const styles = navbarStyles();

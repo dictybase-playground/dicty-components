@@ -7,7 +7,7 @@ export const MobileNavMenu = ({ items }: MobileNavMenuProps) => {
   const [expanded, setExpanded] = useState<number | false>(false)
 
   const handleChange =
-    (panel: number) => (event: React.ChangeEvent<{}>, isExpanded: boolean) => {
+    (panel: number) => (_event: React.ChangeEvent<{}>, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false)
     }
 
