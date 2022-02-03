@@ -23,8 +23,4 @@ test("src/components/Navbar (Mobile)", async ({ page }) => {
   await page.click("text=Research")
   const researchOp = page.locator("text=Anatomy Ontology")
   expect(researchOp).toContainText("Anatomy Ontology")
-
-  // Click away from research
-  await page.click("text=Research")
-  // expect(page.locator("text=Anatomy Ontology")).toBeNull()
 })
