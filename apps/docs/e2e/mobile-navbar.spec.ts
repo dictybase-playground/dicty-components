@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test"
 // Screen width for iPhone 11 Pro
 test.use({ viewport: { width: 375, height: 812 } })
 
-test("src/components/Navbar (Mobile)", async ({ page }) => {
+test("Navbar Mobile", async ({ page }) => {
   // Go to http://localhost:3001/navbar
   await page.goto("http://localhost:3001/navbar")
 
