@@ -1,7 +1,11 @@
-import { test, expect } from "@playwright/test"
+import { test, expect, Page } from "@playwright/test"
 
 test.describe("navbar", () => {
   test("dekstop screen", async ({ page }) => {
+    await desktopTests(page)
+  })
+
+  const desktopTests = async (page: Page) => {
     // Go to http://localhost:3001/navbar
     await page.goto("http://localhost:3001/navbar")
 
@@ -23,7 +27,7 @@ test.describe("navbar", () => {
     // Click away from research
     await page.click("text=Research")
     // expect(page.locator("text=Anatomy Ontology")).toBeNull()
-  })
+  }
 
   test("mobile screen", async ({ page }) => {
     // Screen width for iPhone 11 Pro
