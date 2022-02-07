@@ -14,9 +14,7 @@
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react --inject react-shim.js",
     "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react --inject react-shim.js",
     "lint": "TIMING=1 eslint src --fix",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "e2e": "playwright test",
-    "e2e:codegen": "playwright codegen http://localhost:3001/navbar"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
     "@playwright/test": "^1.18.1",

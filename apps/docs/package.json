@@ -6,7 +6,9 @@
     "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "e2e": "playwright test",
+    "e2e:codegen": "playwright codegen http://localhost:3001/navbar"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
@@ -16,6 +18,7 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.18.1",
     "@types/react": "17.0.37",
     "config": "*",
     "eslint": "7.32.0",
