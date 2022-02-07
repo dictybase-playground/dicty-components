@@ -1,13 +1,14 @@
 import { test, expect, Page } from "@playwright/test"
 
+const url = "http://localhost:3001/navbar"
+
 test.describe("navbar", () => {
   test("dekstop screen", async ({ page }) => {
     await desktopTests(page)
   })
 
   const desktopTests = async (page: Page) => {
-    // Go to http://localhost:3001/navbar
-    await page.goto("http://localhost:3001/navbar")
+    await page.goto(url)
 
     // Click text=Genomes
     await page.click("text=Genomes")
@@ -33,8 +34,8 @@ test.describe("navbar", () => {
     // Screen width for iPhone 11 Pro
     page.setViewportSize({ width: 375, height: 812 })
 
-    // Go to http://localhost:3001/navbar
-    await page.goto("http://localhost:3001/navbar")
+    // navigate to page
+    await page.goto(url)
 
     await page.locator("id=mobile-nav-button").click()
 
