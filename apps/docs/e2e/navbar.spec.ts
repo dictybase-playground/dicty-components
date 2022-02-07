@@ -1,10 +1,24 @@
-import { test, expect, Page } from "@playwright/test"
+import { test, expect, Page, chromium, webkit, firefox } from "@playwright/test"
 
 const url = "http://localhost:3001/navbar"
 
 test.describe("navbar", () => {
-  test("dekstop screen", async ({ page }) => {
+  test("desktop (chromium)", async ({}) => {
+    const browser = await chromium.launch()
+    const context = await browser.newContext({})
+    const page = await context.newPage()
+
     await desktopTests(page)
+    browser.close()
+  })
+
+  test("desktop (firefox)", async ({}) => {
+    const browser = await firefox.launch()
+    const context = await browser.newContext({})
+    const page = await context.newPage()
+
+    await desktopTests(page)
+    browser.close()
   })
 
   const desktopTests = async (page: Page) => {
