@@ -9,7 +9,7 @@ test.describe("navbar", () => {
     const page = await context.newPage()
 
     await desktopTests(page)
-    browser.close()
+    await browser.close()
   })
 
   test("desktop (webkit)", async ({}) => {
@@ -18,7 +18,7 @@ test.describe("navbar", () => {
     const page = await context.newPage()
 
     await desktopTests(page)
-    browser.close()
+    await browser.close()
   })
 
   test("desktop (firefox)", async ({}) => {
@@ -27,7 +27,7 @@ test.describe("navbar", () => {
     const page = await context.newPage()
 
     await desktopTests(page)
-    browser.close()
+    await browser.close()
   })
 
   const desktopTests = async (page: Page) => {
