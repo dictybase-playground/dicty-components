@@ -31,8 +31,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: install dependencies
         run: 
-          yarn install;
-          sudo npx playwright install --with-deps
+          yarn install
       - name: move into apps/docs directory
         run: cd apps/docs
       - name: run e2e tests
