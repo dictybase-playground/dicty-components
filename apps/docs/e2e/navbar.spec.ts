@@ -2,7 +2,7 @@ import { test, expect, Page, chromium, webkit, firefox } from "@playwright/test"
 
 const url = "http://localhost:3001/navbar"
 
-test.describe("navbar", () => {
+test.describe.parallel("navbar", () => {
   test("desktop (chromium)", async ({}) => {
     const browser = await chromium.launch()
     const context = await browser.newContext({})
