@@ -12,6 +12,15 @@ test.describe("navbar", () => {
     browser.close()
   })
 
+  test("desktop (webkit)", async ({}) => {
+    const browser = await webkit.launch()
+    const context = await browser.newContext({})
+    const page = await context.newPage()
+
+    await desktopTests(page)
+    browser.close()
+  })
+
   test("desktop (firefox)", async ({}) => {
     const browser = await firefox.launch()
     const context = await browser.newContext({})
