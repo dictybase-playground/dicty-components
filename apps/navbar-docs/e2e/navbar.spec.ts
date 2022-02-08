@@ -1,6 +1,6 @@
 import { test, expect, Page, chromium, webkit, firefox } from "@playwright/test"
 
-const url = "http://localhost:3001/navbar"
+const url = "http://localhost:3001"
 
 test.describe.parallel("navbar", () => {
   test("desktop (chromium)", async ({}) => {
