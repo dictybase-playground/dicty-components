@@ -31,7 +31,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: install dependencies
         run: 
-          yarn install
+          yarn install;
           sudo npx playwright install --with-deps
       - name: move into apps/docs directory
         run: cd apps/docs
