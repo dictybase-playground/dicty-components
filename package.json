@@ -11,7 +11,8 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "e2e": "turbo run e2e --parallel"
+    "e2e": "turbo run e2e --parallel",
+    "test": "turbo run test --parallel"
   },
   "devDependencies": {
     "prettier": "^2.5.1",
@@ -35,7 +36,8 @@
       "dev": {
         "cache": false
       },
-      "e2e": {}
+      "e2e": {},
+      "test": {}
     }
   },
   "engines": {
