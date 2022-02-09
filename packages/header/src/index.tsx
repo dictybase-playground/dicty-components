@@ -1,1 +1,1 @@
-export * from "navbar/src/components/Navbar"
+export * from "./components/Header"
