@@ -1,1 +1,1 @@
-export * from "./components/Header"
+export * from "header/src/components/Header"

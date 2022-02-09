@@ -1,3 +1,1 @@
-declare const Header: () => JSX.Element;
-
-export { Header };
+export * from 'header/src/components/Header';
