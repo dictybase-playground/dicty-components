@@ -1,0 +1,38 @@
+{
+  "name": "header-docs",
+  "version": "0.0.0",
+  "private": true,
+  "port": "3002",
+  "scripts": {
+    "dev": "next dev --port ${npm_package_port}",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "e2e": "playwright test --workers 4",
+    "e2e:codegen": "playwright codegen http://localhost:${npm_package_port}"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "header": "*",
+    "next": "12.0.7",
+    "playwright": "^1.18.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.18.1",
+    "@types/react": "17.0.37",
+    "config": "*",
+    "eslint": "7.32.0",
+    "next-transpile-modules": "9.0.0",
+    "playwright": "^1.18.1",
+    "tsconfig": "*",
+    "typescript": "^4.5.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css}": [
+      "prettier --no-semi --trailing-comma all --jsx-bracket-same-line true --write",
+      "git add"
+    ]
+  }
+}
