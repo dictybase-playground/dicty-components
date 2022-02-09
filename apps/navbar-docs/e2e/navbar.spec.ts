@@ -30,6 +30,10 @@ test.describe.parallel("navbar", () => {
     await browser.close()
   })
 
+  test("desktop (chrome/edge)", async ({ page }) => {
+    await desktopTests(page)
+  })
+
   const desktopTests = async (page: Page) => {
     await page.goto(url)
 
