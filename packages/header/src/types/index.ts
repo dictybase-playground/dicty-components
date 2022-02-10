@@ -25,3 +25,7 @@ export interface LogoContainerProps {
   logo: string
   home?: string
 }
+
+export interface LinksContainerProps {
+  links: Array<HeaderLink>
+}
