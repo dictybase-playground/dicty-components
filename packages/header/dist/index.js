@@ -86,9 +86,11 @@ var import_core3 = require("@material-ui/core");
 // src/styles/headerStyles.ts
 var import_core2 = require("@material-ui/core");
 var headerStyles = (0, import_core2.makeStyles)((theme) => ({
+  header: {
+    fontFamily: theme.typography.fontFamily
+  },
   logoContainer: {
     paddingBottom: "0px",
-    fontFamily: theme.typography.fontFamily,
     [theme.breakpoints.down("md")]: {
       display: "flex",
       justifyContent: "center",
@@ -142,9 +144,14 @@ var headerStyles = (0, import_core2.makeStyles)((theme) => ({
 }));
 
 // src/components/HeaderContainer.tsx
-var HeaderContainer = ({ home, logo }) => {
+var HeaderContainer = ({
+  home,
+  logo,
+  links
+}) => {
   const classes = headerStyles();
   return /* @__PURE__ */ import_react.default.createElement(import_core3.Grid, {
+    className: classes.header,
     container: true,
     alignItems: "center"
   }, /* @__PURE__ */ import_react.default.createElement(import_core3.Grid, {
@@ -158,7 +165,7 @@ var HeaderContainer = ({ home, logo }) => {
     container: true,
     className: classes.left
   }, /* @__PURE__ */ import_react.default.createElement("a", {
-    href: home
+    href: home ? home : "/"
   }, /* @__PURE__ */ import_react.default.createElement("img", {
     src: logo,
     alt: "dictyBase logo",
@@ -179,7 +186,7 @@ var HeaderContainer = ({ home, logo }) => {
     xs: 12,
     md: 4,
     className: classes.linkContainer
-  }));
+  }, links));
 };
 
 // src/components/Header.tsx
