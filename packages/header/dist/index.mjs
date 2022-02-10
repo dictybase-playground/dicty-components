@@ -52,7 +52,7 @@ var muiTheme = createTheme({
 });
 
 // src/components/HeaderContainer.tsx
-import { Grid as Grid3 } from "@material-ui/core";
+import { Grid as Grid4 } from "@material-ui/core";
 
 // src/styles/headerStyles.ts
 import { makeStyles } from "@material-ui/core";
@@ -189,6 +189,58 @@ var LinksContainer = ({ links }) => {
   }))));
 };
 
+// src/components/SearchContainer.tsx
+import {
+  FormControl,
+  Grid as Grid3,
+  Input,
+  InputAdornment,
+  InputLabel
+} from "@material-ui/core";
+import { Search } from "@material-ui/icons";
+
+// src/styles/searchStyles.ts
+import { makeStyles as makeStyles2 } from "@material-ui/core";
+var searchStyles = makeStyles2((theme) => ({
+  textField: {
+    paddingBottom: "0px",
+    [theme.breakpoints.down("md")]: {
+      marginTop: "0px"
+    }
+  },
+  searchIcon: {
+    color: theme.palette.primary.main
+  },
+  inputLabel: {
+    fontSize: "0.8em"
+  }
+}));
+
+// src/components/SearchContainer.tsx
+var SearchContainer = () => {
+  const classes = searchStyles();
+  return /* @__PURE__ */ React.createElement(Grid3, {
+    item: true,
+    container: true,
+    justifyContent: "center",
+    xs: 12,
+    md: 5,
+    lg: 4
+  }, /* @__PURE__ */ React.createElement(FormControl, {
+    className: classes.textField
+  }, /* @__PURE__ */ React.createElement(InputLabel, {
+    className: classes.inputLabel,
+    htmlFor: "guided-search"
+  }, "Guided Search (coming soon)"), /* @__PURE__ */ React.createElement(Input, {
+    id: "normal-search-box",
+    inputProps: { "aria-label": "search" },
+    endAdornment: /* @__PURE__ */ React.createElement(InputAdornment, {
+      className: classes.searchIcon,
+      position: "end"
+    }, /* @__PURE__ */ React.createElement(Search, null))
+  })));
+};
+
 // src/components/HeaderContainer.tsx
 var HeaderContainer = ({
   home,
@@ -196,21 +248,14 @@ var HeaderContainer = ({
   links
 }) => {
   const classes = headerStyles();
-  return /* @__PURE__ */ React.createElement(Grid3, {
+  return /* @__PURE__ */ React.createElement(Grid4, {
     className: classes.header,
     container: true,
     alignItems: "center"
   }, /* @__PURE__ */ React.createElement(LogoContainer, {
     home,
     logo
-  }), /* @__PURE__ */ React.createElement(Grid3, {
-    item: true,
-    container: true,
-    justifyContent: "center",
-    xs: 12,
-    md: 5,
-    lg: 4
-  }), /* @__PURE__ */ React.createElement(LinksContainer, {
+  }), /* @__PURE__ */ React.createElement(SearchContainer, null), /* @__PURE__ */ React.createElement(LinksContainer, {
     links
   }));
 };

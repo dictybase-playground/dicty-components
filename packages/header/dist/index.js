@@ -66,7 +66,7 @@ __export(src_exports, {
 var import_react = __toESM(require("react"));
 
 // src/components/Header.tsx
-var import_core6 = require("@material-ui/core");
+var import_core8 = require("@material-ui/core");
 
 // ../navbar/src/styles/customTheme.ts
 var import_core = require("@material-ui/core");
@@ -84,7 +84,7 @@ var muiTheme = (0, import_core.createTheme)({
 });
 
 // src/components/HeaderContainer.tsx
-var import_core5 = require("@material-ui/core");
+var import_core7 = require("@material-ui/core");
 
 // src/styles/headerStyles.ts
 var import_core2 = require("@material-ui/core");
@@ -221,6 +221,52 @@ var LinksContainer = ({ links }) => {
   }))));
 };
 
+// src/components/SearchContainer.tsx
+var import_core6 = require("@material-ui/core");
+var import_icons = require("@material-ui/icons");
+
+// src/styles/searchStyles.ts
+var import_core5 = require("@material-ui/core");
+var searchStyles = (0, import_core5.makeStyles)((theme) => ({
+  textField: {
+    paddingBottom: "0px",
+    [theme.breakpoints.down("md")]: {
+      marginTop: "0px"
+    }
+  },
+  searchIcon: {
+    color: theme.palette.primary.main
+  },
+  inputLabel: {
+    fontSize: "0.8em"
+  }
+}));
+
+// src/components/SearchContainer.tsx
+var SearchContainer = () => {
+  const classes = searchStyles();
+  return /* @__PURE__ */ import_react.default.createElement(import_core6.Grid, {
+    item: true,
+    container: true,
+    justifyContent: "center",
+    xs: 12,
+    md: 5,
+    lg: 4
+  }, /* @__PURE__ */ import_react.default.createElement(import_core6.FormControl, {
+    className: classes.textField
+  }, /* @__PURE__ */ import_react.default.createElement(import_core6.InputLabel, {
+    className: classes.inputLabel,
+    htmlFor: "guided-search"
+  }, "Guided Search (coming soon)"), /* @__PURE__ */ import_react.default.createElement(import_core6.Input, {
+    id: "normal-search-box",
+    inputProps: { "aria-label": "search" },
+    endAdornment: /* @__PURE__ */ import_react.default.createElement(import_core6.InputAdornment, {
+      className: classes.searchIcon,
+      position: "end"
+    }, /* @__PURE__ */ import_react.default.createElement(import_icons.Search, null))
+  })));
+};
+
 // src/components/HeaderContainer.tsx
 var HeaderContainer = ({
   home,
@@ -228,21 +274,14 @@ var HeaderContainer = ({
   links
 }) => {
   const classes = headerStyles();
-  return /* @__PURE__ */ import_react.default.createElement(import_core5.Grid, {
+  return /* @__PURE__ */ import_react.default.createElement(import_core7.Grid, {
     className: classes.header,
     container: true,
     alignItems: "center"
   }, /* @__PURE__ */ import_react.default.createElement(LogoContainer, {
     home,
     logo
-  }), /* @__PURE__ */ import_react.default.createElement(import_core5.Grid, {
-    item: true,
-    container: true,
-    justifyContent: "center",
-    xs: 12,
-    md: 5,
-    lg: 4
-  }), /* @__PURE__ */ import_react.default.createElement(LinksContainer, {
+  }), /* @__PURE__ */ import_react.default.createElement(SearchContainer, null), /* @__PURE__ */ import_react.default.createElement(LinksContainer, {
     links
   }));
 };
@@ -251,7 +290,7 @@ var HeaderContainer = ({
 var Header = (_a) => {
   var _b = _a, { theme } = _b, rest = __objRest(_b, ["theme"]);
   const customTheme = theme ? theme : muiTheme;
-  return /* @__PURE__ */ import_react.default.createElement(import_core6.MuiThemeProvider, {
+  return /* @__PURE__ */ import_react.default.createElement(import_core8.MuiThemeProvider, {
     theme: customTheme
   }, /* @__PURE__ */ import_react.default.createElement(HeaderContainer, __spreadValues({}, rest)));
 };

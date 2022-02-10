@@ -3,6 +3,7 @@ import { headerStyles } from "header/src/styles/headerStyles"
 import { HeaderContainerProps } from "header/src/types"
 import { LogoContainer } from "header/src/components/LogoContainer"
 import { LinksContainer } from "./LinksContainer"
+import { SearchContainer } from "./SearchContainer"
 
 export const HeaderContainer = ({
   home,
@@ -14,7 +15,7 @@ export const HeaderContainer = ({
   return (
     <Grid className={classes.header} container alignItems="center">
       <LogoContainer home={home} logo={logo} />
-      <Grid item container justifyContent="center" xs={12} md={5} lg={4}></Grid>
+      <SearchContainer />
       <LinksContainer links={links} />
     </Grid>
   )
