@@ -2,14 +2,18 @@ import { Grid } from "@material-ui/core"
 import { headerStyles } from "header/src/styles/headerStyles"
 import { HeaderContainerProps } from "header/src/types"
 
-export const HeaderContainer = ({ home, logo }: HeaderContainerProps) => {
+export const HeaderContainer = ({
+  home,
+  logo,
+  links,
+}: HeaderContainerProps) => {
   const classes = headerStyles()
 
   return (
-    <Grid container alignItems="center">
+    <Grid className={classes.header} container alignItems="center">
       <Grid item xs={12} md={3} lg={4} className={classes.logoContainer}>
         <Grid item container className={classes.left}>
-          <a href={home}>
+          <a href={home ? home : "/"}>
             <img src={logo} alt="dictyBase logo" className={classes.logo} />
           </a>
           <div className={classes.dcr}>
@@ -25,7 +29,7 @@ export const HeaderContainer = ({ home, logo }: HeaderContainerProps) => {
         xs={12}
         md={4}
         className={classes.linkContainer}>
-        {/* <Links items={items} /> */}
+        {links}
       </Grid>
     </Grid>
   )
