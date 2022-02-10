@@ -1,6 +1,8 @@
 var __create = Object.create;
 var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __getProtoOf = Object.getPrototypeOf;
@@ -18,6 +20,7 @@ var __spreadValues = (a, b) => {
     }
   return a;
 };
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
 var __objRest = (source, exclude) => {
   var target = {};
@@ -63,7 +66,7 @@ __export(src_exports, {
 var import_react = __toESM(require("react"));
 
 // src/components/Header.tsx
-var import_core4 = require("@material-ui/core");
+var import_core6 = require("@material-ui/core");
 
 // ../navbar/src/styles/customTheme.ts
 var import_core = require("@material-ui/core");
@@ -81,7 +84,7 @@ var muiTheme = (0, import_core.createTheme)({
 });
 
 // src/components/HeaderContainer.tsx
-var import_core3 = require("@material-ui/core");
+var import_core5 = require("@material-ui/core");
 
 // src/styles/headerStyles.ts
 var import_core2 = require("@material-ui/core");
@@ -143,18 +146,11 @@ var headerStyles = (0, import_core2.makeStyles)((theme) => ({
   }
 }));
 
-// src/components/HeaderContainer.tsx
-var HeaderContainer = ({
-  home,
-  logo,
-  links
-}) => {
+// src/components/LogoContainer.tsx
+var import_core3 = require("@material-ui/core");
+var LogoContainer = ({ home, logo }) => {
   const classes = headerStyles();
   return /* @__PURE__ */ import_react.default.createElement(import_core3.Grid, {
-    className: classes.header,
-    container: true,
-    alignItems: "center"
-  }, /* @__PURE__ */ import_react.default.createElement(import_core3.Grid, {
     item: true,
     xs: 12,
     md: 3,
@@ -172,28 +168,69 @@ var HeaderContainer = ({
     className: classes.logo
   })), /* @__PURE__ */ import_react.default.createElement("div", {
     className: classes.dcr
-  }, /* @__PURE__ */ import_react.default.createElement("em", null, "Dicty Community Resource")))), /* @__PURE__ */ import_react.default.createElement(import_core3.Grid, {
-    item: true,
-    container: true,
-    justifyContent: "center",
-    xs: 12,
-    md: 5,
-    lg: 4
-  }), /* @__PURE__ */ import_react.default.createElement(import_core3.Grid, {
+  }, /* @__PURE__ */ import_react.default.createElement("em", null, "Dicty Community Resource"))));
+};
+
+// src/components/LinksContainer.tsx
+var import_core4 = require("@material-ui/core");
+
+// src/components/Link.tsx
+var Link = ({ url, text, icon }) => {
+  return /* @__PURE__ */ import_react.default.createElement("div", {
+    style: { padding: "15px" }
+  }, /* @__PURE__ */ import_react.default.createElement("a", {
+    href: url
+  }, /* @__PURE__ */ import_react.default.createElement("div", {
+    style: { textAlign: "center" }
+  }, icon, /* @__PURE__ */ import_react.default.createElement("br", null), text)));
+};
+
+// src/components/LinksContainer.tsx
+var LinksContainer = ({ links }) => {
+  const classes = headerStyles();
+  return /* @__PURE__ */ import_react.default.createElement(import_core4.Grid, {
     item: true,
     container: true,
     justifyContent: "flex-end",
     xs: 12,
     md: 4,
     className: classes.linkContainer
-  }, links));
+  }, links.map((link, i) => /* @__PURE__ */ import_react.default.createElement(Link, __spreadProps(__spreadValues({}, link), {
+    key: i
+  }))));
+};
+
+// src/components/HeaderContainer.tsx
+var HeaderContainer = ({
+  home,
+  logo,
+  links
+}) => {
+  const classes = headerStyles();
+  return /* @__PURE__ */ import_react.default.createElement(import_core5.Grid, {
+    className: classes.header,
+    container: true,
+    alignItems: "center"
+  }, /* @__PURE__ */ import_react.default.createElement(LogoContainer, {
+    home,
+    logo
+  }), /* @__PURE__ */ import_react.default.createElement(import_core5.Grid, {
+    item: true,
+    container: true,
+    justifyContent: "center",
+    xs: 12,
+    md: 5,
+    lg: 4
+  }), /* @__PURE__ */ import_react.default.createElement(LinksContainer, {
+    links
+  }));
 };
 
 // src/components/Header.tsx
 var Header = (_a) => {
   var _b = _a, { theme } = _b, rest = __objRest(_b, ["theme"]);
   const customTheme = theme ? theme : muiTheme;
-  return /* @__PURE__ */ import_react.default.createElement(import_core4.MuiThemeProvider, {
+  return /* @__PURE__ */ import_react.default.createElement(import_core6.MuiThemeProvider, {
     theme: customTheme
   }, /* @__PURE__ */ import_react.default.createElement(HeaderContainer, __spreadValues({}, rest)));
 };

@@ -1,4 +1,6 @@
 var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
@@ -14,6 +16,7 @@ var __spreadValues = (a, b) => {
     }
   return a;
 };
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 var __objRest = (source, exclude) => {
   var target = {};
   for (var prop in source)
@@ -49,7 +52,7 @@ var muiTheme = createTheme({
 });
 
 // src/components/HeaderContainer.tsx
-import { Grid } from "@material-ui/core";
+import { Grid as Grid3 } from "@material-ui/core";
 
 // src/styles/headerStyles.ts
 import { makeStyles } from "@material-ui/core";
@@ -111,18 +114,11 @@ var headerStyles = makeStyles((theme) => ({
   }
 }));
 
-// src/components/HeaderContainer.tsx
-var HeaderContainer = ({
-  home,
-  logo,
-  links
-}) => {
+// src/components/LogoContainer.tsx
+import { Grid } from "@material-ui/core";
+var LogoContainer = ({ home, logo }) => {
   const classes = headerStyles();
   return /* @__PURE__ */ React.createElement(Grid, {
-    className: classes.header,
-    container: true,
-    alignItems: "center"
-  }, /* @__PURE__ */ React.createElement(Grid, {
     item: true,
     xs: 12,
     md: 3,
@@ -140,21 +136,62 @@ var HeaderContainer = ({
     className: classes.logo
   })), /* @__PURE__ */ React.createElement("div", {
     className: classes.dcr
-  }, /* @__PURE__ */ React.createElement("em", null, "Dicty Community Resource")))), /* @__PURE__ */ React.createElement(Grid, {
-    item: true,
-    container: true,
-    justifyContent: "center",
-    xs: 12,
-    md: 5,
-    lg: 4
-  }), /* @__PURE__ */ React.createElement(Grid, {
+  }, /* @__PURE__ */ React.createElement("em", null, "Dicty Community Resource"))));
+};
+
+// src/components/LinksContainer.tsx
+import { Grid as Grid2 } from "@material-ui/core";
+
+// src/components/Link.tsx
+var Link = ({ url, text, icon }) => {
+  return /* @__PURE__ */ React.createElement("div", {
+    style: { padding: "15px" }
+  }, /* @__PURE__ */ React.createElement("a", {
+    href: url
+  }, /* @__PURE__ */ React.createElement("div", {
+    style: { textAlign: "center" }
+  }, icon, /* @__PURE__ */ React.createElement("br", null), text)));
+};
+
+// src/components/LinksContainer.tsx
+var LinksContainer = ({ links }) => {
+  const classes = headerStyles();
+  return /* @__PURE__ */ React.createElement(Grid2, {
     item: true,
     container: true,
     justifyContent: "flex-end",
     xs: 12,
     md: 4,
     className: classes.linkContainer
-  }, links));
+  }, links.map((link, i) => /* @__PURE__ */ React.createElement(Link, __spreadProps(__spreadValues({}, link), {
+    key: i
+  }))));
+};
+
+// src/components/HeaderContainer.tsx
+var HeaderContainer = ({
+  home,
+  logo,
+  links
+}) => {
+  const classes = headerStyles();
+  return /* @__PURE__ */ React.createElement(Grid3, {
+    className: classes.header,
+    container: true,
+    alignItems: "center"
+  }, /* @__PURE__ */ React.createElement(LogoContainer, {
+    home,
+    logo
+  }), /* @__PURE__ */ React.createElement(Grid3, {
+    item: true,
+    container: true,
+    justifyContent: "center",
+    xs: 12,
+    md: 5,
+    lg: 4
+  }), /* @__PURE__ */ React.createElement(LinksContainer, {
+    links
+  }));
 };
 
 // src/components/Header.tsx
