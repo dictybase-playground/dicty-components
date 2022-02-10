@@ -56,6 +56,7 @@ import { makeStyles } from "@material-ui/core";
 var headerStyles = makeStyles((theme) => ({
   logoContainer: {
     paddingBottom: "0px",
+    fontFamily: theme.typography.fontFamily,
     [theme.breakpoints.down("md")]: {
       display: "flex",
       justifyContent: "center",

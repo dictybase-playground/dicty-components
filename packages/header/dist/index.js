@@ -88,6 +88,7 @@ var import_core2 = require("@material-ui/core");
 var headerStyles = (0, import_core2.makeStyles)((theme) => ({
   logoContainer: {
     paddingBottom: "0px",
+    fontFamily: theme.typography.fontFamily,
     [theme.breakpoints.down("md")]: {
       display: "flex",
       justifyContent: "center",

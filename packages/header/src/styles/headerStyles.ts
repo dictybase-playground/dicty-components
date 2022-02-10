@@ -3,6 +3,7 @@ import { makeStyles, Theme } from "@material-ui/core"
 export const headerStyles = makeStyles((theme: Theme) => ({
   logoContainer: {
     paddingBottom: "0px",
+    fontFamily: theme.typography.fontFamily,
     [theme.breakpoints.down("md")]: {
       display: "flex",
       justifyContent: "center",
