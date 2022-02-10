@@ -143,7 +143,23 @@ var headerStyles = (0, import_core2.makeStyles)((theme) => ({
         color: theme.palette.secondary.main
       }
     }
-  }
+  },
+  linkButton: {
+    padding: "15px",
+    "& a": {
+      color: theme.palette.primary.main,
+      "&&:hover": {
+        color: theme.palette.primary.dark
+      }
+    }
+  },
+  linkIconHolder: {
+    textAlign: "center"
+  },
+  linkIcon: {
+    marginBottom: "2px"
+  },
+  linkText: {}
 }));
 
 // src/components/LogoContainer.tsx
@@ -176,13 +192,18 @@ var import_core4 = require("@material-ui/core");
 
 // src/components/Link.tsx
 var Link = ({ url, text, icon }) => {
+  const classes = headerStyles();
   return /* @__PURE__ */ import_react.default.createElement("div", {
-    style: { padding: "15px" }
+    className: classes.linkButton
   }, /* @__PURE__ */ import_react.default.createElement("a", {
     href: url
   }, /* @__PURE__ */ import_react.default.createElement("div", {
-    style: { textAlign: "center" }
-  }, icon, /* @__PURE__ */ import_react.default.createElement("br", null), text)));
+    className: classes.linkIconHolder
+  }, /* @__PURE__ */ import_react.default.createElement("div", {
+    className: classes.linkIcon
+  }, icon), /* @__PURE__ */ import_react.default.createElement("div", {
+    className: classes.linkText
+  }, text))));
 };
 
 // src/components/LinksContainer.tsx

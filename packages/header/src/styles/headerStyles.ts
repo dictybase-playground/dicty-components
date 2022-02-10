@@ -56,4 +56,20 @@ export const headerStyles = makeStyles((theme: Theme) => ({
       },
     },
   },
+  linkButton: {
+    padding: "15px",
+    "& a": {
+      color: theme.palette.primary.main,
+      "&&:hover": {
+        color: theme.palette.primary.dark,
+      },
+    },
+  },
+  linkIconHolder: {
+    textAlign: "center",
+  },
+  linkIcon: {
+    marginBottom: "2px",
+  },
+  linkText: {},
 }))
