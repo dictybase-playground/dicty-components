@@ -1,5 +1,4 @@
-import { Navbar } from "navbar"
-import { navbarData } from "navbar/src/data/navbarData"
+import { Navbar, navbarData } from "navbar"
 
 export default function Docs() {
   return (

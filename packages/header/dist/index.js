@@ -55,7 +55,8 @@ var __toCommonJS = /* @__PURE__ */ ((cache) => {
 // src/index.tsx
 var src_exports = {};
 __export(src_exports, {
-  Header: () => Header
+  Header: () => Header,
+  headerStyles: () => headerStyles
 });
 
 // react-shim.js
@@ -191,5 +192,6 @@ var Header = (_a) => {
 module.exports = __toCommonJS(src_exports);
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  Header
+  Header,
+  headerStyles
 });

@@ -158,5 +158,6 @@ var Header = (_a) => {
   }, /* @__PURE__ */ React.createElement(HeaderContainer, __spreadValues({}, rest)));
 };
 export {
-  Header
+  Header,
+  headerStyles
 };

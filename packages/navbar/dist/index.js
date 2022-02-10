@@ -46,7 +46,10 @@ var __toCommonJS = /* @__PURE__ */ ((cache) => {
 // src/index.tsx
 var src_exports = {};
 __export(src_exports, {
-  Navbar: () => Navbar
+  Navbar: () => Navbar,
+  navData1: () => navData1,
+  navbarData: () => navbarData,
+  navbarStyles: () => navbarStyles
 });
 
 // react-shim.js
@@ -680,8 +683,28 @@ var Navbar = ({
     items: data
   }));
 };
+
+// src/data/testData.ts
+var navData1 = [
+  {
+    type: "link1",
+    id: "1",
+    attributes: {
+      display: "Link 1",
+      items: [
+        {
+          label: "Sublink 1",
+          link: "/sublink1"
+        }
+      ]
+    }
+  }
+];
 module.exports = __toCommonJS(src_exports);
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  Navbar
+  Navbar,
+  navData1,
+  navbarData,
+  navbarStyles
 });
