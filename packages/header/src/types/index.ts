@@ -20,3 +20,8 @@ export interface HeaderLink {
   icon: React.ReactElement<SvgIconProps>
   isNextLink: boolean
 }
+
+export interface LogoContainerProps {
+  logo: string
+  home?: string
+}
