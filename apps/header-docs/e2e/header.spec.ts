@@ -15,6 +15,8 @@ export const desktopTests = async (page: Page) => {
   }
 }
 
-test("chrome/edge", async ({ page }) => {
-  await desktopTests(page)
+test.describe("header", () => {
+  test("chrome/edge", async ({ page }) => {
+    await desktopTests(page)
+  })
 })

@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "e2e": "playwright test --workers 4",
+    "e2e": "playwright test",
     "e2e:codegen": "playwright codegen http://localhost:${npm_package_port}"
   },
   "dependencies": {
