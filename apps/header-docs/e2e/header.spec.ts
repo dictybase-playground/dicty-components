@@ -14,9 +14,3 @@ export const desktopTests = async (page: Page) => {
     await expect(x).toContainText(linkText)
   }
 }
-
-test.describe("header", () => {
-  test("chrome/edge", async ({ page }) => {
-    await desktopTests(page)
-  })
-})
