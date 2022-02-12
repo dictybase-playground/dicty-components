@@ -1,7 +1,9 @@
+import { Footer } from "footer"
+
 export default function Docs() {
   return (
     <div>
-      <h1>Footer docs</h1>
+      <Footer links={[]} />
     </div>
   )
 }
