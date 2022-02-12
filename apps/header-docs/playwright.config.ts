@@ -9,9 +9,6 @@ const config: PlaywrightTestConfig = {
     timeout: 120 * 3000,
     reuseExistingServer: !process.env.CI,
   },
-  use: {
-    channel: "chrome",
-  },
 }
 
 export default config
