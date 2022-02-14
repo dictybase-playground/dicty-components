@@ -1,7 +1,7 @@
-import { test, expect, Page } from "@playwright/test"
+import { test, expect } from "@playwright/test"
 import { port } from "../package.json"
 
-export const desktopTests = async (page: Page) => {
+test("header browser e2e test", async ({ page }) => {
   await page.goto(`http://localhost:${port}`)
 
   const genomesOp = page.locator("text=Dicty Community Resource")
@@ -13,4 +13,4 @@ export const desktopTests = async (page: Page) => {
     const x = page.locator(`text=${linkText}`)
     await expect(x).toContainText(linkText)
   }
-}
+})
