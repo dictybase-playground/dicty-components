@@ -1,7 +1,7 @@
-import { test, expect, Page, chromium, webkit, firefox } from "@playwright/test"
+import { test, expect } from "@playwright/test"
 import { port } from "../package.json"
 
-export const desktopTests = async (page: Page) => {
+test("navbar e2e test for desktop", async ({ page }) => {
   await page.goto(`http://localhost:${port}`)
 
   // Click text=Genomes
@@ -21,9 +21,4 @@ export const desktopTests = async (page: Page) => {
 
   // Click away from research
   await page.click("text=Research")
-  // expect(page.locator("text=Anatomy Ontology")).toBeNull()
-}
-
-test("desktop (chrome/edge)", async ({ page }) => {
-  await desktopTests(page)
 })
