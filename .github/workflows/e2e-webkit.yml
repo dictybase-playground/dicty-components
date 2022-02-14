@@ -1,4 +1,4 @@
-name: E2E WebKit Test
+name: E2E WebKit
 
 on:
   push:

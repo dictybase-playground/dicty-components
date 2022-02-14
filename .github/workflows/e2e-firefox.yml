@@ -1,4 +1,4 @@
-name: E2E FireFox Test
+name: E2E FireFox
 
 on:
   push:
