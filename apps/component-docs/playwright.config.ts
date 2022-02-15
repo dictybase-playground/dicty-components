@@ -6,8 +6,8 @@ const config: PlaywrightTestConfig = {
   webServer: {
     command: "yarn dev",
     port: parseInt(port),
-    timeout: 120 * 3000,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: true,
+    timeout: 120000, // 2 mins
   },
 }
 

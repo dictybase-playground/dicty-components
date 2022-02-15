@@ -12,6 +12,9 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "e2e": "turbo run e2e --parallel",
+    "e2e:chromium": "turbo run e2e --parallel",
+    "e2e:firefox": "turbo run e2e:firefox --parallel",
+    "e2e:webkit": "turbo run e2e:webkit --parallel",
     "test": "turbo run test --parallel"
   },
   "devDependencies": {

@@ -90,7 +90,8 @@ var import_core7 = require("@material-ui/core");
 var import_core2 = require("@material-ui/core");
 var headerStyles = (0, import_core2.makeStyles)((theme) => ({
   header: {
-    fontFamily: theme.typography.fontFamily
+    fontFamily: theme.typography.fontFamily,
+    backgroundColor: theme.palette.common.white
   },
   logoContainer: {
     paddingBottom: "0px",

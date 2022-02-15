@@ -1,5 +1,5 @@
 {
-  "name": "navbar-docs",
+  "name": "component-docs",
   "version": "0.0.0",
   "private": true,
   "port": "3001",
@@ -9,10 +9,20 @@
     "start": "next start",
     "lint": "next lint",
     "e2e": "playwright test",
+    "e2e:chromium": "playwright test",
+    "e2e:firefox": "playwright test --config=./firefox.playwright.config.ts",
+    "e2e:webkit": "playwright test --config=./webkit.playwright.config.ts",
     "e2e:codegen": "playwright codegen http://localhost:${npm_package_port}"
   },
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@mui/icons-material": "^5.3.1",
+    "@mui/material": "^5.4.1",
+    "footer": "*",
+    "header": "*",
     "navbar": "*",
     "next": "12.0.7",
     "playwright": "^1.18.1",
@@ -20,7 +30,7 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@playwright/test": "^1.18.1",
+    "@playwright/test": "^1.19.0",
     "@types/react": "17.0.37",
     "config": "*",
     "eslint": "7.32.0",

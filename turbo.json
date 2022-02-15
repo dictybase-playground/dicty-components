@@ -16,6 +16,9 @@
       "cache": false
     },
     "e2e": {},
+    "e2e:chromium": {},
+    "e2e:firefox": {},
+    "e2e:webkit": {},
     "test": {}
   }
 }
