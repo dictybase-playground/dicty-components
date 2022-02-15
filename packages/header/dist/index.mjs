@@ -58,7 +58,8 @@ import { Grid as Grid4 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 var headerStyles = makeStyles((theme) => ({
   header: {
-    fontFamily: theme.typography.fontFamily
+    fontFamily: theme.typography.fontFamily,
+    backgroundColor: theme.palette.common.white
   },
   logoContainer: {
     paddingBottom: "0px",
