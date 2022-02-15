@@ -6,9 +6,20 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  # Force terminal colors. @see https://www.npmjs.com/package/colors
+  FORCE_COLOR: 1
+  FLAKINESS_CONNECTION_STRING: ${{ secrets.FLAKINESS_CONNECTION_STRING }}
+
 jobs:
-  build:
-    runs-on: ubuntu-20.04
+  e2e:
+    name: ${{ matrix.os }} (${{ matrix.browser }})
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+        os: [ubuntu-20.04]
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: set up node.js
@@ -32,11 +43,7 @@ jobs:
       - name: install dependencies
         run: yarn install
       - name: install PlayWright dependencies
-        run: npx playwright install-deps
+        run: npx playwright install --with-deps ${{ matrix.browser }} chromium
       
-      - name: run e2e tests on Chromium
-        run: yarn e2e
-      - name: run e2e tests on FireFox
-        run: yarn e2e:firefox
-      - name: run e2e tests on WebKit
-        run: yarn e2e:webkit
+      - name: run e2e tests on ${{matrix.browser}}
+        run: yarn e2e:${{matrix.browser}}
