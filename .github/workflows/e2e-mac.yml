@@ -1,4 +1,4 @@
-name: E2E FireFox
+name: E2E on MacOS
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-20.04
+    runs-on: macos-latest
 
     steps:
       - name: set up node.js
@@ -31,8 +31,13 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: install dependencies
         run: 
-          yarn install; sudo npx playwright install-deps
-      - name: start server
-        run: yarn dev &
-      - name: run e2e tests
+          yarn install
+      - name: install Playwright dependencies
+        run:    
+          npx playwright install --with-deps
+      - name: run e2e tests on Chromium
         run: yarn e2e
+      - name: run e2e tests on FireFox
+        run: yarn e2e:firefox
+      - name: run e2e tests on WebKit
+        run: yarn e2e:webkit
