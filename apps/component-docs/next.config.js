@@ -1,5 +1,5 @@
-const withTM = require("next-transpile-modules")(["navbar"]);
+const withTM = require("next-transpile-modules")(["navbar", "header"])
 
 module.exports = withTM({
   reactStrictMode: false,
-});
+})
