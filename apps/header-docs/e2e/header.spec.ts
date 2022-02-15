@@ -2,12 +2,7 @@ import { test, expect } from "@playwright/test"
 import { port } from "../package.json"
 
 test("header browser e2e test", async ({ page }) => {
-  // Page.goto might cause a navigation error. Ex "page.goto: Navigation failed because page was closed!"
-  try {
-    await page.goto(`http://localhost:${port}`, { timeout: 0 })
-  } catch (_) {
-    return
-  }
+  await page.goto(`http://localhost:${port}`, { timeout: 0 })
 
   const genomesOp = page.locator("text=Dicty Community Resource")
   await expect(genomesOp).toContainText("Dicty Community Resource")
