@@ -18,7 +18,7 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
     background: theme.palette.primary.main,
     color: "#fff",
     fontFamily: theme.typography.fontFamily,
-    height: navHeight,
+    minHeight: navHeight,
 
     "&& a": {
       textDecoration: "none",

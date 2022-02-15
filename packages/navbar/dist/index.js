@@ -91,7 +91,7 @@ var navbarStyles = (0, import_core2.makeStyles)((theme) => ({
     background: theme.palette.primary.main,
     color: "#fff",
     fontFamily: theme.typography.fontFamily,
-    height: navHeight,
+    minHeight: navHeight,
     "&& a": {
       textDecoration: "none",
       color: theme.palette.primary.main
