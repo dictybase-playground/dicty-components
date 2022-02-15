@@ -30,7 +30,7 @@ test("mobile (iPhone 11 Pro) navbar e2e test", async ({ page }) => {
   page.setViewportSize({ width: 375, height: 812 })
 
   // navigate to page
-  await page.goto(`http://localhost:${port}`)
+  await page.goto(url)
 
   await page.locator("id=mobile-nav-button").click()
 
