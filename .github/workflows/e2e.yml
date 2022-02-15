@@ -1,4 +1,4 @@
-name: E2E (Ubuntu)
+name: E2E
 
 on:
   push:
@@ -12,13 +12,49 @@ env:
   FLAKINESS_CONNECTION_STRING: ${{ secrets.FLAKINESS_CONNECTION_STRING }}
 
 jobs:
-  e2e:
+  e2e_linux:
     name: ${{ matrix.os }} (${{ matrix.browser }})
     strategy:
       fail-fast: false
       matrix:
-        browser: [chromium, firefox, webkit]
+        browser: [chromium, firefox]
         os: [ubuntu-20.04]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: set up node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.13.1
+      - name: check out code
+        uses: actions/checkout@v2
+      - name: get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: check yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      
+      - name: install dependencies
+        run: yarn install
+      - name: install PlayWright dependencies
+        run: npx playwright install --with-deps ${{ matrix.browser }} chromium
+      
+      - name: run e2e tests on ${{matrix.browser}}
+        run: yarn e2e:${{matrix.browser}}
+
+  e2e_macos:
+    name: ${{ matrix.os }} (${{ matrix.browser }})
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [webkit]
+        os: [macos-latest]
     runs-on: ${{ matrix.os }}
 
     steps:
