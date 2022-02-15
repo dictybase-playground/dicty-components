@@ -1,9 +1,10 @@
 import { test, expect } from "@playwright/test"
 import { port } from "../package.json"
 
-test("header browser e2e test", async ({ browser }) => {
-  const page = await browser.newPage()
-  await page.goto(`http://localhost:${port}`)
+export const url = `http://localhost:${port}`
+
+test("header browser e2e test", async ({ page }) => {
+  await page.goto(url)
 
   const genomesOp = page.locator("text=Dicty Community Resource")
   await expect(genomesOp).toContainText("Dicty Community Resource")
@@ -14,6 +15,4 @@ test("header browser e2e test", async ({ browser }) => {
     const x = page.locator(`text=${linkText}`)
     await expect(x).toContainText(linkText)
   }
-
-  browser.close()
 })
