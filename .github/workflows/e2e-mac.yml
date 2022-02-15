@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: macos-latest
 
     steps:
@@ -29,18 +28,21 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
+      
       - name: install dependencies
         run: 
           yarn install
       - name: install Playwright dependencies
         run:    
           npx playwright install --with-deps
+      
       - name: start server
         run: 
           yarn dev &
+      
       - name: run e2e tests on Chromium
         run: yarn e2e
-      - name: run e2e tests on FireFox
-        run: yarn e2e:firefox
-      - name: run e2e tests on WebKit
-        run: yarn e2e:webkit
+      # - name: run e2e tests on FireFox
+      #   run: yarn e2e:firefox
+      # - name: run e2e tests on WebKit
+      #   run: yarn e2e:webkit
