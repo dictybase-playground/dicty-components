@@ -35,6 +35,9 @@ jobs:
       - name: install Playwright dependencies
         run:    
           npx playwright install --with-deps
+      - name: start server
+        run: 
+          yarn dev &
       - name: run e2e tests on Chromium
         run: yarn e2e
       - name: run e2e tests on FireFox
