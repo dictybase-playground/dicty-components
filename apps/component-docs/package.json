@@ -14,8 +14,13 @@
     "e2e:codegen": "playwright codegen http://localhost:${npm_package_port}"
   },
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@material-ui/core": "^4.12.3",
-    "navbar": "*",
+    "@material-ui/icons": "^4.11.2",
+    "@mui/icons-material": "^5.3.1",
+    "@mui/material": "^5.4.1",
+    "header": "*",
     "next": "12.0.7",
     "playwright": "^1.18.1",
     "react": "17.0.2",
