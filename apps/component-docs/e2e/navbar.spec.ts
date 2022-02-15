@@ -3,7 +3,7 @@ import { port } from "../package.json"
 
 const url = `http://localhost:${port}/navbar`
 
-test("desktop", async ({ page }) => {
+test("desktop navbar e2e test", async ({ page }) => {
   await page.goto(url)
 
   // Click text=Genomes
@@ -25,7 +25,7 @@ test("desktop", async ({ page }) => {
   await page.click("text=Research")
 })
 
-test("mobile (iPhone 11 Pro)", async ({ page }) => {
+test("mobile (iPhone 11 Pro) navbar e2e test", async ({ page }) => {
   // Screen width for iPhone 11 Pro
   page.setViewportSize({ width: 375, height: 812 })
 

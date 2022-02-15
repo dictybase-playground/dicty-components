@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test"
 import { port } from "../package.json"
 
-export const url = `http://localhost:${port}`
+export const url = `http://localhost:${port}/footer`
 
-test("test footer", async ({ page }) => {
+test("footer e2e test", async ({ page }) => {
   await page.goto(url)
 
   const header = page.locator("text=Dicty Community Resource")
