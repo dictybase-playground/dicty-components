@@ -1,6 +1,7 @@
 import { createTheme, MuiThemeProvider, CssBaseline } from "@material-ui/core"
 import { AppProps } from "next/app"
 import Head from "next/head"
+import ClientOnly from "../components/clientOnly"
 
 const muiTheme = createTheme({
   palette: {
@@ -61,21 +62,23 @@ const muiTheme = createTheme({
 
 export default function ComponentDocsApp({ Component, pageProps }: AppProps) {
   return (
-    <MuiThemeProvider theme={muiTheme}>
-      <CssBaseline />
-      <Head>
-        <link rel="shortcut icon" href="favicon.ico" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <meta name="theme-color" content="#000000" />
+    <ClientOnly>
+      <MuiThemeProvider theme={muiTheme}>
+        <CssBaseline />
+        <Head>
+          <link rel="shortcut icon" href="favicon.ico" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          />
+          <meta name="theme-color" content="#000000" />
 
-        <link rel="manifest" href="manifest.json" />
+          <link rel="manifest" href="manifest.json" />
 
-        <title>dictyBase Component Docs</title>
-      </Head>
-      <Component {...pageProps} />
-    </MuiThemeProvider>
+          <title>dictyBase Component Docs</title>
+        </Head>
+        <Component {...pageProps} />
+      </MuiThemeProvider>
+    </ClientOnly>
   )
 }

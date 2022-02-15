@@ -10,7 +10,7 @@ import { Footer, footerData } from "footer"
 export default function Docs() {
   return (
     <>
-      <div style={{ height: "500px" }}>
+      <div style={{ marginBottom: "20vh" }}>
         <Header
           logo={logo.src}
           links={[
