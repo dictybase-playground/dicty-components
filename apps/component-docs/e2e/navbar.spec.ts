@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test"
 import { port } from "../package.json"
 
-const url = `https://localhost:${port}`
+const url = `https://localhost:${port}/navbar`
 
 test("desktop", async ({ page }) => {
   await page.goto(url)

@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test"
 import { port } from "../package.json"
 
-export const url = `http://localhost:${port}`
+const url = `http://localhost:${port}/header`
 
 test("header browser e2e test", async ({ page }) => {
   await page.goto(url)
