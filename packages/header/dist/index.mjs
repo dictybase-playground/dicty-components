@@ -83,7 +83,8 @@ var headerStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       justifyContent: "center"
-    }
+    },
+    fontStyle: "italic"
   },
   left: {
     [theme.breakpoints.down("sm")]: {
@@ -133,7 +134,7 @@ var headerStyles = makeStyles((theme) => ({
 
 // src/components/LogoContainer.tsx
 import { Grid } from "@material-ui/core";
-var LogoContainer = ({ home, logo }) => {
+var LogoContainer = ({ home, logo, caption }) => {
   const classes = headerStyles();
   return /* @__PURE__ */ React.createElement(Grid, {
     item: true,
@@ -151,9 +152,9 @@ var LogoContainer = ({ home, logo }) => {
     src: logo,
     alt: "dictyBase logo",
     className: classes.logo
-  })), /* @__PURE__ */ React.createElement("div", {
+  })), caption ? /* @__PURE__ */ React.createElement("div", {
     className: classes.dcr
-  }, /* @__PURE__ */ React.createElement("em", null, "Dicty Community Resource"))));
+  }, caption) : /* @__PURE__ */ React.createElement(React.Fragment, null)));
 };
 
 // src/components/LinksContainer.tsx
@@ -246,7 +247,8 @@ var SearchContainer = () => {
 var HeaderContainer = ({
   home,
   logo,
-  links
+  links,
+  caption
 }) => {
   const classes = headerStyles();
   return /* @__PURE__ */ React.createElement(Grid4, {
@@ -255,7 +257,8 @@ var HeaderContainer = ({
     alignItems: "center"
   }, /* @__PURE__ */ React.createElement(LogoContainer, {
     home,
-    logo
+    logo,
+    caption
   }), /* @__PURE__ */ React.createElement(SearchContainer, null), /* @__PURE__ */ React.createElement(LinksContainer, {
     links
   }));

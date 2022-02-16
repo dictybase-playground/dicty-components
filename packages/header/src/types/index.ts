@@ -6,12 +6,14 @@ export interface HeaderProps {
   theme?: Partial<Theme>
   links: Array<HeaderLink>
   logo: string
+  caption?: string
 }
 
 export interface HeaderContainerProps {
   home?: string
   links: Array<HeaderLink>
   logo: string
+  caption?: string
 }
 
 export interface HeaderLink {
@@ -23,6 +25,7 @@ export interface HeaderLink {
 
 export interface LogoContainerProps {
   logo: string
+  caption?: string
   home?: string
 }
 

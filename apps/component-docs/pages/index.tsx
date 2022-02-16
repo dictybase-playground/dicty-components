@@ -13,6 +13,7 @@ export default function Docs() {
       <div style={{ marginBottom: "20vh" }}>
         <Header
           logo={logo.src}
+          caption="Dicty Community Resource"
           links={[
             {
               url: "/community/citation",

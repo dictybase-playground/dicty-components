@@ -115,7 +115,8 @@ var headerStyles = (0, import_core2.makeStyles)((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       justifyContent: "center"
-    }
+    },
+    fontStyle: "italic"
   },
   left: {
     [theme.breakpoints.down("sm")]: {
@@ -165,7 +166,7 @@ var headerStyles = (0, import_core2.makeStyles)((theme) => ({
 
 // src/components/LogoContainer.tsx
 var import_core3 = require("@material-ui/core");
-var LogoContainer = ({ home, logo }) => {
+var LogoContainer = ({ home, logo, caption }) => {
   const classes = headerStyles();
   return /* @__PURE__ */ import_react.default.createElement(import_core3.Grid, {
     item: true,
@@ -183,9 +184,9 @@ var LogoContainer = ({ home, logo }) => {
     src: logo,
     alt: "dictyBase logo",
     className: classes.logo
-  })), /* @__PURE__ */ import_react.default.createElement("div", {
+  })), caption ? /* @__PURE__ */ import_react.default.createElement("div", {
     className: classes.dcr
-  }, /* @__PURE__ */ import_react.default.createElement("em", null, "Dicty Community Resource"))));
+  }, caption) : /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null)));
 };
 
 // src/components/LinksContainer.tsx
@@ -272,7 +273,8 @@ var SearchContainer = () => {
 var HeaderContainer = ({
   home,
   logo,
-  links
+  links,
+  caption
 }) => {
   const classes = headerStyles();
   return /* @__PURE__ */ import_react.default.createElement(import_core7.Grid, {
@@ -281,7 +283,8 @@ var HeaderContainer = ({
     alignItems: "center"
   }, /* @__PURE__ */ import_react.default.createElement(LogoContainer, {
     home,
-    logo
+    logo,
+    caption
   }), /* @__PURE__ */ import_react.default.createElement(SearchContainer, null), /* @__PURE__ */ import_react.default.createElement(LinksContainer, {
     links
   }));
