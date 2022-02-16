@@ -46,7 +46,7 @@ export default function Docs() {
         />
       </div>
 
-      <Footer links={footerData} />
+      <Footer title="Dicty Community Resource" links={footerData} />
     </>
   )
 }
