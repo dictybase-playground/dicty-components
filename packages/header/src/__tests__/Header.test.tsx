@@ -3,12 +3,14 @@ import { render, screen } from "@testing-library/react"
 
 describe("src/components/Header", () => {
   it("should render header", () => {
-    render(<Header links={[]} logo={""} />)
+    const caption = "Dicty Community Resource"
+    render(<Header links={[]} logo="" caption={caption} />)
 
-    expect(screen.getByText("Dicty Community Resource")).not.toBeNull()
+    expect(screen.getByText(caption)).not.toBeNull()
   })
 
   it("should render header with links", () => {
+    const caption = "My Caption"
     render(
       <Header
         links={[
@@ -19,11 +21,12 @@ describe("src/components/Header", () => {
             isNextLink: false,
           },
         ]}
-        logo={""}
+        logo=""
+        caption={caption}
       />,
     )
 
-    expect(screen.getByText("Dicty Community Resource")).not.toBeNull()
+    expect(screen.getByText(caption)).not.toBeNull()
     expect(screen.getByText("Link")).not.toBeNull()
   })
 })
