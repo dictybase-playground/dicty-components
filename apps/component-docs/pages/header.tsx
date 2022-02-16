@@ -9,6 +9,7 @@ export default function HeaderPage() {
   return (
     <Header
       logo={logo.src}
+      caption="Dicty Community Resource"
       links={[
         {
           url: "/community/citation",
