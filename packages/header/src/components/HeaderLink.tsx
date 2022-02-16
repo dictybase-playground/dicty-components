@@ -1,7 +1,7 @@
-import { HeaderLink } from "header/src/types"
+import { HeaderLinkProps } from "header/src/types"
 import { headerStyles } from "header/src/styles/headerStyles"
 
-export const Link = ({ url, text, icon }: HeaderLink) => {
+export const HeaderLink = ({ url, text, icon }: HeaderLinkProps) => {
   const classes = headerStyles()
 
   return (

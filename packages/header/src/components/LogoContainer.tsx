@@ -2,7 +2,7 @@ import { Grid } from "@material-ui/core"
 import { LogoContainerProps } from "header/src/types"
 import { headerStyles } from "header/src/styles/headerStyles"
 
-export const LogoContainer = ({ home, logo }: LogoContainerProps) => {
+export const LogoContainer = ({ home, logo, caption }: LogoContainerProps) => {
   const classes = headerStyles()
 
   return (
@@ -11,9 +11,7 @@ export const LogoContainer = ({ home, logo }: LogoContainerProps) => {
         <a href={home ? home : "/"}>
           <img src={logo} alt="dictyBase logo" className={classes.logo} />
         </a>
-        <div className={classes.dcr}>
-          <em>Dicty Community Resource</em>
-        </div>
+        {caption ? <div className={classes.dcr}>{caption}</div> : <></>}
       </Grid>
     </Grid>
   )

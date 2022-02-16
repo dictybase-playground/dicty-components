@@ -1,8 +1,6 @@
 var __create = Object.create;
 var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __getProtoOf = Object.getPrototypeOf;
@@ -20,7 +18,6 @@ var __spreadValues = (a, b) => {
     }
   return a;
 };
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
 var __objRest = (source, exclude) => {
   var target = {};
@@ -59,6 +56,7 @@ var __toCommonJS = /* @__PURE__ */ ((cache) => {
 var src_exports = {};
 __export(src_exports, {
   Header: () => Header,
+  HeaderLink: () => HeaderLink,
   headerStyles: () => headerStyles
 });
 
@@ -115,7 +113,8 @@ var headerStyles = (0, import_core2.makeStyles)((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       justifyContent: "center"
-    }
+    },
+    fontStyle: "italic"
   },
   left: {
     [theme.breakpoints.down("sm")]: {
@@ -165,7 +164,7 @@ var headerStyles = (0, import_core2.makeStyles)((theme) => ({
 
 // src/components/LogoContainer.tsx
 var import_core3 = require("@material-ui/core");
-var LogoContainer = ({ home, logo }) => {
+var LogoContainer = ({ home, logo, caption }) => {
   const classes = headerStyles();
   return /* @__PURE__ */ import_react.default.createElement(import_core3.Grid, {
     item: true,
@@ -183,31 +182,13 @@ var LogoContainer = ({ home, logo }) => {
     src: logo,
     alt: "dictyBase logo",
     className: classes.logo
-  })), /* @__PURE__ */ import_react.default.createElement("div", {
+  })), caption ? /* @__PURE__ */ import_react.default.createElement("div", {
     className: classes.dcr
-  }, /* @__PURE__ */ import_react.default.createElement("em", null, "Dicty Community Resource"))));
+  }, caption) : /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null)));
 };
 
 // src/components/LinksContainer.tsx
 var import_core4 = require("@material-ui/core");
-
-// src/components/Link.tsx
-var Link = ({ url, text, icon }) => {
-  const classes = headerStyles();
-  return /* @__PURE__ */ import_react.default.createElement("div", {
-    className: classes.linkButton
-  }, /* @__PURE__ */ import_react.default.createElement("a", {
-    href: url
-  }, /* @__PURE__ */ import_react.default.createElement("div", {
-    className: classes.linkIconHolder
-  }, /* @__PURE__ */ import_react.default.createElement("div", {
-    className: classes.linkIcon
-  }, icon), /* @__PURE__ */ import_react.default.createElement("div", {
-    className: classes.linkText
-  }, text))));
-};
-
-// src/components/LinksContainer.tsx
 var LinksContainer = ({ links }) => {
   const classes = headerStyles();
   return /* @__PURE__ */ import_react.default.createElement(import_core4.Grid, {
@@ -217,9 +198,7 @@ var LinksContainer = ({ links }) => {
     xs: 12,
     md: 4,
     className: classes.linkContainer
-  }, links.map((link, i) => /* @__PURE__ */ import_react.default.createElement(Link, __spreadProps(__spreadValues({}, link), {
-    key: i
-  }))));
+  }, links);
 };
 
 // src/components/SearchContainer.tsx
@@ -272,7 +251,8 @@ var SearchContainer = () => {
 var HeaderContainer = ({
   home,
   logo,
-  links
+  links,
+  caption
 }) => {
   const classes = headerStyles();
   return /* @__PURE__ */ import_react.default.createElement(import_core7.Grid, {
@@ -281,7 +261,8 @@ var HeaderContainer = ({
     alignItems: "center"
   }, /* @__PURE__ */ import_react.default.createElement(LogoContainer, {
     home,
-    logo
+    logo,
+    caption
   }), /* @__PURE__ */ import_react.default.createElement(SearchContainer, null), /* @__PURE__ */ import_react.default.createElement(LinksContainer, {
     links
   }));
@@ -289,15 +270,34 @@ var HeaderContainer = ({
 
 // src/components/Header.tsx
 var Header = (_a) => {
-  var _b = _a, { theme } = _b, rest = __objRest(_b, ["theme"]);
+  var _b = _a, { theme, children } = _b, rest = __objRest(_b, ["theme", "children"]);
   const customTheme = theme ? theme : muiTheme;
   return /* @__PURE__ */ import_react.default.createElement(import_core8.MuiThemeProvider, {
     theme: customTheme
-  }, /* @__PURE__ */ import_react.default.createElement(HeaderContainer, __spreadValues({}, rest)));
+  }, /* @__PURE__ */ import_react.default.createElement(HeaderContainer, __spreadValues({
+    links: children
+  }, rest)));
+};
+
+// src/components/HeaderLink.tsx
+var HeaderLink = ({ url, text, icon }) => {
+  const classes = headerStyles();
+  return /* @__PURE__ */ import_react.default.createElement("div", {
+    className: classes.linkButton
+  }, /* @__PURE__ */ import_react.default.createElement("a", {
+    href: url
+  }, /* @__PURE__ */ import_react.default.createElement("div", {
+    className: classes.linkIconHolder
+  }, /* @__PURE__ */ import_react.default.createElement("div", {
+    className: classes.linkIcon
+  }, icon), /* @__PURE__ */ import_react.default.createElement("div", {
+    className: classes.linkText
+  }, text))));
 };
 module.exports = __toCommonJS(src_exports);
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Header,
+  HeaderLink,
   headerStyles
 });

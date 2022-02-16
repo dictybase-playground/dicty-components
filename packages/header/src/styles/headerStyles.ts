@@ -28,6 +28,7 @@ export const headerStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.down("sm")]: {
       justifyContent: "center",
     },
+    fontStyle: "italic",
   },
   left: {
     [theme.breakpoints.down("sm")]: {

@@ -9,12 +9,13 @@ export const HeaderContainer = ({
   home,
   logo,
   links,
+  caption,
 }: HeaderContainerProps) => {
   const classes = headerStyles()
 
   return (
     <Grid className={classes.header} container alignItems="center">
-      <LogoContainer home={home} logo={logo} />
+      <LogoContainer home={home} logo={logo} caption={caption} />
       <SearchContainer />
       <LinksContainer links={links} />
     </Grid>

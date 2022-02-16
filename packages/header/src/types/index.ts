@@ -4,17 +4,19 @@ import React from "react"
 export interface HeaderProps {
   home?: string
   theme?: Partial<Theme>
-  links: Array<HeaderLink>
+  children: React.ReactNode
   logo: string
+  caption?: string
 }
 
 export interface HeaderContainerProps {
   home?: string
-  links: Array<HeaderLink>
+  links: React.ReactNode
   logo: string
+  caption?: string
 }
 
-export interface HeaderLink {
+export interface HeaderLinkProps {
   url: string
   text: string
   icon: React.ReactElement<SvgIconProps>
@@ -23,9 +25,10 @@ export interface HeaderLink {
 
 export interface LogoContainerProps {
   logo: string
+  caption?: string
   home?: string
 }
 
 export interface LinksContainerProps {
-  links: Array<HeaderLink>
+  links: React.ReactNode
 }
