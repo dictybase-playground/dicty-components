@@ -5,7 +5,7 @@ import AddIcon from "@material-ui/icons/Add"
 import FileDownloadIcon from "@material-ui/icons/GetApp"
 import InfoIcon from "@material-ui/icons/Info"
 import LoginIcon from "@mui/icons-material/Login"
-import { Footer, footerData } from "footer"
+import { Footer, footerData, FooterLink } from "footer"
 
 export default function Docs() {
   return (
@@ -46,7 +46,11 @@ export default function Docs() {
         />
       </div>
 
-      <Footer title="Dicty Community Resource" links={footerData} />
+      <Footer title="Dicty Community Resource">
+        {footerData.map(({ label, url }, i) => (
+          <FooterLink label={label} url={url} key={i} />
+        ))}
+      </Footer>
     </>
   )
 }
