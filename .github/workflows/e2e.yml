@@ -46,5 +46,8 @@ jobs:
       - name: install PlayWright dependencies
         run: npx playwright install --with-deps ${{ matrix.browser }} chromium
       
+      - name: build monorepo packages
+        run: yarn build
+      
       - name: run e2e tests on ${{matrix.browser}}
         run: yarn e2e:${{matrix.browser}}
