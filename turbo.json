@@ -24,7 +24,8 @@
       "dependsOn": [
         "build",
         "test",
-        "e2e"
+        "e2e",
+        "semantic-release"
       ]
     }
   }
