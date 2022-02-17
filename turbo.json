@@ -19,6 +19,13 @@
     "e2e:chromium": {},
     "e2e:firefox": {},
     "e2e:webkit": {},
-    "test": {}
+    "test": {},
+    "semantic-release": {
+      "dependsOn": [
+        "build",
+        "test",
+        "e2e"
+      ]
+    }
   }
 }
