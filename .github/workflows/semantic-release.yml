@@ -1,0 +1,26 @@
+name: Semantic release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.13.1
+      - name: install dependencies
+        run: yarn install
+      - name: build
+        run: yarn build
+      - name: run unit tests
+        run: yarn test
+      - name: run semantic release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: yarn semantic-release
