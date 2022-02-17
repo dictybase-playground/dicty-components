@@ -15,7 +15,8 @@
     "e2e:chromium": "turbo run e2e --parallel",
     "e2e:firefox": "turbo run e2e:firefox --parallel",
     "e2e:webkit": "turbo run e2e:webkit --parallel",
-    "test": "turbo run test --parallel"
+    "test": "turbo run test --parallel",
+    "semantic-release": "turbo run semantic-release --parallel"
   },
   "devDependencies": {
     "prettier": "^2.5.1",
