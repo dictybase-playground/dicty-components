@@ -20,13 +20,6 @@
     "e2e:firefox": {},
     "e2e:webkit": {},
     "test": {},
-    "semantic-release": {
-      "dependsOn": [
-        "build",
-        "test",
-        "e2e",
-        "semantic-release"
-      ]
-    }
+    "semantic-release": {}
   }
 }
