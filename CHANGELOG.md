@@ -1,3 +1,13 @@
+# [1.0.0](https://github.com/dictybase-playground/dicty-components/compare/0.1.0...1.0.0) (2022-02-18)
+
+
+* Merge branch 'develop' of github.com:dictybase-playground/dicty-components into develop ([87c3fed](https://github.com/dictybase-playground/dicty-components/commit/87c3fed21ed25dca32f41541c3725f5813701a4f))
+
+
+### BREAKING CHANGES
+
+* New version
+
 # [0.1.0](https://github.com/dictybase-playground/dicty-components/compare/v0.0.3...0.1.0) (2022-02-18)
 
 
