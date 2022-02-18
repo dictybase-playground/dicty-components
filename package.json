@@ -18,18 +18,10 @@
     "e2e:chromium": "turbo run e2e --parallel",
     "e2e:firefox": "turbo run e2e:firefox --parallel",
     "e2e:webkit": "turbo run e2e:webkit --parallel",
-    "test": "turbo run test --parallel",
-    "create-release": "semantic-release"
+    "test": "turbo run test --parallel"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.1",
-    "@semantic-release/commit-analyzer": "^9.0.2",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^8.0.2",
-    "@semantic-release/npm": "^9.0.0",
-    "@semantic-release/release-notes-generator": "^10.0.3",
     "prettier": "^2.5.1",
-    "semantic-release": "^19.0.2",
     "turbo": "latest"
   },
   "engines": {
