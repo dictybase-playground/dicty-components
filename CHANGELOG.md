@@ -1,3 +1,5 @@
+## [1.0.1](https://github.com/dictybase-playground/dicty-components/compare/1.0.0...1.0.1) (2022-02-18)
+
 # [1.0.0](https://github.com/dictybase-playground/dicty-components/compare/0.1.0...1.0.0) (2022-02-18)
 
 
