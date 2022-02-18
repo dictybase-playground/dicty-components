@@ -1,10 +1,6 @@
 name: E2E
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: push
 
 env:
   # Force terminal colors. @see https://www.npmjs.com/package/colors
