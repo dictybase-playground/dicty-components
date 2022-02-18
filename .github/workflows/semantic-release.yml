@@ -3,7 +3,7 @@ name: Semantic Release
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   semantic-release:
@@ -21,3 +21,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn semantic-release
+  
+  merge:
+    needs: semantic-release
+    runs-on: ubuntu-20.04
+    steps:
+      - name: merge to develop
+        uses: devmasx/merge-branch@1.4.0
+        with:
+          type: now
+          from_branch: master
+          target_branch: develop
+          github_token: ${{ secrets.GITHUB_TOKEN }}
