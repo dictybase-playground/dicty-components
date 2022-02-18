@@ -6,6 +6,9 @@
     "apps/*",
     "packages/*"
   ],
+  "publishConfig": {
+    "@dictyBase:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
