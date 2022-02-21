@@ -21,6 +21,7 @@
     "test": "turbo run test --parallel"
   },
   "devDependencies": {
+    "auto": "^10.32.6",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
