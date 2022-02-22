@@ -12,8 +12,12 @@ export default class EmojiHook implements IPlugin {
     // This will run before every command
     auto.hooks.beforeRun.tapPromise(this.name, async (config) => {
       console.log("🤯 this should run before every command");
-      if (this.getCurrentBranchName() !== "master")
+      if (this.getCurrentBranchName() !== "master") {
         auto.logger.log.error("Can only release on main or master branch");
+        throw new Error(
+          "please make sure to run any releases on the master branch"
+        );
+      }
     });
 
     // This will run for the command `yarn auto changelog`
