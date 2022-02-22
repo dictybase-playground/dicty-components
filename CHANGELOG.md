@@ -3,6 +3,33 @@
 #### ⚠️ Pushed to `master`
 
 - Merge branch 'master' of github.com:dictybase-playground/dicty-components ([@ayaanqui](https://github.com/ayaanqui))
+- build: generate autorc ([@ayaanqui](https://github.com/ayaanqui))
+- build: run git fetch --tag ([@ayaanqui](https://github.com/ayaanqui))
+- build: update version to match release ([@ayaanqui](https://github.com/ayaanqui))
+- build: add author block ([@ayaanqui](https://github.com/ayaanqui))
+- ci: update auto node version ([@ayaanqui](https://github.com/ayaanqui))
+- ci: update on block ([@ayaanqui](https://github.com/ayaanqui))
+- ci: add auto job to run on push to master ([@ayaanqui](https://github.com/ayaanqui))
+- build: configure auto ([@ayaanqui](https://github.com/ayaanqui))
+- build: ignore .env files ([@ayaanqui](https://github.com/ayaanqui))
+- build: install intuit/auto ([@ayaanqui](https://github.com/ayaanqui))
+- build: remove semantic release ([@ayaanqui](https://github.com/ayaanqui))
+- Merge branch 'develop' of github.com:dictybase-playground/dicty-components into develop ([@ayaanqui](https://github.com/ayaanqui))
+- Merge branch 'master' into develop ([@ayaanqui](https://github.com/ayaanqui))
+- Merge master into develop ([@github-actions[bot]](https://github.com/github-actions[bot]))
+
+#### Authors: 2
+
+- [@github-actions[bot]](https://github.com/github-actions[bot])
+- Ayaan Siddiqui ([@ayaanqui](https://github.com/ayaanqui))
+
+---
+
+# v1.0.5 (Tue Feb 22 2022)
+
+#### ⚠️ Pushed to `master`
+
+- Merge branch 'master' of github.com:dictybase-playground/dicty-components ([@ayaanqui](https://github.com/ayaanqui))
 - build: run git fetch --tag ([@ayaanqui](https://github.com/ayaanqui))
 - build: update version to match release ([@ayaanqui](https://github.com/ayaanqui))
 - build: add author block ([@ayaanqui](https://github.com/ayaanqui))
