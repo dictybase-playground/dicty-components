@@ -21,6 +21,7 @@
     "test": "turbo run test --parallel"
   },
   "devDependencies": {
+    "@auto-it/conventional-commits": "^10.32.6",
     "@types/conventional-commits-parser": "^3.0.2",
     "auto": "^10.32.6",
     "conventional-commits-parser": "^3.2.4",
@@ -35,7 +36,8 @@
   "repository": "https://github.com/dictybase-playground/dicty-components",
   "auto": {
     "plugins": [
-      "./customAutoPlugin.ts"
+      "./customAutoPlugin.ts",
+      "conventional-commits"
     ]
   },
   "author": {
