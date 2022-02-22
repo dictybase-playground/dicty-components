@@ -11,7 +11,7 @@ export default class EmojiHook implements IPlugin {
     // This will run before every command
     auto.hooks.beforeRun.tapPromise(this.name, async (config) => {
       console.log("🤯 this should run before every command");
-      if (this.getCurrentBranchName() !== "master") {
+      if ((await this.getCurrentBranchName()) !== "master") {
         auto.logger.log.error("Can only release on main or master branch");
         throw new Error(
           "please make sure to run any releases on the master branch"
@@ -44,16 +44,16 @@ export default class EmojiHook implements IPlugin {
     });
   }
 
+  // Source: https://stackoverflow.com/a/68764462/5834961
   private getCurrentBranchName() {
-    const { exec } = require("child_process");
-    const command = "git branch --show-current";
-    let branch = "";
-    exec(command, (err: any, stdout: string, stderr: any) => {
-      if (err || stderr) {
-        throw new Error("could not fetch current branch.");
-      }
-      branch = stdout.trim();
+    return new Promise((resolve, reject) => {
+      const { exec } = require("child_process");
+      const command = "git rev-parse --abbrev-ref HEAD";
+      
+      return exec(command, (err: any, stdout: string, stderr: any) => {
+        if (err) reject(`could not get current branch name. ${err}`);
+        else if (typeof stdout === "string") resolve(stdout.trim());
+      });
     });
-    return branch;
   }
 }
