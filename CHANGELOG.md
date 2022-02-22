@@ -1,4 +1,4 @@
-# (Tue Feb 22 2022)
+# v1.1.0 (Tue Feb 22 2022)
 
 #### 🚀 Enhancement
 
