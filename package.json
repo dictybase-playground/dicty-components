@@ -18,7 +18,8 @@
     "e2e:chromium": "turbo run e2e --parallel",
     "e2e:firefox": "turbo run e2e:firefox --parallel",
     "e2e:webkit": "turbo run e2e:webkit --parallel",
-    "test": "turbo run test --parallel"
+    "test": "turbo run test --parallel",
+    "release": "auto changelog && auto release && auto shipit"
   },
   "devDependencies": {
     "@auto-it/conventional-commits": "^10.32.6",
@@ -37,7 +38,8 @@
   "auto": {
     "plugins": [
       "./customAutoPlugin.ts",
-      "conventional-commits"
+      "conventional-commits",
+      "git-tag"
     ]
   },
   "author": {
