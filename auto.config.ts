@@ -2,6 +2,7 @@ import { Auto, IPlugin } from "@auto-it/core";
 import { repository } from "./package.json";
 import * as conventionalCommitsParser from "conventional-commits-parser";
 
+
 export default class EmojiHook implements IPlugin {
   name = "test";
 
@@ -11,12 +12,13 @@ export default class EmojiHook implements IPlugin {
     // This will run before every command
     auto.hooks.beforeRun.tapPromise(this.name, async (config) => {
       console.log("🤯 this should run before every command");
+      if (this.getCurrentBranchName() !== "master")
+        auto.logger.log.error("Can only release on main or master branch");
     });
 
     // This will run for the command `yarn auto changelog`
     auto.hooks.beforeCommitChangelog.tap(this.name, (config) => {
-      console.log("🧐");
-      console.log(config.commits);
+      console.log("runs before creating the changelog");
     });
 
     // Run when generating changelog
@@ -37,5 +39,14 @@ export default class EmojiHook implements IPlugin {
         }
       );
     });
+  }
+
+  private getCurrentBranchName(p = process.cwd()) {
+    const fs = require("fs");
+    const gitHeadPath = `./.git/HEAD`;
+
+    return fs.existsSync(p)
+      ? fs.readFileSync(gitHeadPath, "utf-8").trim().split("/")[2]
+      : false;
   }
 }
