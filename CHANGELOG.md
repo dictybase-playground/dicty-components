@@ -2,6 +2,8 @@
 
 #### ⚠️ Pushed to `master`
 
+- Merge branch 'master' of github.com:dictybase-playground/dicty-components ([@ayaanqui](https://github.com/ayaanqui))
+- build: update version to match release ([@ayaanqui](https://github.com/ayaanqui))
 - build: add author block ([@ayaanqui](https://github.com/ayaanqui))
 - ci: update auto node version ([@ayaanqui](https://github.com/ayaanqui))
 - ci: update on block ([@ayaanqui](https://github.com/ayaanqui))
