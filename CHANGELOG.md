@@ -1,3 +1,26 @@
+# v1.0.5 (Tue Feb 22 2022)
+
+#### ⚠️ Pushed to `master`
+
+- build: add author block ([@ayaanqui](https://github.com/ayaanqui))
+- ci: update auto node version ([@ayaanqui](https://github.com/ayaanqui))
+- ci: update on block ([@ayaanqui](https://github.com/ayaanqui))
+- ci: add auto job to run on push to master ([@ayaanqui](https://github.com/ayaanqui))
+- build: configure auto ([@ayaanqui](https://github.com/ayaanqui))
+- build: ignore .env files ([@ayaanqui](https://github.com/ayaanqui))
+- build: install intuit/auto ([@ayaanqui](https://github.com/ayaanqui))
+- build: remove semantic release ([@ayaanqui](https://github.com/ayaanqui))
+- Merge branch 'develop' of github.com:dictybase-playground/dicty-components into develop ([@ayaanqui](https://github.com/ayaanqui))
+- Merge branch 'master' into develop ([@ayaanqui](https://github.com/ayaanqui))
+- Merge master into develop ([@github-actions[bot]](https://github.com/github-actions[bot]))
+
+#### Authors: 2
+
+- [@github-actions[bot]](https://github.com/github-actions[bot])
+- Ayaan Siddiqui ([@ayaanqui](https://github.com/ayaanqui))
+
+---
+
 ## [1.0.1](https://github.com/dictybase-playground/dicty-components/compare/1.0.0...1.0.1) (2022-02-18)
 
 # [1.0.0](https://github.com/dictybase-playground/dicty-components/compare/0.1.0...1.0.0) (2022-02-18)
