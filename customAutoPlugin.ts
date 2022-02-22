@@ -44,12 +44,16 @@ export default class EmojiHook implements IPlugin {
     });
   }
 
-  private getCurrentBranchName(p = process.cwd()) {
-    const fs = require("fs");
-    const gitHeadPath = `./.git/HEAD`;
-
-    return fs.existsSync(p)
-      ? fs.readFileSync(gitHeadPath, "utf-8").trim().split("/")[2]
-      : false;
+  private getCurrentBranchName() {
+    const { exec } = require("child_process");
+    const command = "git branch --show-current";
+    let branch = "";
+    exec(command, (err: any, stdout: string, stderr: any) => {
+      if (err || stderr) {
+        throw new Error("could not fetch current branch.");
+      }
+      branch = stdout.trim();
+    });
+    return branch;
   }
 }
