@@ -3,7 +3,7 @@ name: Unit Tests
 on: push
 
 jobs:
-  build:
+  jest:
     runs-on: ubuntu-20.04
 
     steps:
