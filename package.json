@@ -35,5 +35,9 @@
     "plugins": [
       "npm"
     ]
+  },
+  "author": {
+    "name": "Ayaan Siddiqui",
+    "email": "ayaanqui.com@gmail.com"
   }
 }
