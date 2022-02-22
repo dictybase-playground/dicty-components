@@ -2,7 +2,6 @@ import { Auto, IPlugin } from "@auto-it/core";
 import { repository } from "./package.json";
 import * as conventionalCommitsParser from "conventional-commits-parser";
 
-
 export default class EmojiHook implements IPlugin {
   name = "test";
 
