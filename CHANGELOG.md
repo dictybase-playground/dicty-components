@@ -2,6 +2,35 @@
 
 #### ⚠️ Pushed to `main`
 
+- 💩  add beforeRun hook ([@ayaanqui](https://github.com/ayaanqui))
+- 💩  add plugins ([@ayaanqui](https://github.com/ayaanqui))
+- 💩 dictybase-playground/dicty-components ([@ayaanqui](https://github.com/ayaanqui))
+- 💩  generate autorc ([@ayaanqui](https://github.com/ayaanqui))
+- 💩  run git fetch --tag ([@ayaanqui](https://github.com/ayaanqui))
+- 💩  update version to match release ([@ayaanqui](https://github.com/ayaanqui))
+- 💩  add author block ([@ayaanqui](https://github.com/ayaanqui))
+- 💩  update auto node version ([@ayaanqui](https://github.com/ayaanqui))
+- 💩  update on block ([@ayaanqui](https://github.com/ayaanqui))
+- 💩  add auto job to run on push to master ([@ayaanqui](https://github.com/ayaanqui))
+- 💩  configure auto ([@ayaanqui](https://github.com/ayaanqui))
+- 💩  ignore .env files ([@ayaanqui](https://github.com/ayaanqui))
+- 💩  install intuit/auto ([@ayaanqui](https://github.com/ayaanqui))
+- 💩  remove semantic release ([@ayaanqui](https://github.com/ayaanqui))
+- 💩 dictybase-playground/dicty-components into develop ([@ayaanqui](https://github.com/ayaanqui))
+- 💩 //github.com/ayaanqui))
+- 💩 //github.com/github-actions[bot]))
+
+#### Authors: 2
+
+- [@github-actions[bot]](https://github.com/github-actions[bot])
+- Ayaan Siddiqui ([@ayaanqui](https://github.com/ayaanqui))
+
+---
+
+# v1.0.5 (Tue Feb 22 2022)
+
+#### ⚠️ Pushed to `main`
+
 💩 - feat: add beforeRun hook ([@ayaanqui](https://github.com/ayaanqui))
 💩 - build: add plugins ([@ayaanqui](https://github.com/ayaanqui))
 💩 - Merge branch 'master' of github.com:dictybase-playground/dicty-components ([@ayaanqui](https://github.com/ayaanqui))
