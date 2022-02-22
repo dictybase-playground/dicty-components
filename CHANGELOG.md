@@ -76,6 +76,43 @@
 
 #### ⚠️ Pushed to `main`
 
+- throw error if not relased in master branch ([a5e6b73](https://github.com/dictybase-playground/dicty-components/commit/a5e6b7318a862f489c79eb4a1d80eabe225a37f8))
+- run only when released on master ([6e64992](https://github.com/dictybase-playground/dicty-components/commit/6e64992eeb520bc564ca4dc7c78676cc9dfea93f))
+- Merge branch 'master' of github.com:dictybase-playground/dicty-components ([f88291c](https://github.com/dictybase-playground/dicty-components/commit/f88291c24705e820f0cb5d16813ad859cbb3ebee))
+- parse and output commits with proper subjects and hashes ([a89837b](https://github.com/dictybase-playground/dicty-components/commit/a89837bad8bca6309e347dd7aebc9aeb22affe8e))
+- install conventional commit parser library ([13a69c0](https://github.com/dictybase-playground/dicty-components/commit/13a69c0a9359f43e0b62385be84b37f1c289b6bd))
+- add beforeRun hook ([6f42d5f](https://github.com/dictybase-playground/dicty-components/commit/6f42d5f8bffcfc88db17fd70bde624e2b2028ec9))
+- add plugins ([d2db026](https://github.com/dictybase-playground/dicty-components/commit/d2db026721ef135af8a5006e3298da56b477e788))
+- Merge branch 'master' of github.com:dictybase-playground/dicty-components ([02d287f](https://github.com/dictybase-playground/dicty-components/commit/02d287fc925803a338b2353bf17555bd3a30dbab))
+- generate autorc ([d00cf15](https://github.com/dictybase-playground/dicty-components/commit/d00cf15d3950ad2fd25162b2d98ee6b286af784f))
+- Merge branch 'master' of github.com:dictybase-playground/dicty-components ([542d659](https://github.com/dictybase-playground/dicty-components/commit/542d659651018971b32c1f418ef3dd8763950286))
+- run git fetch --tag ([486e597](https://github.com/dictybase-playground/dicty-components/commit/486e597fe0f6860faf94b631dcdb4541c0223224))
+- Merge branch 'master' of github.com:dictybase-playground/dicty-components ([c3caf2c](https://github.com/dictybase-playground/dicty-components/commit/c3caf2c19c55bf23c516d139a2f4301d86c719ce))
+- update version to match release ([09d8b01](https://github.com/dictybase-playground/dicty-components/commit/09d8b01f5d869439eb59f3625e6e858281e8c781))
+- add author block ([554c1b4](https://github.com/dictybase-playground/dicty-components/commit/554c1b4651bf938a7fb21f40d2004fcda9e993a8))
+- update auto node version ([88b81a9](https://github.com/dictybase-playground/dicty-components/commit/88b81a92587dfb5622cbd0d3a9428d3b3421eaf9))
+- update on block ([798cead](https://github.com/dictybase-playground/dicty-components/commit/798cead34baadd5e8cde4896b36b8e08bb0d235e))
+- add auto job to run on push to master ([1a57e51](https://github.com/dictybase-playground/dicty-components/commit/1a57e5118e46ac0750c80baca7dfe46cdf14e3ab))
+- configure auto ([3d505a0](https://github.com/dictybase-playground/dicty-components/commit/3d505a012e23edcd6ba6a9dcac0b978e66649c1e))
+- ignore .env files ([09dd7f2](https://github.com/dictybase-playground/dicty-components/commit/09dd7f28a0581f27d9331cb564b559e4aabbb2d5))
+- install intuit/auto ([6fe501c](https://github.com/dictybase-playground/dicty-components/commit/6fe501c813c4f5c7f9de97e93d92848394e2119c))
+- remove semantic release ([455d55f](https://github.com/dictybase-playground/dicty-components/commit/455d55fa5bed9adced45ea286187b32068c330ca))
+- Merge branch 'develop' of github.com:dictybase-playground/dicty-components into develop ([2c42ffc](https://github.com/dictybase-playground/dicty-components/commit/2c42ffcb51571c4d8662dc2e22ca77267773221e))
+- Merge branch 'master' into develop ([6f5db62](https://github.com/dictybase-playground/dicty-components/commit/6f5db622f100b0ec0f44e7b35677908ffc88fd0d))
+- Merge master into develop ([6ad61eb](https://github.com/dictybase-playground/dicty-components/commit/6ad61eb3a3f579f568165badc97fabd133825e93))
+- Merge master into develop ([90d573e](https://github.com/dictybase-playground/dicty-components/commit/90d573e0ab3c216db8fff4e038b2b2020339b324))
+
+#### Authors: 2
+
+- [@github-actions[bot]](https://github.com/github-actions[bot])
+- Ayaan Siddiqui ([@ayaanqui](https://github.com/ayaanqui))
+
+---
+
+# v1.0.5 (Tue Feb 22 2022)
+
+#### ⚠️ Pushed to `main`
+
 - run only when released on master ([6e64992](https://github.com/dictybase-playground/dicty-components/commit/6e64992eeb520bc564ca4dc7c78676cc9dfea93f))
 - Merge branch 'master' of github.com:dictybase-playground/dicty-components ([f88291c](https://github.com/dictybase-playground/dicty-components/commit/f88291c24705e820f0cb5d16813ad859cbb3ebee))
 - parse and output commits with proper subjects and hashes ([a89837b](https://github.com/dictybase-playground/dicty-components/commit/a89837bad8bca6309e347dd7aebc9aeb22affe8e))
