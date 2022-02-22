@@ -1,7 +1,4 @@
 {
-  "plugins": [
-    "git-tag"
-  ],
   "owner": "dictybase-playground",
   "repo": "dictybase-component",
   "name": "Ayaan Siddiqui",

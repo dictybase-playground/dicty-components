@@ -33,7 +33,9 @@
   "repository": "https://github.com/dictybase-playground/dicty-components",
   "auto": {
     "plugins": [
-      "npm"
+      "npm",
+      "git-tag",
+      "./auto.config.ts"
     ]
   },
   "author": {
