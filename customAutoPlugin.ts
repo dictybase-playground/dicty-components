@@ -45,6 +45,7 @@ export default class CustomAutoPlugin implements IPlugin {
     });
   }
 
+  // Returns the name of the current checked out git branch
   // Source: https://stackoverflow.com/a/68764462/5834961
   private getCurrentBranchName() {
     return new Promise((resolve, reject) => {
