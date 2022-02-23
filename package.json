@@ -25,6 +25,7 @@
     "@auto-it/conventional-commits": "^10.32.6",
     "@types/conventional-commits-parser": "^3.0.2",
     "auto": "^10.32.6",
+    "conventional-changelog-angular": "^5.0.13",
     "conventional-commits-parser": "^3.2.4",
     "prettier": "^2.5.1",
     "turbo": "latest"
