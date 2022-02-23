@@ -20,7 +20,7 @@ export default class CustomAutoPlugin implements IPlugin {
 
     auto.hooks.onCreateLogParse.tap(this.name, (changelog) => {
       // ignore all merge and dependabot commits
-      changelog.hooks.omitCommit.tap("test", (commit) => {
+      changelog.hooks.omitCommit.tap(this.name, (commit) => {
         const { subject } = conventionalCommitsParser.sync(commit.subject);
         if (!subject) {
           return true;
