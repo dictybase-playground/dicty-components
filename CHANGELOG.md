@@ -46,6 +46,3 @@
 #### Authors: 1
 
 - Ayaan Siddiqui ([@ayaanqui](https://github.com/ayaanqui))
-
----
-
