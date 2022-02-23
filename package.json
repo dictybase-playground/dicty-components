@@ -39,7 +39,12 @@
   "auto": {
     "plugins": [
       "./customAutoPlugin.ts",
-      "conventional-commits"
+      [
+        "conventional-commits",
+        {
+          "preset": "angular"
+        }
+      ]
     ]
   },
   "author": {
