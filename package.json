@@ -38,8 +38,7 @@
   "auto": {
     "plugins": [
       "./customAutoPlugin.ts",
-      "conventional-commits",
-      "git-tag"
+      "conventional-commits"
     ]
   },
   "author": {
