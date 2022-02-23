@@ -9,7 +9,7 @@ export default class EmojiHook implements IPlugin {
     console.log("Custom config is running... 🤞\n\n");
 
     // This will run before every command
-    auto.hooks.beforeRun.tapPromise(this.name, async (config) => {
+    auto.hooks.beforeRun.tapPromise(this.name, async (_) => {
       console.log("🤯 this should run before every command");
       if ((await this.getCurrentBranchName()) !== "master") {
         auto.logger.log.error("Can only release on main or master branch");
@@ -20,16 +20,16 @@ export default class EmojiHook implements IPlugin {
     });
 
     // This will run for the command `yarn auto changelog`
-    auto.hooks.beforeCommitChangelog.tap(this.name, (config) => {
+    auto.hooks.beforeCommitChangelog.tap(this.name, (_) => {
       console.log("runs before creating the changelog");
     });
 
     // Run when generating changelog
-    auto.hooks.onCreateChangelog.tap(this.name, (changelog, { bump }) => {
+    auto.hooks.onCreateChangelog.tap(this.name, (changelog, _) => {
       // Run for each commit line for the changelog
       changelog.hooks.renderChangelogLine.tapPromise(
         this.name,
-        async (line, commit) => {
+        async (_, commit) => {
           const { subject } = conventionalCommitsParser.sync(commit.subject);
 
           const hash = commit.hash;
@@ -50,7 +50,7 @@ export default class EmojiHook implements IPlugin {
       const { exec } = require("child_process");
       const command = "git rev-parse --abbrev-ref HEAD";
       
-      return exec(command, (err: any, stdout: string, stderr: any) => {
+      return exec(command, (err: any, stdout: string) => {
         if (err) reject(`could not get current branch name. ${err}`);
         else if (typeof stdout === "string") resolve(stdout.trim());
       });
