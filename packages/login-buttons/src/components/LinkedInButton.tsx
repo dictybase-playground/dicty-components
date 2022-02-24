@@ -13,7 +13,8 @@ export const LinkedInButton = ({ handleClick, text }: LinkedInButtonProps) => {
       fullWidth
       startIcon={<LinkedInIcon />}
       className={classes.button}
-      onClick={handleClick}>
+      onClick={handleClick}
+      role="linkedin-button">
       <Typography
         className={classes.subtitle}
         variant="inherit"

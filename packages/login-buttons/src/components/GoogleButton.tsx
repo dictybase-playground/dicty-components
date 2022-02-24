@@ -13,7 +13,8 @@ export const GoogleButton = ({ handleClick, text }: GoogleButtonProps) => {
       fullWidth
       startIcon={<GoogleIcon />}
       className={classes.button}
-      onClick={handleClick}>
+      onClick={handleClick}
+      role="google-button">
       <Typography
         className={classes.subtitle}
         variant="inherit"

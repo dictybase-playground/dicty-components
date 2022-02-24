@@ -13,7 +13,8 @@ export const OrcidButton = ({ handleClick, text }: OrcidButtonProps) => {
       fullWidth
       startIcon={<OrcidIcon />}
       className={classes.button}
-      onClick={handleClick}>
+      onClick={handleClick}
+      role="orcid-button">
       <Typography
         className={classes.subtitle}
         variant="inherit"
