@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from "@material-ui/core"
-import { GoogleButton } from "login-buttons"
+import { GoogleButton, LinkedInButton } from "login-buttons"
 
 const handleClick = (value: string) => {
   alert(`You clicked ${value}`)
@@ -24,10 +24,10 @@ export default function LoginButtons() {
         handleClick={() => handleClick("google")}
       />
       <p />
-      {/* <LinkedInButton
+      <LinkedInButton
         text="Sign in with LinkedIn"
-        handleClick={(event) => handleClick(event, "linkedin")}
-      /> */}
+        handleClick={(event) => handleClick("linkedin")}
+      />
     </Container>
   )
 }
