@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from "@material-ui/core"
-import { GoogleButton, LinkedInButton } from "login-buttons"
+import { GoogleButton, LinkedInButton, OrcidButton } from "login-buttons"
 
 const handleClick = (value: string) => {
   alert(`You clicked ${value}`)
@@ -14,10 +14,10 @@ export default function LoginButtons() {
           Log in
         </Typography>
       </Box>
-      {/* <OrcidButton
+      <OrcidButton
         text="Sign in with ORCID"
-        handleClick={(event) => handleClick(event, "orcid")}
-      /> */}
+        handleClick={() => handleClick("orcid")}
+      />
       <p />
       <GoogleButton
         text="Sign in with Google"

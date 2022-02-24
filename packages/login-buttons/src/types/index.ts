@@ -5,3 +5,4 @@ export interface LoginButtonProps {
 
 export interface GoogleButtonProps extends LoginButtonProps {}
 export interface LinkedInButtonProps extends LoginButtonProps {}
+export interface OrcidButtonProps extends LoginButtonProps {}
