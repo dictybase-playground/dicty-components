@@ -6,7 +6,7 @@ const handleClick = (value: string) => {
   console.log(event)
 }
 
-export default function LoginButtons() {
+export default function LoginButtonsPage() {
   return (
     <Container maxWidth="xs">
       <Box textAlign="center" mt={2}>

@@ -6,6 +6,10 @@ import FileDownloadIcon from "@material-ui/icons/GetApp"
 import InfoIcon from "@material-ui/icons/Info"
 import LoginIcon from "@mui/icons-material/Login"
 import { Footer, footerData, FooterLink } from "footer"
+import HeaderPage from "./header"
+import NavbarPage from "./navbar"
+import FooterPage from "./footer"
+import LoginButtonsPage from "./login-buttons"
 
 const headerItems: Array<HeaderLinkProps> = [
   {
@@ -37,23 +41,14 @@ const headerItems: Array<HeaderLinkProps> = [
 export default function Docs() {
   return (
     <>
-      <div style={{ marginBottom: "20vh" }}>
-        <Header logo={logo.src} caption="Dicty Community Resource">
-          {headerItems.map((item, i) => (
-            <HeaderLink {...item} key={i} />
-          ))}
-        </Header>
-        <Navbar
-          dataUrl="https://raw.githubusercontent.com/dictyBase/migration-data/master/navbar/navbar.json"
-          initialData={navbarData}
-        />
+      <HeaderPage />
+      <NavbarPage />
+
+      <div style={{ margin: "10vh 0" }}>
+        <LoginButtonsPage />
       </div>
 
-      <Footer title="Dicty Community Resource">
-        {footerData.map(({ label, url }, i) => (
-          <FooterLink label={label} url={url} key={i} />
-        ))}
-      </Footer>
+      <FooterPage />
     </>
   )
 }
