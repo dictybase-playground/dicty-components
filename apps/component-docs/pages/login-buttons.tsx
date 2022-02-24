@@ -26,7 +26,7 @@ export default function LoginButtons() {
       <p />
       <LinkedInButton
         text="Sign in with LinkedIn"
-        handleClick={(event) => handleClick("linkedin")}
+        handleClick={() => handleClick("linkedin")}
       />
     </Container>
   )
