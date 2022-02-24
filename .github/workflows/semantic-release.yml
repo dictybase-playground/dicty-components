@@ -20,7 +20,7 @@ jobs:
       - name: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: yarn workspace footer create-release
+        run: yarn create-release
   
   merge:
     needs: semantic-release
