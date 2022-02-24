@@ -1,4 +1,4 @@
-import { SvgIcon } from "@material-ui/core";
+import { SvgIcon } from "@material-ui/core"
 
 export const GoogleIcon = () => (
   <SvgIcon viewBox="0 0 533.5 544.3">
@@ -19,4 +19,4 @@ export const GoogleIcon = () => (
       fill="#fff"
     />
   </SvgIcon>
-);
+)

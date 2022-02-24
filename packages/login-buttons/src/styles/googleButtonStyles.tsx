@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core"
 
 export const googleButtonStyles = makeStyles((theme) => ({
   button: {
@@ -12,4 +12,4 @@ export const googleButtonStyles = makeStyles((theme) => ({
     width: "100%",
     color: "#fafafa",
   },
-}));
+}))

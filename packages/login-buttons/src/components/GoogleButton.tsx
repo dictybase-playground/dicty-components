@@ -1,10 +1,10 @@
-import { Button, Typography } from "@material-ui/core";
-import { GoogleButtonProps } from "login-buttons/src/types";
-import { GoogleIcon } from "login-buttons/src/components/icons/GoogleIcon";
-import { googleButtonStyles } from "login-buttons/src/styles/googleButtonStyles";
+import { Button, Typography } from "@material-ui/core"
+import { GoogleButtonProps } from "login-buttons/src/types"
+import { GoogleIcon } from "login-buttons/src/components/icons/GoogleIcon"
+import { googleButtonStyles } from "login-buttons/src/styles/googleButtonStyles"
 
 export const GoogleButton = ({ handleClick, text }: GoogleButtonProps) => {
-  const classes = googleButtonStyles();
+  const classes = googleButtonStyles()
 
   return (
     <Button
@@ -13,16 +13,14 @@ export const GoogleButton = ({ handleClick, text }: GoogleButtonProps) => {
       fullWidth
       startIcon={<GoogleIcon />}
       className={classes.button}
-      onClick={handleClick}
-    >
+      onClick={handleClick}>
       <Typography
         className={classes.subtitle}
         variant="inherit"
         align="center"
-        color="textSecondary"
-      >
+        color="textSecondary">
         {text}
       </Typography>
     </Button>
-  );
-};
+  )
+}
