@@ -2,21 +2,20 @@
 
 dictyBase monorepo developed using Turborepo, React, and Next.js
 
-## What's inside?
+## Apps and Packages
 
-This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `component-demo`: Next.js app that displays all components
+- `frontend`: Next.js app
+- `footer`: Component library for the footer
+- `header`: Component library for the header
+- `navbar`: Component library for the navbar
+- `login-buttons`: Component library for all social media login buttons
 - `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-### Utilities
+## Utilities
 
 This turborepo has some additional tools already setup for you:
 
