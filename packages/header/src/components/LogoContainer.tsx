@@ -1,6 +1,6 @@
 import { Grid } from "@material-ui/core"
-import { LogoContainerProps } from "header/src/types"
-import { headerStyles } from "header/src/styles/headerStyles"
+import { LogoContainerProps } from "@dictyBase/header/src/types"
+import { headerStyles } from "@dictyBase/header/src/styles/headerStyles"
 
 export const LogoContainer = ({ home, logo, caption }: LogoContainerProps) => {
   const classes = headerStyles()

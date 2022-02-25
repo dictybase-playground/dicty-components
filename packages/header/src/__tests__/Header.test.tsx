@@ -1,4 +1,4 @@
-import { Header, HeaderLink } from "header"
+import { Header, HeaderLink } from "@dictyBase/header"
 import { render, screen } from "@testing-library/react"
 
 describe("src/components/Header", () => {

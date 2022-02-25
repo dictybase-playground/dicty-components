@@ -1,5 +1,5 @@
-import { HeaderLinkProps } from "header/src/types"
-import { headerStyles } from "header/src/styles/headerStyles"
+import { HeaderLinkProps } from "@dictyBase/header/src/types"
+import { headerStyles } from "@dictyBase/header/src/styles/headerStyles"
 
 export const HeaderLink = ({ url, text, icon }: HeaderLinkProps) => {
   const classes = headerStyles()

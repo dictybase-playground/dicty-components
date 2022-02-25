@@ -1,14 +1,14 @@
 import { MuiThemeProvider } from "@material-ui/core"
-import { HeaderProps } from "header/src/types"
-import { muiTheme } from "navbar/src/styles/customTheme"
-import { HeaderContainer } from "header/src/components/HeaderContainer"
+import { HeaderProps } from "@dictyBase/header/src/types"
+import { muiTheme } from "@dictyBase/navbar/src/styles/customTheme"
+import { HeaderContainer } from "@dictyBase/header/src/components/HeaderContainer"
 
 /**
  * Renders dictyBase header
  * 
  * ```tsx
- * import { Header, HeaderLink } from "header"
- * import logo from "header/src/images/logo.png"
+ * import { Header, HeaderLink } from "@dictyBase/header"
+ * import logo from "@dictyBase/header/src/images/logo.png"
  * 
  * <Header logo={logo.src} caption="Dicty Community Resource">
  *  <HeaderLink 
