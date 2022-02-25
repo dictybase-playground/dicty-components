@@ -24,6 +24,7 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
       textDecoration: "none",
       color: theme.palette.primary.main,
     },
+    position: "relative",
   },
 
   // Desktop nav
@@ -40,6 +41,8 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
     height: navHeight,
     margin: "0px",
     padding: "0px",
+    position: "absolute",
+    zIndex: theme.zIndex.tooltip,
   },
   desktopNavItemRoot: {
     display: "flex",
