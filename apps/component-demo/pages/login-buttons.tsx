@@ -1,5 +1,9 @@
 import { Box, Container, Typography } from "@material-ui/core"
-import { GoogleButton, LinkedInButton, OrcidButton } from "login-buttons"
+import {
+  GoogleButton,
+  LinkedInButton,
+  OrcidButton,
+} from "@dictyBase/login-buttons"
 
 const handleClick = (value: string) => {
   alert(`You clicked ${value}`)
