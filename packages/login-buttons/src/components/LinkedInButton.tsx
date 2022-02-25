@@ -1,7 +1,7 @@
 import { Button, Typography } from "@material-ui/core"
-import { LinkedInButtonProps } from "login-buttons/src/types"
-import { LinkedInIcon } from "login-buttons/src/components/icons/LinkedInIcon"
-import { linkedInButtonStyles } from "login-buttons/src/styles/linkedInButtonStyles"
+import { LinkedInButtonProps } from "@dictyBase/login-buttons/src/types"
+import { LinkedInIcon } from "@dictyBase/login-buttons/src/components/icons/LinkedInIcon"
+import { linkedInButtonStyles } from "@dictyBase/login-buttons/src/styles/linkedInButtonStyles"
 
 export const LinkedInButton = ({ handleClick, text }: LinkedInButtonProps) => {
   const classes = linkedInButtonStyles()

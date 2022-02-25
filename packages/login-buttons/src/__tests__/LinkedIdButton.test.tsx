@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import { LinkedInButton } from "login-buttons"
+import { LinkedInButton } from "@dictyBase/login-buttons"
 import userEvent from "@testing-library/user-event"
 
 describe("LinkedInButton", () => {

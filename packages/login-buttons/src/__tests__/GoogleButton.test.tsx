@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import { GoogleButton } from "login-buttons"
+import { GoogleButton } from "@dictyBase/login-buttons"
 import userEvent from "@testing-library/user-event"
 
 describe("GoogleButton", () => {
