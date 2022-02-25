@@ -1,7 +1,7 @@
 import { Grid } from "@material-ui/core"
-import { headerStyles } from "header/src/styles/headerStyles"
-import { HeaderContainerProps } from "header/src/types"
-import { LogoContainer } from "header/src/components/LogoContainer"
+import { headerStyles } from "@dictyBase/header/src/styles/headerStyles"
+import { HeaderContainerProps } from "@dictyBase/header/src/types"
+import { LogoContainer } from "@dictyBase/header/src/components/LogoContainer"
 import { LinksContainer } from "./LinksContainer"
 import { SearchContainer } from "./SearchContainer"
 

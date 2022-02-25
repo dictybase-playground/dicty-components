@@ -1,4 +1,4 @@
-import { Navbar, navbarData } from "navbar"
+import { Navbar, navbarData } from "@dictyBase/navbar"
 
 export default function NavbarPage() {
   return (

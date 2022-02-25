@@ -6,7 +6,7 @@ import {
   InputLabel,
 } from "@material-ui/core"
 import { Search } from "@material-ui/icons"
-import { searchStyles } from "header/src/styles/searchStyles"
+import { searchStyles } from "@dictyBase/header/src/styles/searchStyles"
 
 export const SearchContainer = () => {
   const classes = searchStyles()

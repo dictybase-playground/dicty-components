@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "@dictyBase/frontend",
   "version": "0.0.0",
   "private": true,
   "port": "3000",

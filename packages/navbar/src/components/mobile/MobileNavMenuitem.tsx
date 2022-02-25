@@ -4,9 +4,9 @@ import {
   AccordionSummary,
   List,
 } from "@material-ui/core"
-import { MobileNavMenuitemProps } from "navbar/src/types"
-import { navbarStyles } from "navbar/src/styles/navbarStyles"
-import { MobileNavSubitem } from "navbar/src/components/mobile/MobileNavSubitem"
+import { MobileNavMenuitemProps } from "@dictyBase/navbar/src/types"
+import { navbarStyles } from "@dictyBase/navbar/src/styles/navbarStyles"
+import { MobileNavSubitem } from "@dictyBase/navbar/src/components/mobile/MobileNavSubitem"
 
 export const MobileNavMenuitem = ({
   expanded,

@@ -1,4 +1,4 @@
-import { Footer, footerData, FooterLink } from "footer"
+import { Footer, footerData, FooterLink } from "@dictyBase/footer"
 
 export default function FooterPage() {
   return (

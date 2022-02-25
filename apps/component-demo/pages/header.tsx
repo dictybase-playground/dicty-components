@@ -1,5 +1,5 @@
-import { Header, HeaderLinkProps, HeaderLink } from "header"
-import logo from "header/src/images/logo.png"
+import { Header, HeaderLinkProps, HeaderLink } from "@dictyBase/header"
+import logo from "@dictyBase/header/src/images/logo.png"
 import AddIcon from "@material-ui/icons/Add"
 import FileDownloadIcon from "@material-ui/icons/GetApp"
 import InfoIcon from "@material-ui/icons/Info"

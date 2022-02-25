@@ -3601,6 +3601,11 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.5.tgz#76c8584f4fc843db64702a6bd04ab7a8bd666da3"
   integrity sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==
 
+footer@*:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/footer/-/footer-1.0.0.tgz#6e81ebdf20f5271316df33f9976abb5395cba186"
+  integrity sha1-boHr3yD1JxMW3zP5l2q7U5XLoYY=
+
 form-data@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-3.0.1.tgz#ebd53791b78356a99af9a300d4282c4d5eb9755f"
@@ -3874,6 +3879,11 @@ has@^1.0.3:
   integrity sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
   dependencies:
     function-bind "^1.1.1"
+
+header@*:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/header/-/header-0.1.1.tgz#f365a5a66018058f7f9e374a1e8153360c9386b9"
+  integrity sha1-82WlpmAYBY9/njdKHoFTNgyThrk=
 
 hoist-non-react-statics@^3.3.1, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
@@ -5562,6 +5572,11 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
+
+navbar@*:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/navbar/-/navbar-2.1.0.tgz#5284095ca26d61243a9c36401e7c747696b51e59"
+  integrity sha512-s+EDPMotnD2Dd5sZmsS3ZX48vPxRfsryH1fHPqScjqM2DZJgpJ8oJvR0iZHL7mZt70zW7d/x7H8yCLkrjt/CCA==
 
 negotiator@^0.6.2, negotiator@^0.6.3:
   version "0.6.3"

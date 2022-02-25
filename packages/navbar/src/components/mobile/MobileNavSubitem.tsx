@@ -1,6 +1,6 @@
 import { ListItem, ListItemText } from "@material-ui/core"
-import { MobileNavSubitemProps } from "navbar/src/types"
-import { navbarStyles } from "navbar/src/styles/navbarStyles"
+import { MobileNavSubitemProps } from "@dictyBase/navbar/src/types"
+import { navbarStyles } from "@dictyBase/navbar/src/styles/navbarStyles"
 
 export const MobileNavSubitem = ({ item }: MobileNavSubitemProps) => {
   const styles = navbarStyles()

@@ -1,6 +1,6 @@
-import { navbarStyles } from "navbar/src/styles/navbarStyles"
-import { DesktopNavProps } from "navbar/src/types"
-import { DesktopNavItem } from "navbar/src/components/desktop/DesktopNavItem"
+import { navbarStyles } from "@dictyBase/navbar/src/styles/navbarStyles"
+import { DesktopNavProps } from "@dictyBase/navbar/src/types"
+import { DesktopNavItem } from "@dictyBase/navbar/src/components/desktop/DesktopNavItem"
 import { Box } from "@material-ui/core"
 
 export const DesktopNav = ({ items }: DesktopNavProps) => {

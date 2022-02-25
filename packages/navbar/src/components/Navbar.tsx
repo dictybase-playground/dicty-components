@@ -1,9 +1,9 @@
 import { MuiThemeProvider, useMediaQuery } from "@material-ui/core"
-import { NavbarProps, NavItem } from "navbar/src/types/index"
-import { muiTheme } from "navbar/src/styles/customTheme"
-import { DesktopNav } from "navbar/src/components/desktop/DesktopNav"
-import { MobileNav } from "navbar/src/components/mobile/MobileNav"
-import { navbarData } from "navbar/src/data/navbarData"
+import { NavbarProps, NavItem } from "@dictyBase/navbar/src/types/index"
+import { muiTheme } from "@dictyBase/navbar/src/styles/customTheme"
+import { DesktopNav } from "@dictyBase/navbar/src/components/desktop/DesktopNav"
+import { MobileNav } from "@dictyBase/navbar/src/components/mobile/MobileNav"
+import { navbarData } from "@dictyBase/navbar/src/data/navbarData"
 import { useEffect, useState } from "react"
 
 export const Navbar = ({

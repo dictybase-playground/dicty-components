@@ -1,5 +1,5 @@
-import { navbarStyles } from "navbar/src/styles/navbarStyles"
-import { MobileMenuButtonProps } from "navbar/src/types"
+import { navbarStyles } from "@dictyBase/navbar/src/styles/navbarStyles"
+import { MobileMenuButtonProps } from "@dictyBase/navbar/src/types"
 
 export const MobileMenuButton = ({ open, setOpen }: MobileMenuButtonProps) => {
   const styles = navbarStyles()

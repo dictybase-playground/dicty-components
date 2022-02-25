@@ -1,6 +1,6 @@
 import { Grid } from "@material-ui/core"
-import { headerStyles } from "header/src/styles/headerStyles"
-import { LinksContainerProps } from "header/src/types"
+import { headerStyles } from "@dictyBase/header/src/styles/headerStyles"
+import { LinksContainerProps } from "@dictyBase/header/src/types"
 
 export const LinksContainer = ({ links }: LinksContainerProps) => {
   const classes = headerStyles()

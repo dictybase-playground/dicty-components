@@ -1,7 +1,7 @@
 import { Button, Typography } from "@material-ui/core"
-import { OrcidButtonProps } from "login-buttons/src/types"
-import { OrcidIcon } from "login-buttons/src/components/icons/OrcidIcon"
-import { orcidButtonStyles } from "login-buttons/src/styles/orcidButtonStyles"
+import { OrcidButtonProps } from "@dictyBase/login-buttons/src/types"
+import { OrcidIcon } from "@dictyBase/login-buttons/src/components/icons/OrcidIcon"
+import { orcidButtonStyles } from "@dictyBase/login-buttons/src/styles/orcidButtonStyles"
 
 export const OrcidButton = ({ handleClick, text }: OrcidButtonProps) => {
   const classes = orcidButtonStyles()
