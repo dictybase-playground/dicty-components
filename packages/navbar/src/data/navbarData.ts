@@ -1,4 +1,4 @@
-import { NavItem } from "navbar/src/types"
+import { NavItem } from "@dictyBase/navbar/src/types"
 
 export const navbarData: Array<NavItem> = [
   {

@@ -1,7 +1,7 @@
-import { MobileNavMenuProps } from "navbar/src/types"
-import { navbarStyles } from "navbar/src/styles/navbarStyles"
+import { MobileNavMenuProps } from "@dictyBase/navbar/src/types"
+import { navbarStyles } from "@dictyBase/navbar/src/styles/navbarStyles"
 import { useState } from "react"
-import { MobileNavMenuitem } from "navbar/src/components/mobile/MobileNavMenuitem"
+import { MobileNavMenuitem } from "@dictyBase/navbar/src/components/mobile/MobileNavMenuitem"
 
 export const MobileNavMenu = ({ items }: MobileNavMenuProps) => {
   const [expanded, setExpanded] = useState<number | false>(false)

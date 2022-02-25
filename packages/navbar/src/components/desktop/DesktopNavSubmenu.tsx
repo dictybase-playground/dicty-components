@@ -1,6 +1,6 @@
-import { DesktopNavSubmenuProps } from "navbar/src/types"
+import { DesktopNavSubmenuProps } from "@dictyBase/navbar/src/types"
 import { Popper } from "@material-ui/core"
-import { CustomMenu } from "navbar/src/components/desktop/CustomMenu"
+import { CustomMenu } from "@dictyBase/navbar/src/components/desktop/CustomMenu"
 
 export const DesktopNavSubmenu = ({
   open,

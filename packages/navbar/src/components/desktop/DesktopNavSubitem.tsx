@@ -1,6 +1,6 @@
 import { MenuItem } from "@material-ui/core"
-import { navbarStyles } from "navbar/src/styles/navbarStyles"
-import { DesktopNavSubitemProps } from "navbar/src/types"
+import { navbarStyles } from "@dictyBase/navbar/src/styles/navbarStyles"
+import { DesktopNavSubitemProps } from "@dictyBase/navbar/src/types"
 
 export const DesktopNavSubitem = ({ item }: DesktopNavSubitemProps) => {
   const styles = navbarStyles()
