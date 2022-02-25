@@ -1,6 +1,6 @@
-# Turborepo starter
+# dictyBase Monorepo
 
-This is an official Yarn v1 starter turborepo.
+dictyBase monorepo developed using Turborepo, React, and Next.js
 
 ## What's inside?
 
@@ -76,16 +76,3 @@ Learn more about the power of Turborepo:
 - [Scoped Tasks](https://turborepo.org/docs/features/scopes)
 - [Configuration Options](https://turborepo.org/docs/reference/configuration)
 - [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
-
-
-## Graphs
-
-Footer graph
-```mermaid
-graph TD
-    A{Footer} --> B[FooterContainer]
-    B --> B1[FooterHead]
-    B --> B2[FooterLinks]
-    B --> B3[FooterSponsors]
-    B2 --> C[FooterLink]
-```
