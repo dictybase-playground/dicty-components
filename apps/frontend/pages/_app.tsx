@@ -2,12 +2,8 @@ import { MuiThemeProvider, CssBaseline } from "@material-ui/core"
 import { AppProps } from "next/app"
 import Head from "next/head"
 import ClientOnly from "../components/clientOnly"
-import { Header, HeaderLink, HeaderLinkProps } from "@dictyBase/header"
+import { Header, HeaderLink } from "@dictyBase/header"
 import logo from "../public/logo.png"
-import AddIcon from "@material-ui/icons/Add"
-import FileDownloadIcon from "@material-ui/icons/GetApp"
-import InfoIcon from "@material-ui/icons/Info"
-import LoginIcon from "@mui/icons-material/Login"
 import { Navbar, navbarData } from "@dictyBase/navbar"
 import { Footer, FooterLink, footerData } from "@dictyBase/footer"
 import { dictyStyles } from "../styles/defaultStyles"
@@ -30,8 +26,9 @@ export default function ComponentDocsApp({ Component, pageProps }: AppProps) {
 
           <title>dictyBase</title>
         </Head>
+
         <Header logo={logo.src} caption="Dicty Community Resource">
-          {headerItems.map((item, i) => (
+          {headerLoginData.map((item, i) => (
             <HeaderLink key={i} {...item} />
           ))}
         </Header>
@@ -39,7 +36,10 @@ export default function ComponentDocsApp({ Component, pageProps }: AppProps) {
           dataUrl="https://raw.githubusercontent.com/dictyBase/migration-data/master/navbar/navbar.json"
           initialData={navbarData}
         />
+
+        {/* render pages here */}
         <Component {...pageProps} />
+
         <Footer title="Dicty Community Resource">
           {footerData.map(({ label, url }, i) => (
             <FooterLink label={label} url={url} key={i} />
