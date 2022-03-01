@@ -24,7 +24,7 @@ export const headerLoginData: Array<HeaderLinkProps> = [
     isNextLink: true,
   },
   {
-    url: "/login",
+    url: "/auth/login",
     icon: <LoginIcon fontSize="large" />,
     text: "Login",
     isNextLink: true,
