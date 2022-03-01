@@ -8,7 +8,7 @@ export interface IClientConfig {
   orcid: IClientProvider
 }
 
-export interface IOAuthProviderConfig {
+export interface IOauthProviderConfig {
   name: string
   url: string
   authorizationEndpoint: string
@@ -20,8 +20,8 @@ export interface IOAuthProviderConfig {
   optionalUrlParams?: Array<Array<string>>
 }
 
-export interface IOAuthConfig {
-  google: IOAuthProviderConfig
-  linkedin: IOAuthProviderConfig
-  orcid: IOAuthProviderConfig
+export interface IOauthConfig {
+  google: IOauthProviderConfig
+  linkedin: IOauthProviderConfig
+  orcid: IOauthProviderConfig
 }
