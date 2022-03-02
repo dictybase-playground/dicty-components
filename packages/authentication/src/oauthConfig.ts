@@ -1,4 +1,4 @@
-import clientConfig from "@dictyBase/authentication/src/config/clientConfig"
+import clientConfig from "@dictyBase/authentication/src/clientConfig"
 import { OauthConfig } from "@dictyBase/authentication/src/types"
 
 /**
