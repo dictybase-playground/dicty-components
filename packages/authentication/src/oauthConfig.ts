@@ -3,6 +3,15 @@ import { OauthConfig } from "@dictyBase/authentication/src/types"
 
 /**
  * Given a redirectBaseUrl returns an `IOAuthConfig` object with the appropriate redirect/callback urls and clientIds
+ * 
+ * ### Usage
+ * ```ts
+ * import { oauthConfig } from "@dictyBase/authentication"
+ * 
+ * const config = oauthConfig("https://dictycr.org/stockcenter")
+ * // config will contain clientIds and other important information for a given provider
+ * console.log(config.google)
+ * ```
  *
  * @param redirectBaseUrl Base path to the redirect url (Ex. `https://dictycr.org/stockcenter` *with no leading slash*)
  * @returns `IOAuthConfig` object with config properties for all auth providers
