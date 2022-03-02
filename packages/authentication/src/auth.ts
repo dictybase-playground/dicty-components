@@ -1,4 +1,8 @@
-import { OauthProviderConfig } from "@dictyBase/authentication/src/types"
+import {
+  OauthProviderConfig,
+  Provider,
+} from "@dictyBase/authentication/src/types"
+import { oauthConfig } from "@dictyBase/authentication/src/oauthConfig"
 
 /**
  * Given an array of "key-value" sub arrays, returns a url param string
@@ -22,9 +26,6 @@ export const generateParamString = (params: Array<Array<string>>) => {
  * const config = oauthConfig("")
  * const url = createOauthUrl(config.google)
  * ```
- *
- * @param config
- * @returns
  */
 export const createOauthUrl = (config: OauthProviderConfig) => {
   let url = `${config.authorizationEndpoint}?client_id=${config.clientId}`
@@ -34,4 +35,26 @@ export const createOauthUrl = (config: OauthProviderConfig) => {
   }
   url += `&redirect_uri=${config.redirectUrl}`
   return url
+}
+
+/**
+ * Given a name for an oauth provider opens a pop-up window to proceed with the authentication
+ *
+ * @param name oauth provider
+ * @param callback callback function that gets called after the window is open
+ */
+export const openOauthWindow = (
+  name: Provider,
+  baseUrl?: string,
+  callback?: () => void,
+) => {
+  const config = oauthConfig(baseUrl ? baseUrl : window.origin)
+  const url = createOauthUrl(config[name])
+  window.open(
+    url,
+    name,
+    `width=550,
+    height=600`,
+  )
+  if (callback) callback()
 }

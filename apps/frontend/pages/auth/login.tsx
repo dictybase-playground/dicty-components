@@ -1,11 +1,10 @@
 import { Container, Box, Typography } from "@material-ui/core"
+import { openOauthWindow } from "@dictyBase/authentication"
 import {
   OrcidButton,
   GoogleButton,
   LinkedInButton,
 } from "@dictyBase/login-buttons"
-
-const openOauthWindow = (provider: string) => {}
 
 export default function LoginPage() {
   return (
