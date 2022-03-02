@@ -45,8 +45,8 @@ export const createOauthUrl = (config: OauthProviderConfig) => {
  */
 export const openOauthWindow = (
   name: Provider,
-  baseUrl?: string,
   callback?: () => void,
+  baseUrl?: string,
 ) => {
   const config = oauthConfig(baseUrl ? baseUrl : window.origin)
   const url = createOauthUrl(config[name])
