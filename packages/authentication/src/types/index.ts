@@ -27,3 +27,9 @@ export interface OauthConfig {
   linkedin: OauthProviderConfig
   orcid: OauthProviderConfig
 }
+
+export interface OauthCallbackData {
+  query: string
+  provider: Provider
+  url: string
+}

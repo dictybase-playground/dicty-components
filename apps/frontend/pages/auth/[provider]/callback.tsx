@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import { Provider } from "@dictyBase/authentication"
+import { Provider, OauthCallbackData } from "@dictyBase/authentication"
 import { useEffect } from "react"
 import { Box, Typography } from "@material-ui/core"
 
@@ -10,16 +10,13 @@ export default function OauthCallbackPage() {
   useEffect(() => {
     // asPath returns the the entire url minus the origin
     // ex. http://example.com/foo/bar?name=brad -> /foo/bar?name=brad
-    const queryParamStart = asPath.indexOf("?")
-    const queryParamsString = asPath.substring(queryParamStart)
-    window.opener?.postMessage(
-      {
-        query: queryParamsString,
-        provider: provider,
-        url: `${window.location.origin}${asPath.substring(0, queryParamStart)}`,
-      },
-      window.location.toString(),
-    )
+    const queryStart = asPath.indexOf("?")
+    const message: OauthCallbackData = {
+      query: asPath.substring(queryStart),
+      provider: provider,
+      url: `${window.location.origin}${asPath.substring(0, queryStart)}`,
+    }
+    window.opener?.postMessage(message, window.location.toString())
     window.close()
   }, [asPath, provider])
 
