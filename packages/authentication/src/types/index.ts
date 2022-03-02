@@ -2,6 +2,8 @@ export interface ClientProvider {
   clientId: string
 }
 
+export type Provider = "google" | "linkedin" | "orcid"
+
 export interface ClientConfig {
   google: ClientProvider
   linkedin: ClientProvider
