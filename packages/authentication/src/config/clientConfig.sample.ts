@@ -1,6 +1,6 @@
-import { IClientConfig } from "@dictyBase/authentication/src/types"
+import { ClientConfig } from "@dictyBase/authentication/src/types"
 
-const clientConfig: IClientConfig = {
+const clientConfig: ClientConfig = {
   google: { clientId: "xxxxxxxxxxxxxxxxxx" },
   linkedin: { clientId: "xxxxxxxxxxxxxxxxxx" },
   orcid: { clientId: "xxxxxxxxxxxxxxxxxx" },

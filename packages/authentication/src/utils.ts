@@ -1,4 +1,4 @@
-import { IOauthProviderConfig } from "./types/index"
+import { OauthProviderConfig } from "./types/index"
 
 const generateParamString = (params: Array<Array<string>>) => {
   return params
@@ -6,7 +6,7 @@ const generateParamString = (params: Array<Array<string>>) => {
     .join("&")
 }
 
-export const createOauthUrl = (config: IOauthProviderConfig) => {
+export const createOauthUrl = (config: OauthProviderConfig) => {
   let url = `${config.authorizationEndpoint}?client_id=${config.clientId}`
   url += `&scope=${config.scopes.join(config.scopeDelimiter)}`
   if (config.requiredUrlParams) {

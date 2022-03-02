@@ -1,14 +1,14 @@
-export interface IClientProvider {
+export interface ClientProvider {
   clientId: string
 }
 
-export interface IClientConfig {
-  google: IClientProvider
-  linkedin: IClientProvider
-  orcid: IClientProvider
+export interface ClientConfig {
+  google: ClientProvider
+  linkedin: ClientProvider
+  orcid: ClientProvider
 }
 
-export interface IOauthProviderConfig {
+export interface OauthProviderConfig {
   name: string
   url: string
   authorizationEndpoint: string
@@ -20,8 +20,8 @@ export interface IOauthProviderConfig {
   optionalUrlParams?: Array<Array<string>>
 }
 
-export interface IOauthConfig {
-  google: IOauthProviderConfig
-  linkedin: IOauthProviderConfig
-  orcid: IOauthProviderConfig
+export interface OauthConfig {
+  google: OauthProviderConfig
+  linkedin: OauthProviderConfig
+  orcid: OauthProviderConfig
 }
