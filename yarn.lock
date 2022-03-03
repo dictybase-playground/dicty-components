@@ -2880,6 +2880,10 @@ dezalgo@^1.0.0:
     asap "^2.0.0"
     wrappy "1"
 
+dicty-graphql-schema@dictybase/dicty-graphql-schema#1.8.1:
+  version "1.8.1"
+  resolved "https://codeload.github.com/dictybase/dicty-graphql-schema/tar.gz/bd68148dbfbc88b9edbc91db3baad652d2da01ae"
+
 diff-sequences@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-27.5.1.tgz#eaecc0d327fd68c8d9672a1e64ab8dccb2ef5327"
