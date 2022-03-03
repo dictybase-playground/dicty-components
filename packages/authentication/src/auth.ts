@@ -38,23 +38,18 @@ export const createOauthUrl = (config: OauthProviderConfig) => {
 }
 
 /**
- * Given a name for an oauth provider opens a pop-up window to proceed with the authentication
+ * Given a name for an oauth provider launches the oauth provider sign-in page
+ * to proceed with the authentication
  *
  * @param name oauth provider
  * @param callback callback function that gets called after the window is open
  */
-export const openOauthWindow = (
+export const openOauth = (
   name: Provider,
-  callback?: () => void,
+  callback: (oauthUrl: string) => void,
   baseUrl?: string,
 ) => {
   const config = oauthConfig(baseUrl ? baseUrl : window.origin)
   const url = createOauthUrl(config[name])
-  window.open(
-    url,
-    name,
-    `width=550,
-    height=600`,
-  )
-  if (callback) callback()
+  callback(url)
 }
