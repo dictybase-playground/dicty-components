@@ -3,6 +3,7 @@ import {
   Provider,
 } from "@dictyBase/authentication/src/types"
 import { oauthConfig } from "@dictyBase/authentication/src/oauthConfig"
+import { LoginInput } from "dicty-graphql-schema"
 
 /**
  * Given an array of "key-value" sub arrays, returns a url param string
@@ -52,4 +53,49 @@ export const openOauth = (
   const config = oauthConfig(baseUrl ? baseUrl : window.origin)
   const url = createOauthUrl(config[name])
   callback(url)
+}
+
+/**
+ * Generates `LoginInput` data
+ *
+ * ### Usage
+ *
+ * ```tsx
+ * import { useLoginMutation, User } from "dicty-graphql-schema"
+ * import { oauthLoginInput } from "@dictyBase/authentication"
+ *
+ * const [login] = useLoginMutation()
+ * // get `LoginInput` object
+ * const variables = oauthLoginInput(provider, code, origin, url)
+ * try {
+ *  const { data } = await login({ variables })
+ * } catch (err) {
+ *  console.error(err)
+ * }
+ * ```
+ *
+ * @param provider name of the Oauth provider
+ * @param code Oauth code
+ * @param originUrl origin url (ex. `https://dictycr.org`)
+ * @param redirectUrl oauth redirect url (ex.`https://dictycr.org/auth/google/callback`)
+ * @returns `LoginInput` to be used as variable param to generate authenticate and generate JWT using the graphql server
+ */
+export const oauthLoginInput = (
+  provider: Provider,
+  code: string,
+  originUrl: string,
+  redirectUrl: string,
+  scope?: string,
+  state?: string,
+): LoginInput => {
+  const providerConfig = oauthConfig(originUrl)[provider]
+  const loginData: LoginInput = {
+    client_id: providerConfig.clientId,
+    code: code,
+    provider: provider,
+    redirect_url: redirectUrl,
+    scopes: scope || "",
+    state: state || "state",
+  }
+  return loginData
 }
