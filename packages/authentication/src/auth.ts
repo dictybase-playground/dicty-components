@@ -79,9 +79,9 @@ export const openOauth = (
  *
  * const [login] = useLoginMutation()
  * // get `LoginInput` object
- * const variables = oauthLoginInput(provider, code, origin, url)
+ * const input = oauthLoginInput(provider, code, origin, url)
  * try {
- *  const { data } = await login({ variables })
+ *  const { data } = await login({ variables: { input } })
  * } catch (err) {
  *  console.error(err)
  * }
