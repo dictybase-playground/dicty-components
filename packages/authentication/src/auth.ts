@@ -24,7 +24,7 @@ export const generateParamString = (params: Array<Array<string>>) => {
  * ```ts
  * import { oauthConfig, createOauthUrl } from "@dictyBase/authentication"
  *
- * const config = oauthConfig("")
+ * const config = oauthConfig(window.location.origin)
  * const url = createOauthUrl(config.google)
  * ```
  */
@@ -41,6 +41,20 @@ export const createOauthUrl = (config: OauthProviderConfig) => {
 /**
  * Given a name for an oauth provider launches the oauth provider sign-in page
  * to proceed with the authentication
+ * 
+ * ### Usage
+ * ```tsx
+ * import { GoogleButton } from "@dictyBase/login-buttons"
+ * import { openOauth } from "@dictyBase/authentication"
+ * import { useRouter } from "next/router"
+ * 
+ * const {push} = useRouter()
+ * 
+ * <GoogleButton 
+ *  handleClick={() => openOauth("google", (url) => push(url))}
+ *  text="Sign in with Google"
+ * />
+ * ```
  *
  * @param name oauth provider
  * @param callback callback function that gets called after the window is open
@@ -59,7 +73,6 @@ export const openOauth = (
  * Generates `LoginInput` data
  *
  * ### Usage
- *
  * ```tsx
  * import { useLoginMutation, User } from "dicty-graphql-schema"
  * import { oauthLoginInput } from "@dictyBase/authentication"
