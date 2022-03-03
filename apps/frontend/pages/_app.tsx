@@ -1,4 +1,4 @@
-import { MuiThemeProvider, CssBaseline } from "@material-ui/core"
+import { MuiThemeProvider, CssBaseline, Container } from "@material-ui/core"
 import { AppProps } from "next/app"
 import Head from "next/head"
 import ClientOnly from "../components/clientOnly"
@@ -38,7 +38,11 @@ export default function ComponentDocsApp({ Component, pageProps }: AppProps) {
         />
 
         {/* render pages here */}
-        <Component {...pageProps} />
+        <Container maxWidth="lg">
+          <br />
+          <Component {...pageProps} />
+          <br />
+        </Container>
 
         <Footer title="Dicty Community Resource">
           {footerData.map(({ label, url }, i) => (
