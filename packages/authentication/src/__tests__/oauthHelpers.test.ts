@@ -2,8 +2,8 @@ import {} from "@testing-library/react"
 import {
   generateParamString,
   createOauthUrl,
-} from "@dictyBase/authentication/src/oauthHelpers"
-import { oauthConfig } from "@dictyBase/authentication/src/oauthConfig"
+  oauthConfig,
+} from "@dictyBase/authentication"
 
 describe("src/oauthHelpers.ts", () => {
   test("generateParamString", () => {
