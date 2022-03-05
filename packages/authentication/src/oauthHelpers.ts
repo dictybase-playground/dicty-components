@@ -11,7 +11,9 @@ import { LoginInput } from "dicty-graphql-schema"
  * @param params
  * @returns Given `[["name", "Ayaan"], ["age", "22"]]` returns the string `"name=Ayaan&age=22"`
  */
-export const generateParamString = (params: Array<Array<string>>) => {
+export const generateParamString = (params: Array<Array<string>>): string => {
+  if (params.length === 0) return ""
+
   return params
     .reduce((prev, [key, val]) => [...prev, `${key}=${val}`], [])
     .join("&")
