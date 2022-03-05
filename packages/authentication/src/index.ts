@@ -1,3 +1,6 @@
 export * from "@dictyBase/authentication/src/types"
 export * from "@dictyBase/authentication/src/oauthConfig"
 export * from "@dictyBase/authentication/src/oauthHelpers"
+export * from "@dictyBase/authentication/src/store/hooks"
+export * from "@dictyBase/authentication/src/store/reducers"
+export * from "@dictyBase/authentication/src/components/AuthProvider"
