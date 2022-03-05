@@ -2,7 +2,7 @@ import clientConfig from "@dictyBase/authentication/src/clientConfig"
 import { OauthConfig } from "@dictyBase/authentication/src/types"
 
 /**
- * Given a redirectBaseUrl returns an `IOAuthConfig` object with the appropriate redirect/callback urls and clientIds
+ * Given a redirectBaseUrl returns an `OauthConfig` object with the appropriate redirect/callback urls and clientIds
  * 
  * ### Usage
  * ```ts
