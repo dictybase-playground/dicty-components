@@ -1,5 +1,9 @@
 import {} from "@testing-library/react"
-import { generateParamString } from "@dictyBase/authentication/src/oauthHelpers"
+import {
+  generateParamString,
+  createOauthUrl,
+} from "@dictyBase/authentication/src/oauthHelpers"
+import { oauthConfig } from "@dictyBase/authentication/src/oauthConfig"
 
 describe("src/oauthHelpers.ts", () => {
   test("generateParamString", () => {
@@ -33,5 +37,14 @@ describe("src/oauthHelpers.ts", () => {
       const result = generateParamString(data)
       expect(result).toBe("")
     }
+  })
+
+  test("createOauthUrl", () => {
+    const config = oauthConfig("https://dictycr.org")
+    const gConfig = config.google
+    const url = createOauthUrl(gConfig)
+    expect(url).toBe(
+      `${gConfig.authorizationEndpoint}?client_id=${gConfig.clientId}&scope=email&response_type=code&redirect_uri=${gConfig.redirectUrl}`,
+    )
   })
 })
