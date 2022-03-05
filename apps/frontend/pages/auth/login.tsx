@@ -1,14 +1,20 @@
 import { Container, Box, Typography } from "@material-ui/core"
-import { openOauth } from "@dictyBase/authentication"
+import { openOauth, useAuthStore } from "@dictyBase/authentication"
 import { useRouter } from "next/router"
 import {
   OrcidButton,
   GoogleButton,
   LinkedInButton,
 } from "@dictyBase/login-buttons"
+import { useEffect } from "react"
 
 export default function LoginPage() {
   const router = useRouter()
+  const { state } = useAuthStore()
+
+  useEffect(() => {
+    if (state.isAuthenticated) router.push(window.location.origin)
+  }, [state, router])
 
   const oauthWindowCallback = (oauthUrl: string) => {
     router.push(oauthUrl)
