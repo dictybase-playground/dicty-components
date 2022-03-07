@@ -62,6 +62,10 @@ export interface AuthErrorPayload {
   error: any
 }
 
+export interface AuthUpdateTokenPayload {
+  token: string
+}
+
 export type AuthAction =
   | {
       type: AuthActionType.LOGIN
@@ -74,7 +78,7 @@ export type AuthAction =
   | { type: AuthActionType.LOGOUT }
   | {
       type: AuthActionType.UPDATE_TOKEN
-      payload: AuthPayload
+      payload: AuthUpdateTokenPayload
     }
 
 export interface AuthStateContextProps {
