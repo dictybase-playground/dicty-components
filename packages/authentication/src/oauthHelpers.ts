@@ -77,7 +77,7 @@ export const openOauth = (
  * ### Usage
  * ```tsx
  * import { useLoginMutation, User } from "dicty-graphql-schema"
- * import { oauthLoginInput } from "@dictyBase/authentication"
+ * import { oauthLoginInput, Provider } from "@dictyBase/authentication"
  *
  * const [login] = useLoginMutation()
  * // get `LoginInput` object

@@ -31,11 +31,11 @@ layout: intro
 
 ---
 
-# Handling OAuth Sign-In Prompts
+# Handling OAuth *Sign-In Prompts*
 
-Using the `@dictyBase/authentication` library for managing OAuth is extremely simple using the `openOauth` function which takes in the name of a supported provider (`google`, `linkedin`, and `orcid`) and a callback function that is called at the end with a `url` params
+Using the `@dictyBase/authentication` library for managing OAuth is extremely simple using the `openOauth` function which takes in the name of a supported provider and a callback function that is called at the end with a `url`.
 
-```tsx {2,10|all}
+```tsx {all|2,10}
 import { GoogleButton } from "@dictyBase/login-buttons"
 import { openOauth } from "@dictyBase/authentication"
 import { useRouter } from "next/router"
@@ -49,5 +49,37 @@ export default function LoginPage() {
       text="Sign in with Google"
     />
   )
+}
+```
+
+---
+
+# Handling OAuth *Callbacks*
+
+Upon successful sign-in from the provider the user is taken to the ***callback*** page which will have at least 2 query params (`provider` and `code`) which is parsed by the `oauthLoginInput` function.
+
+```tsx {2,12-15,17}
+import React from "react"
+import { oauthLoginInput, Provider } from "@dictyBase/authentication"
+import { useRouter } from "next/router"
+import { useLoginMutation } from "dicty-graphql-schema"
+
+export default function OauthCallbackPage() {
+  const { query, asPath, push } = useRouter()
+  const [login] = useLoginMutation()
+
+  React.useEffect(() => {
+    if (!query.provider || !query.code) return
+    const provider = query.provider as Provider
+    const code = query.code as string
+    const origin = window.location.origin
+    const url = `${origin}${window.location.pathname}`
+
+    const input = oauthLoginInput(provider, code, origin, url)
+    const { data } = await login({ variables: input })
+    push("/home")
+  }, [asPath, query, push, login])
+
+  return (<h1>Logging in...</h1>)
 }
 ```
