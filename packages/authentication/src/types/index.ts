@@ -48,8 +48,8 @@ export interface AuthState {
   isAuthenticated: boolean
   token: string
   user: User
-  provider: Provider
-  error: any
+  provider: Provider | ""
+  error?: any
 }
 
 export interface AuthPayload {
