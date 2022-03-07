@@ -16,33 +16,22 @@ export const authInitialState: AuthState = {
 export const authReducer = (state: AuthState, action: AuthAction) => {
   switch (action.type) {
     case AuthActionType.LOGIN:
-      const token = action.payload.token
-      return {
-        ...state,
-        isAuthenticated: token !== "" ? true : false,
-        token,
-        user: action.payload.user,
-        provider: action.payload.provider,
-        error: null,
-      }
-    case AuthActionType.LOGIN_ERROR: {
-      return {
-        ...state,
-        error: action.payload.error,
-      }
-    }
+      const { token, user, provider } = action.payload
+      state.isAuthenticated = token !== "" && user ? true : false
+      state.token = token
+      state.user = user
+      state.provider = provider
+      state.error = null
+      return state
+    case AuthActionType.LOGIN_ERROR:
+      state = authInitialState // reset state
+      state.error = action.payload.error
+      return state
     case AuthActionType.LOGOUT:
       return authInitialState
     case AuthActionType.UPDATE_TOKEN:
-      const newToken = action.payload.token
-      return {
-        ...state,
-        isAuthenticated: true,
-        token: newToken,
-        user: action.payload.user,
-        provider: action.payload.provider,
-        error: null,
-      }
+      state.token = action.payload.token
+      return state
     default:
       return state
   }
