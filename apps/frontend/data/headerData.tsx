@@ -20,7 +20,7 @@ export const headerLoginData: Array<HeaderLinkProps> = [
   {
     url: "/about",
     icon: <InfoIcon fontSize="large" />,
-    text: "About dictyBase",
+    text: "About",
     isNextLink: true,
   },
   {
