@@ -36,7 +36,7 @@ export interface OauthCallbackData {
   url: string
 }
 
-/** Auth provider */
+
 export enum AuthActionType {
   LOGIN = "LOGIN",
   LOGIN_ERROR = "LOGIN_ERROR",
@@ -48,14 +48,14 @@ export interface AuthState {
   isAuthenticated: boolean
   token: string
   user: User
-  provider: string
+  provider: Provider
   error: any
 }
 
 export interface AuthPayload {
   token: string
   user: User
-  provider: string
+  provider: Provider
 }
 
 export interface AuthErrorPayload {
