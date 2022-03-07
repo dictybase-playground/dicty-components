@@ -13,6 +13,6 @@ export const googleButtonStyles = makeStyles((theme) => ({
   },
   subtitle: {
     width: "100%",
-    color: "#fafafa",
+    color: "#fff",
   },
 }))

@@ -13,6 +13,6 @@ export const orcidButtonStyles = makeStyles((theme) => ({
   },
   subtitle: {
     width: "100%",
-    color: "#4D4D4D",
+    color: "#fff",
   },
 }))
