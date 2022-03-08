@@ -35,54 +35,99 @@ download: true
 
 # Handling OAuth *Sign-In Prompts*
 
-Using the `@dictyBase/authentication` library for managing OAuth is extremely simple using the `openOauth` function which takes in the name of a supported provider and a callback function that is called at the end with a `url`.
+Using the `@dictyBase/authentication` library for managing OAuth is extremely simple using the `openOauth` function.
 
-```tsx {2,10}
+<div grid="~ cols-2 gap-2">
+<div>
+
+### Usage
+
+```tsx {2,10-12}
 import { GoogleButton } from "@dictyBase/login-buttons"
 import { openOauth } from "@dictyBase/authentication"
 import { useRouter } from "next/router"
- 
+
 export default function LoginPage() {
   const {push} = useRouter()
 
   return (
     <GoogleButton 
-      handleClick={() => openOauth("google", url => push(url))}
+      handleClick={() => {
+        openOauth("google", url => push(url))
+      }}
       text="Sign in with Google"
     />
   )
 }
 ```
 
+</div>
+
+<div>
+
+### Demo
+
+![OAuth demo GIF](oauth_signin_demo.gif)
+
+</div>
+</div>
+
+<!--
+Using the `@dictyBase/authentication` library for managing OAuth is extremely simple using the `openOauth` function which takes in the name of a supported provider and a callback function that is called at the end with a `url`.
+-->
+
 ---
 
 # Handling OAuth *Callbacks*
 
-Upon successful sign-in from the provider the user is taken to the ***callback*** page which will have at least 2 query params (`provider` and `code`) which is parsed by the `oauthLoginInput` function.
+<div grid="~ cols-2 gap-2">
+<div>
 
-```tsx {2,12-15}
+### Usage
+
+```tsx {2-5,14-17}
 import React from "react"
-import { oauthLoginInput, Provider } from "@dictyBase/authentication"
+import { 
+  oauthLoginInput, 
+  Provider
+} from "@dictyBase/authentication"
 import { useRouter } from "next/router"
-import { useLoginMutation } from "dicty-graphql-schema"
 
 export default function OauthCallbackPage() {
-  const { query, asPath, push } = useRouter()
-  const [login] = useLoginMutation()
+  const { query } = useRouter()
 
   React.useEffect(() => {
     if (!query.provider || !query.code) return
+
     const provider = query.provider as Provider
     const code = query.code as string
-
     const input = oauthLoginInput(provider, code)
-    const { data } = await login({ variables: { input } })
-    push("/home")
-  }, [asPath, query, push, login])
+    console.log(input)
+  }, [query, push, login])
 
   return (<h1>Logging in...</h1>)
 }
 ```
+
+</div>
+
+<div>
+
+### Callback URL
+
+```text
+http://localhost:3000/auth/google/callback?code=4%2F0AX4XfWgALBewIlVuECvSf-YCiafH50TLUzgBF3ENwnmY7jYagPF5YneZyq1RCidJwixuKg&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent
+```
+
+![Callback demo GIF](oauth_callback_demo.gif)
+
+</div>
+
+</div>
+
+<!--
+Upon successful sign-in from the provider the user is taken to the ***callback*** page which will have at least 2 query params (`provider` and `code`) which is parsed by the `oauthLoginInput` function.
+-->
 
 ---
 
