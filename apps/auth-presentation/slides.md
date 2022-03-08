@@ -8,6 +8,8 @@ drawings:
   persist: false
 
 layout: intro
+
+download: true
 ---
 
 # Authentication
@@ -58,7 +60,7 @@ export default function LoginPage() {
 
 Upon successful sign-in from the provider the user is taken to the ***callback*** page which will have at least 2 query params (`provider` and `code`) which is parsed by the `oauthLoginInput` function.
 
-```tsx {2,12-15,17}
+```tsx {2,12-15}
 import React from "react"
 import { oauthLoginInput, Provider } from "@dictyBase/authentication"
 import { useRouter } from "next/router"
@@ -72,11 +74,9 @@ export default function OauthCallbackPage() {
     if (!query.provider || !query.code) return
     const provider = query.provider as Provider
     const code = query.code as string
-    const origin = window.location.origin
-    const url = `${origin}${window.location.pathname}`
 
-    const input = oauthLoginInput(provider, code, origin, url)
-    const { data } = await login({ variables: input })
+    const input = oauthLoginInput(provider, code)
+    const { data } = await login({ variables: { input } })
     push("/home")
   }, [asPath, query, push, login])
 

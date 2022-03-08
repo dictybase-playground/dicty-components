@@ -76,39 +76,44 @@ export const openOauth = (
  *
  * ### Usage
  * ```tsx
- * import { useLoginMutation, User } from "dicty-graphql-schema"
+ * import React from "react"
+ * import { useRouter } from "next/router"
+ * import { useLoginMutation } from "dicty-graphql-schema"
  * import { oauthLoginInput, Provider } from "@dictyBase/authentication"
  *
- * const [login] = useLoginMutation()
- * // get `LoginInput` object
- * const input = oauthLoginInput(provider, code, origin, url)
- * try {
- *  const { data } = await login({ variables: { input } })
- * } catch (err) {
- *  console.error(err)
+ * export default function OauthCallbackPage() {
+ *  const [login] = useLoginMutation()
+ *  const { query } = useRouter()
+ *  React.useEffect(() => {
+ *    if (!query.provider || !query.code) return
+ *    const provider = query.provider as Provider
+ *    const code = query.code as string
+ * 
+ *    const input = oauthLoginInput(provider, code)
+ *    const { data } = await login({ variables: { input } })
+ *  }, [query, login]) 
+ * 
+ *  return (<h1>Logging in...</h1>)
  * }
  * ```
  *
  * @param provider name of the Oauth provider
  * @param code Oauth code
- * @param originUrl origin url (ex. `https://dictycr.org`)
- * @param redirectUrl oauth redirect url (ex.`https://dictycr.org/auth/google/callback`)
  * @returns `LoginInput` to be used as variable param to generate authenticate and generate JWT using the graphql server
  */
 export const oauthLoginInput = (
   provider: Provider,
   code: string,
-  originUrl: string,
-  redirectUrl: string,
   scope?: string,
   state?: string,
 ): LoginInput => {
-  const providerConfig = oauthConfig(originUrl)[provider]
+  const origin = window.location.origin
+  const providerConfig = oauthConfig(origin)[provider]
   const loginData: LoginInput = {
     client_id: providerConfig.clientId,
     code: code,
     provider: provider,
-    redirect_url: redirectUrl,
+    redirect_url: `${origin}${window.location.pathname}`,
     scopes: scope || "",
     state: state || "state",
   }
