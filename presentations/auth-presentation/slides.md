@@ -35,7 +35,7 @@ layout: intro
 
 Using the `@dictyBase/authentication` library for managing OAuth is extremely simple using the `openOauth` function which takes in the name of a supported provider and a callback function that is called at the end with a `url`.
 
-```tsx {all|2,10}
+```tsx {2,10}
 import { GoogleButton } from "@dictyBase/login-buttons"
 import { openOauth } from "@dictyBase/authentication"
 import { useRouter } from "next/router"
@@ -81,5 +81,30 @@ export default function OauthCallbackPage() {
   }, [asPath, query, push, login])
 
   return (<h1>Logging in...</h1>)
+}
+```
+
+---
+
+# State Management with `AuthProvider`
+
+```tsx
+import React from "react"
+import { AuthProvider, useAuthStore } from "@dictyBase/authentication"
+
+const App = ({ children }: { children: React.ReactNode }) => (
+  <AuthProvider>
+    {children}
+  </AuthProvider>
+)
+
+const MyComponent = () => {
+  const { state, dispatch } = useAuthStore()
+  React.useEffect(() => {
+    if (!state.isAuthenticated) {
+      console.error("Login required")
+      return
+    }
+  }, [state])
 }
 ```
