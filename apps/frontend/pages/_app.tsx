@@ -1,4 +1,4 @@
-import { MuiThemeProvider, CssBaseline, Container } from "@material-ui/core"
+import { CssBaseline, Container } from "@material-ui/core"
 import { AppProps } from "next/app"
 import Head from "next/head"
 import ClientOnly from "../components/clientOnly"
@@ -6,15 +6,18 @@ import { Header, HeaderLink } from "@dictyBase/header"
 import logo from "../public/logo.png"
 import { Navbar, navbarData } from "@dictyBase/navbar"
 import { Footer, FooterLink, footerData } from "@dictyBase/footer"
-import { dictyStyles } from "../styles/defaultStyles"
 import { headerLoginData } from "../data/headerData"
+import { AppProvider } from "@dictyBase/provider"
 import { AuthProvider } from "@dictyBase/authentication"
 
 export default function ComponentDocsApp({ Component, pageProps }: AppProps) {
   return (
     <AuthProvider>
       <ClientOnly>
-        <MuiThemeProvider theme={dictyStyles}>
+        <AppProvider
+          server={process.env.NEXT_PUBLIC_GRAPHQL_SERVER}
+          altServer={process.env.NEXT_PUBLIC_ALT_GRAPHQL_SERVER}
+          deployEnv={process.env.NEXT_PUBLIC_DEPLOY_ENV}>
           <CssBaseline />
           <Head>
             <link rel="shortcut icon" href="favicon.ico" />
@@ -51,7 +54,7 @@ export default function ComponentDocsApp({ Component, pageProps }: AppProps) {
               <FooterLink label={label} url={url} key={i} />
             ))}
           </Footer>
-        </MuiThemeProvider>
+        </AppProvider>
       </ClientOnly>
     </AuthProvider>
   )
