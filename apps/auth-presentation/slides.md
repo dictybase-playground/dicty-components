@@ -6,9 +6,7 @@ highlighter: shiki
 # persist drawings in exports and build
 drawings:
   persist: false
-
 layout: intro
-
 download: true
 ---
 
@@ -133,6 +131,12 @@ Upon successful sign-in from the provider the user is taken to the ***callback**
 layout: center
 ---
 
+# Generating [JWT](https://jwt.io/)s
+
+---
+layout: center
+---
+
 # Storing User Auth State
 
 Solutions to securely store the identity of an authenticated user
@@ -160,12 +164,13 @@ const App = ({ children }: { children: ReactNode }) => (
 const MyComponent = () => {
   const { state, dispatch } = useAuthStore()
   React.useEffect(() => {
-    if (!state.isAuthenticated) {
-      console.error("Login required")
-      return
-    }
+    if (!state.isAuthenticated) alert("Login required")
   }, [state])
 
-  return <></>
+  return (
+    <App>
+      <h1>Hello world</h1>
+    </App>
+  )
 }
 ```
