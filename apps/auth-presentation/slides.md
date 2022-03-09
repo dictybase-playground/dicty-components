@@ -130,14 +130,28 @@ Upon successful sign-in from the provider the user is taken to the ***callback**
 -->
 
 ---
+layout: center
+---
+
+# Storing User Auth State
+
+Solutions to securely store the identity of an authenticated user
+
+* 🍪 **Cookies** - Store generated [JWT](https://jwt.io/)s using secure [`HttpOnly`](https://owasp.org/www-community/HttpOnly) cookies
+* ⛑️ **Safe** - Refresh auth tokens preventing hackers from stealing user identity
+* 🔑 **Password-free** - Using OAuth 2.0 users can use existing Google, LinkedIn, ORCID accounts to login
+* 🥳 No need to remember new passwords
+* 😃 Avoid storing passwords or user identity
+
+---
 
 # State Management with `AuthProvider`
 
 ```tsx
-import React from "react"
+import React, { ReactNode } from "react"
 import { AuthProvider, useAuthStore } from "@dictyBase/authentication"
 
-const App = ({ children }: { children: React.ReactNode }) => (
+const App = ({ children }: { children: ReactNode }) => (
   <AuthProvider>
     {children}
   </AuthProvider>
@@ -151,5 +165,7 @@ const MyComponent = () => {
       return
     }
   }, [state])
+
+  return <></>
 }
 ```
