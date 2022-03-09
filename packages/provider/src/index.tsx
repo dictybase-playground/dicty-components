@@ -1,1 +1,1 @@
-export const provider = "Provider"
+export * from "@dictyBase/provider/src/styles/defaultTheme"
