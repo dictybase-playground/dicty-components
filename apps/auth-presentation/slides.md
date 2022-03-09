@@ -67,7 +67,7 @@ export default function LoginPage() {
 
 ### Demo
 
-![OAuth demo GIF](oauth_signin_demo.gif)
+![OAuth demo GIF](static/oauth_signin_demo.gif)
 
 </div>
 </div>
@@ -119,7 +119,7 @@ export default function OauthCallbackPage() {
 http://localhost:3000/auth/google/callback?code=4%2F0AX4XfWgALBewIlVuECvSf-YCiafH50TLUzgBF3ENwnmY7jYagPF5YneZyq1RCidJwixuKg&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent
 ```
 
-![Callback demo GIF](oauth_callback_demo.gif)
+![Callback demo GIF](static/oauth_callback_demo.gif)
 
 </div>
 
