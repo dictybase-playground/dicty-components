@@ -3,6 +3,7 @@ const withTM = require("next-transpile-modules")([
   "@dictyBase/header",
   "@dictyBase/footer",
   "@dictyBase/login-buttons",
+  "@dictyBase/provider",
 ])
 
 module.exports = withTM({
