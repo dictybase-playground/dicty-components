@@ -9,7 +9,9 @@
     "@slidev/cli": "^0.28.9",
     "@slidev/theme-apple-basic": "^0.20.0",
     "@slidev/theme-default": "*",
-    "@slidev/theme-seriph": "*"
+    "@slidev/theme-seriph": "*",
+    "slidev-theme-flayyer": "^1.0.2"
   },
-  "name": "auth-presentation"
+  "name": "auth-presentation",
+  "version": "0.0.0"
 }
