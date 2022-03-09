@@ -21,7 +21,6 @@
     "e2e:webkit": {},
     "test": {},
     "create-release": {},
-    "demo:dev": {},
-    "presentation:dev": {}
+    "demo:dev": {}
   }
 }

@@ -20,8 +20,7 @@
     "e2e:webkit": "turbo run e2e:webkit --parallel",
     "test": "turbo run test --parallel",
     "create-release": "semantic-release",
-    "demo:dev": "turbo run demo:dev",
-    "presentation:dev": "turbo run presentation:dev"
+    "demo:dev": "turbo run demo:dev"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",

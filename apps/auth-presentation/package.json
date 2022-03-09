@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "presentation:build": "slidev build",
-    "presentation:dev": "slidev --open",
-    "presentation:export": "slidev export"
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
   },
   "dependencies": {
     "@slidev/cli": "^0.28.9",
