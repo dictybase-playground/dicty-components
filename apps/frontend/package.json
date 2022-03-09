@@ -44,5 +44,8 @@
       "prettier --no-semi --trailing-comma all --jsx-bracket-same-line true --write",
       "git add"
     ]
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
