@@ -4,6 +4,7 @@
       "dom",
       "ES2015"
     ],
+    "resolveJsonModule": true
   },
   "extends": "tsconfig/react-library.json",
   "include": [
