@@ -2,8 +2,9 @@ import { graphql } from "msw"
 import { LoginInput, Auth, Identity, User } from "dicty-graphql-schema"
 
 export const handlers = [
-  graphql.mutation("Login", (req, res, ctx) => {
-    const variables = req.body.variables as { input: LoginInput }
+  graphql.mutation("Login", async (req, res, ctx) => {
+    const {} = req.body.variables as { input: LoginInput }
+
     const auth: Auth = {
       identity: { provider: "google" } as Identity,
       token:
