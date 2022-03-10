@@ -22,16 +22,16 @@ export const authReducer = (state: AuthState, action: AuthAction) => {
       state.user = user
       state.provider = provider
       state.error = null
-      return state
+      return { ...state }
     case AuthActionType.LOGIN_ERROR:
       state = authInitialState // reset state
       state.error = action.payload.error
-      return state
+      return {...state}
     case AuthActionType.LOGOUT:
       return authInitialState
     case AuthActionType.UPDATE_TOKEN:
       state.token = action.payload.token
-      return state
+      return {...state}
     default:
       return state
   }
