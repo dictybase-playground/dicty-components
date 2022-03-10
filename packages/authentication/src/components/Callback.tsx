@@ -45,7 +45,17 @@ export const Callback = ({
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    if (!provider || !code) return
+    if (state.isAuthenticated) {
+      callback()
+      return
+    }
+  }, [state])
+
+  useEffect(() => {
+    if (!provider || !code) {
+      setError(true)
+      return
+    }
 
     const auth = async () => {
       const input = oauthLoginInput(provider, code)
@@ -62,12 +72,8 @@ export const Callback = ({
             user,
           },
         })
-
-        // call callback function once login state is dispatched
-        if (state.isAuthenticated) callback()
       } catch (err) {
         setError(true)
-        return
       }
     }
     auth()
@@ -75,7 +81,7 @@ export const Callback = ({
 
   return (
     <Box textAlign="center" mt={10} mb={10}>
-      {!state.isAuthenticated && !error && <AuthLoading />}
+      {!error && <AuthLoading />}
       {error && <AuthError />}
     </Box>
   )
