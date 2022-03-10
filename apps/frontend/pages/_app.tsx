@@ -8,8 +8,20 @@ import { Footer, FooterLink, footerData } from "@dictyBase/footer"
 import { headerLoginData } from "../data/headerData"
 import { AppProvider } from "@dictyBase/provider"
 import { AuthProvider } from "@dictyBase/authentication"
+import { useEffect } from "react"
 
 export default function ComponentDocsApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    // start msw
+    if (typeof window === "undefined") {
+      const { server } = require("../mocks/server")
+      server.listen()
+    } else {
+      const { worker } = require("../mocks/browser")
+      worker.start()
+    }
+  }, [])
+
   return (
     <AuthProvider>
       <AppProvider
