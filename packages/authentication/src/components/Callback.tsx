@@ -1,4 +1,4 @@
-import { Box, Typography, CircularProgress } from "@material-ui/core"
+import { Box } from "@material-ui/core"
 import { useState, useEffect } from "react"
 import {
   CallbackProps,
@@ -6,6 +6,8 @@ import {
 } from "@dictyBase/authentication/src/types"
 import { oauthLoginInput } from "@dictyBase/authentication/src/oauthHelpers"
 import { useLoginMutation, User } from "dicty-graphql-schema"
+import { AuthLoading } from "@dictyBase/authentication/src/components/AuthLoading"
+import { AuthError } from "@dictyBase/authentication/src/components/AuthError"
 
 /**
  * OAuth callback component. Verifies and dispatches the user login state
@@ -73,14 +75,8 @@ export const Callback = ({
 
   return (
     <Box textAlign="center" mt={10} mb={10}>
-      {!state.isAuthenticated && !error && (
-        <Box>
-          <CircularProgress />
-          <Typography>Logging in</Typography>
-        </Box>
-      )}
-
-      {error && <Typography variant="h1">Could not login</Typography>}
+      {!state.isAuthenticated && !error && <AuthLoading />}
+      {error && <AuthError />}
     </Box>
   )
 }
