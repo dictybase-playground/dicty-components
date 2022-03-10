@@ -8,25 +8,25 @@ import { oauthLoginInput } from "@dictyBase/authentication/src/oauthHelpers"
 import { useLoginMutation, User } from "dicty-graphql-schema"
 import { AuthLoading } from "@dictyBase/authentication/src/components/AuthLoading"
 import { AuthError } from "@dictyBase/authentication/src/components/AuthError"
+import { useAuthStore } from "@dictyBase/authentication/src/store/hooks"
 
 /**
- * OAuth callback component. Verifies and dispatches the user login state
+ * OAuth callback component. Verifies and dispatches the user login state.
+ *
+ * *Note: This component assumes `<AuthProvider />` is in use*
  *
  * ### Usage
  * ```tsx
  * import { useRouter } from "next/router"
- * import { Provider, useAuthStore, Callback } from "@dictyBase/authentication"
+ * import { Provider, Callback } from "@dictyBase/authentication"
  *
  * export default function OauthCallbackPage() {
  *   const { query, push } = useRouter()
- *   const { state, dispatch } = useAuthStore()
  *
  *   return (
  *     <Callback
  *       provider={query.provider as Provider}
  *       code={query.code as string}
- *       state={state}
- *       dispatch={dispatch}
  *       callback={() => push("/")}
  *     />
  *   )
@@ -34,19 +34,14 @@ import { AuthError } from "@dictyBase/authentication/src/components/AuthError"
  * ```
  *
  */
-export const Callback = ({
-  state,
-  dispatch,
-  provider,
-  code,
-  callback,
-}: CallbackProps) => {
+export const Callback = ({ provider, code, callback }: CallbackProps) => {
   const [login] = useLoginMutation()
+  const { state, dispatch } = useAuthStore()
   const [error, setError] = useState(false)
 
   useEffect(() => {
     if (state.isAuthenticated) {
-      callback()
+      callback(state)
       return
     }
   }, [state])
