@@ -17,21 +17,20 @@ export const authReducer = (state: AuthState, action: AuthAction) => {
   switch (action.type) {
     case AuthActionType.LOGIN:
       const { token, user, provider } = action.payload
-      state.isAuthenticated = token !== "" && user ? true : false
-      state.token = token
-      state.user = user
-      state.provider = provider
-      state.error = null
-      return { ...state }
+      return {
+        ...state,
+        isAuthenticated: token !== "" && user ? true : false,
+        token,
+        user,
+        provider,
+        error: null
+      }
     case AuthActionType.LOGIN_ERROR:
-      state = authInitialState // reset state
-      state.error = action.payload.error
-      return {...state}
+      return {...authInitialState, error: action.payload.error}
     case AuthActionType.LOGOUT:
-      return authInitialState
+      return {...authInitialState}
     case AuthActionType.UPDATE_TOKEN:
-      state.token = action.payload.token
-      return {...state}
+      return {...state, token: action.payload.token}
     default:
       return state
   }
