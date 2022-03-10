@@ -1,5 +1,6 @@
 import React from "react"
 import { User } from "dicty-graphql-schema"
+
 export interface ClientProvider {
   clientId: string
 }
