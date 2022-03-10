@@ -5,17 +5,8 @@ import { defaultTheme } from "@dictyBase/provider/src/styles/defaultTheme"
 import { AppProviderProps } from "@dictyBase/provider/src/types"
 import { LoadingScreen } from "@dictyBase/provider/src/components/LoadingScreen"
 
-export const AppProvider = ({
-  server,
-  altServer,
-  deployEnv,
-  children,
-}: AppProviderProps) => {
-  const { client, cacheInitializing } = useCreateApolloClient(
-    server,
-    altServer,
-    deployEnv,
-  )
+export const AppProvider = ({ deployEnv, children }: AppProviderProps) => {
+  const { client, cacheInitializing } = useCreateApolloClient(deployEnv)
 
   return (
     <ApolloProvider client={client}>

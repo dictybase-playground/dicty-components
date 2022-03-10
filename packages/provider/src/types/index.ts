@@ -1,8 +1,6 @@
 import { ReactNode } from "react"
 
 export interface AppProviderProps {
-  server: string
-  altServer: string
-  deployEnv: string
+  deployEnv: "development" | "staging" | "production" | string
   children: ReactNode
 }

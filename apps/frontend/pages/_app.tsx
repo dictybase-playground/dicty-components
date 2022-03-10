@@ -1,4 +1,4 @@
-import { CssBaseline, Container } from "@material-ui/core"
+import { Container } from "@material-ui/core"
 import { AppProps } from "next/app"
 import Head from "next/head"
 import { Header, HeaderLink } from "@dictyBase/header"
@@ -26,10 +26,7 @@ export default function ComponentDocsApp({ Component, pageProps }: AppProps) {
 
   return (
     <AuthProvider>
-      <AppProvider
-        server={process.env.NEXT_PUBLIC_GRAPHQL_SERVER}
-        altServer={process.env.NEXT_PUBLIC_ALT_GRAPHQL_SERVER}
-        deployEnv={process.env.NEXT_PUBLIC_DEPLOY_ENV}>
+      <AppProvider deployEnv={process.env.NEXT_PUBLIC_DEPLOY_ENV}>
         <Head>
           <link rel="shortcut icon" href="favicon.ico" />
           <meta

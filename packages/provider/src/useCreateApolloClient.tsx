@@ -13,6 +13,10 @@ import { version } from "dicty-graphql-schema/package.json"
 const SCHEMA_VERSION_KEY = "gene-apollo-schema-version"
 const GENE_CACHE_KEY = "gene-apollo-cache-persist"
 
+// GraphQL servers
+const GRAPHQL_SERVER = "https://ericgraphql.dictybase.dev"
+const GRAPHQL_ALT_SERVER = "https://betagraphql.dictycr.org"
+
 const mutationList = ["Logout"]
 
 export const isMutation = (value: string) => {
@@ -22,16 +26,11 @@ export const isMutation = (value: string) => {
   return false
 }
 
-export const getGraphQLServer = (
-  url: string,
-  altServer: string,
-  deployEnv: string,
-  origin: string,
-) => {
+export const getGraphQLServer = (deployEnv: string, origin: string) => {
   if (deployEnv === "staging" && origin === "https://dictycr.org") {
-    return altServer
+    return GRAPHQL_ALT_SERVER
   }
-  return url
+  return GRAPHQL_SERVER
 }
 
 const cache = new InMemoryCache()
@@ -54,23 +53,15 @@ const createApolloLink = (server: string): ApolloLink =>
     }),
   )
 
-export const useCreateApolloClient = (
-  url: string,
-  altServer: string,
-  deployEnv: string,
-) => {
+export const useCreateApolloClient = (deployEnv: string) => {
   const [cacheInitializing, setCacheInitializing] = React.useState(true)
   const [link, setLink] = React.useState<ApolloLink>()
 
   React.useEffect(() => {
-    const server = getGraphQLServer(
-      url,
-      altServer,
-      deployEnv,
-      window.location.origin,
-    )
+    const server = getGraphQLServer(deployEnv, window.location.origin)
     setLink(createApolloLink(server))
   }, [])
+
   React.useEffect(() => {
     const initializeCache = async () => {
       const persistor = new CachePersistor({
@@ -91,7 +82,6 @@ export const useCreateApolloClient = (
       }
       setCacheInitializing(false)
     }
-
     initializeCache()
   }, [])
 
@@ -99,6 +89,5 @@ export const useCreateApolloClient = (
     cache,
     link,
   })
-
   return { client, cacheInitializing }
 }
