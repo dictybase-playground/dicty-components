@@ -83,29 +83,24 @@ Using the `@dictyBase/authentication` library for managing OAuth is extremely si
 
 ### Usage
 
-```tsx {2-5,14-17}
-import React from "react"
-import { 
-  oauthLoginInput, 
-  Provider
-} from "@dictyBase/authentication"
+```tsx {2,5,8-12}
 import { useRouter } from "next/router"
+import { Provider, useAuthStore, Callback } from "@dictyBase/authentication"
 
 export default function OauthCallbackPage() {
-  const { query } = useRouter()
+  const { query, push } = useRouter()
 
-  React.useEffect(() => {
-    if (!query.provider || !query.code) return
-
-    const provider = query.provider as Provider
-    const code = query.code as string
-    const input = oauthLoginInput(provider, code)
-    console.log(input)
-  }, [query, push, login])
-
-  return (<h1>Logging in...</h1>)
+  return (
+    <Callback
+      provider={query.provider as Provider}
+      code={query.code as string}
+      callback={() => push("/")}
+    />
+  )
 }
 ```
+
+The `Callback` component handles all logic dealing with errors, verification, and state.
 
 </div>
 
@@ -124,7 +119,9 @@ http://localhost:3000/auth/google/callback?code=4%2F0AX4XfWgALBewIlVuECvSf-YCiaf
 </div>
 
 <!--
-Upon successful sign-in from the provider the user is taken to the ***callback*** page which will have at least 2 query params (`provider` and `code`) which is parsed by the `oauthLoginInput` function.
+Upon successful sign-in from the provider the user is taken to the ***callback*** page which will have at least 2 query params (`provider` and `code`) which is parsed by the `oauthLoginInput` function. 
+
+The `Callback` component takes care of all the common logic, (calling the `login` mutation, errors, dispatching the new state, etc.) while also giving the developer access to a callback with the updated state.
 -->
 
 ---
