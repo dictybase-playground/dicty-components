@@ -1,5 +1,6 @@
 import React from "react"
 import { User } from "dicty-graphql-schema"
+import { Dispatch } from "react"
 
 export interface ClientProvider {
   clientId: string
@@ -36,7 +37,6 @@ export interface OauthCallbackData {
   provider: Provider
   url: string
 }
-
 
 export enum AuthActionType {
   LOGIN = "LOGIN",
@@ -85,4 +85,12 @@ export type AuthAction =
 export interface AuthStateContextProps {
   state: AuthState
   dispatch: React.Dispatch<AuthAction>
+}
+
+export interface CallbackProps {
+  provider: Provider
+  code: string
+  state: AuthState
+  dispatch: Dispatch<AuthAction>
+  callback: () => void
 }

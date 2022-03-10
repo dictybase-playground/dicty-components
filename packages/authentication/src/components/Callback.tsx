@@ -1,0 +1,86 @@
+import { Box, Typography, CircularProgress } from "@material-ui/core"
+import { useState, useEffect } from "react"
+import {
+  CallbackProps,
+  AuthActionType,
+} from "@dictyBase/authentication/src/types"
+import { oauthLoginInput } from "@dictyBase/authentication/src/oauthHelpers"
+import { useLoginMutation, User } from "dicty-graphql-schema"
+
+/**
+ * OAuth callback component. Verifies and dispatches the user login state
+ *
+ * ### Usage
+ * ```tsx
+ * import { useRouter } from "next/router"
+ * import { Provider, useAuthStore, Callback } from "@dictyBase/authentication"
+ *
+ * export default function OauthCallbackPage() {
+ *   const { query, push } = useRouter()
+ *   const { state, dispatch } = useAuthStore()
+ *
+ *   return (
+ *     <Callback
+ *       provider={query.provider as Provider}
+ *       code={query.code as string}
+ *       state={state}
+ *       dispatch={dispatch}
+ *       callback={() => push("/")}
+ *     />
+ *   )
+ * }
+ * ```
+ *
+ */
+export const Callback = ({
+  state,
+  dispatch,
+  provider,
+  code,
+  callback,
+}: CallbackProps) => {
+  const [login] = useLoginMutation()
+  const [error, setError] = useState(false)
+
+  useEffect(() => {
+    if (!provider || !code) return
+
+    const auth = async () => {
+      const input = oauthLoginInput(provider, code)
+      try {
+        const { data } = await login({ variables: { input } })
+
+        const token = data?.login?.token as string
+        const user = data?.login?.user as User
+        dispatch({
+          type: AuthActionType.LOGIN,
+          payload: {
+            token,
+            provider,
+            user,
+          },
+        })
+
+        // call callback function once login state is dispatched
+        if (state.isAuthenticated) callback()
+      } catch (err) {
+        setError(true)
+        return
+      }
+    }
+    auth()
+  }, [code, provider, dispatch])
+
+  return (
+    <Box textAlign="center" mt={10} mb={10}>
+      {!state.isAuthenticated && !error && (
+        <Box>
+          <CircularProgress />
+          <Typography>Logging in</Typography>
+        </Box>
+      )}
+
+      {error && <Typography variant="h1">Could not login</Typography>}
+    </Box>
+  )
+}
