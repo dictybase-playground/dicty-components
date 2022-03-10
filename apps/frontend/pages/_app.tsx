@@ -12,13 +12,15 @@ import { useEffect } from "react"
 
 export default function ComponentDocsApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    // start msw
-    if (typeof window === "undefined") {
-      const { server } = require("../mocks/server")
-      server.listen()
-    } else {
-      const { worker } = require("../mocks/browser")
-      worker.start()
+    // start msw only if on development
+    if (process.env.NEXT_PUBLIC_DEPLOY_ENV === "development") {
+      if (typeof window === "undefined") {
+        const { server } = require("../mocks/server")
+        server.listen()
+      } else {
+        const { worker } = require("../mocks/browser")
+        worker.start()
+      }
     }
   }, [])
 
