@@ -5,14 +5,15 @@ import {
   useAuthStore,
   AuthActionType,
 } from "@dictyBase/authentication"
-import { useEffect } from "react"
-import { Box, Typography } from "@material-ui/core"
+import { useEffect, useState } from "react"
+import { Box, Typography, CircularProgress } from "@material-ui/core"
 import { useLoginMutation, User } from "dicty-graphql-schema"
 
 export default function OauthCallbackPage() {
   const { query } = useRouter()
   const [login] = useLoginMutation()
-  const { dispatch } = useAuthStore()
+  const { state, dispatch } = useAuthStore()
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     // do not proceed until provider and code are defined
@@ -33,17 +34,27 @@ export default function OauthCallbackPage() {
             user: data.login.user as User,
           },
         })
-        console.log("Dispatched login state")
       } catch (err) {
-        console.error("Could not process callback credentials", err)
+        setError(true)
       }
     }
     auth()
   }, [query, login, dispatch])
 
   return (
-    <Box textAlign="center">
-      <Typography variant="h1">Logging in...</Typography>
+    <Box textAlign="center" mt={10} mb={10}>
+      {state.isAuthenticated && (
+        <Typography variant="h1">Logged In!</Typography>
+      )}
+
+      {!state.isAuthenticated && !error && (
+        <Box>
+          <CircularProgress />
+          <Typography>Logging in</Typography>
+        </Box>
+      )}
+
+      {error && <Typography variant="h1">Could not login</Typography>}
     </Box>
   )
 }
