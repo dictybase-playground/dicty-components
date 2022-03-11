@@ -35,49 +35,38 @@ import { useAuthStore } from "@dictyBase/authentication/src/store/hooks"
  *
  */
 export const Callback = ({ provider, code, callback }: CallbackProps) => {
-  const [login] = useLoginMutation()
+  const input = oauthLoginInput(provider, code)
+  const [loginMutation, { data, error }] = useLoginMutation({
+    variables: { input },
+  })
   const { state, dispatch } = useAuthStore()
-  const [error, setError] = useState(false)
 
+  // hit callback if user is authenticated
   useEffect(() => {
-    if (state.isAuthenticated) {
-      callback(state)
-      return
-    }
+    if (state.isAuthenticated) callback(state)
   }, [state])
 
+  // call loginMutation and update state
   useEffect(() => {
-    if (!provider || !code) {
-      setError(true)
-      return
-    }
-
     const auth = async () => {
-      const input = oauthLoginInput(provider, code)
-      try {
-        const { data } = await login({ variables: { input } })
-
-        const token = data?.login?.token as string
-        const user = data?.login?.user as User
+      await loginMutation()
+      if (data) {
         dispatch({
           type: AuthActionType.LOGIN,
           payload: {
-            token,
             provider,
-            user,
+            token: data.login?.token as string,
+            user: data.login?.user as User,
           },
         })
-      } catch (err) {
-        setError(true)
       }
     }
     auth()
-  }, [code, provider, dispatch])
+  }, [loginMutation, dispatch, data])
 
   return (
     <Box textAlign="center" mt={10} mb={10}>
-      {!error && <AuthLoading />}
-      {error && <AuthError />}
+      {!error ? <AuthLoading /> : <AuthError />}
     </Box>
   )
 }
