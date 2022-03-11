@@ -1,5 +1,5 @@
 import { Box } from "@material-ui/core"
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import {
   CallbackProps,
   AuthActionType,
@@ -22,11 +22,13 @@ import { useAuthStore } from "@dictyBase/authentication/src/store/hooks"
  *
  * export default function OauthCallbackPage() {
  *   const { query, push } = useRouter()
+ *   const provider = query.provider as Provider
+ *   const code = query.code as string
  *
  *   return (
  *     <Callback
- *       provider={query.provider as Provider}
- *       code={query.code as string}
+ *       provider={provider}
+ *       code={code}
  *       callback={() => push("/")}
  *     />
  *   )
@@ -35,10 +37,7 @@ import { useAuthStore } from "@dictyBase/authentication/src/store/hooks"
  *
  */
 export const Callback = ({ provider, code, callback }: CallbackProps) => {
-  const input = oauthLoginInput(provider, code)
-  const [loginMutation, { data, error }] = useLoginMutation({
-    variables: { input },
-  })
+  const [login, { error }] = useLoginMutation()
   const { state, dispatch } = useAuthStore()
 
   // hit callback if user is authenticated
@@ -49,20 +48,20 @@ export const Callback = ({ provider, code, callback }: CallbackProps) => {
   // call loginMutation and update state
   useEffect(() => {
     const auth = async () => {
-      await loginMutation()
-      if (data) {
-        dispatch({
-          type: AuthActionType.LOGIN,
-          payload: {
-            provider,
-            token: data.login?.token as string,
-            user: data.login?.user as User,
-          },
-        })
-      }
+      const input = oauthLoginInput(provider, code)
+      const { data } = await login({ variables: { input } })
+
+      dispatch({
+        type: AuthActionType.LOGIN,
+        payload: {
+          provider,
+          token: data?.login?.token as string,
+          user: data?.login?.user as User,
+        },
+      })
     }
     auth()
-  }, [loginMutation, dispatch, data])
+  }, [code, provider, dispatch])
 
   return (
     <Box textAlign="center" mt={10} mb={10}>
