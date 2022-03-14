@@ -52,7 +52,7 @@ export const MockProvider = ({
     token: validToken ? activeToken : expiredToken,
     user: user,
     provider: "google",
-    isAuthenticated: true,
+    isAuthenticated: validToken && user ? true : false,
     error: null,
   })
 
