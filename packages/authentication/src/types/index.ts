@@ -1,5 +1,5 @@
 import React from "react"
-import { User } from "dicty-graphql-schema"
+import { LoginMutation, User } from "dicty-graphql-schema"
 
 export interface ClientProvider {
   clientId: string
@@ -89,5 +89,9 @@ export interface AuthStateContextProps {
 export interface CallbackProps {
   provider: Provider
   code: string
-  callback: (state: AuthState) => void
+}
+
+export interface AuthRedirectProps {
+  provider: Provider
+  data: LoginMutation
 }
