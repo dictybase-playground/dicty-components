@@ -41,6 +41,8 @@ jobs:
         run: yarn install
       - name: install PlayWright dependencies
         run: npx playwright install --with-deps ${{ matrix.browser }} chromium
+      - name: create `packages/authentication/src/clientConfig.ts` file
+        run: cp packages/authentication/src/clientConfig.sample.ts ./packages/authentication/src/clientConfig.ts
       
       - name: build monorepo packages
         run: yarn build

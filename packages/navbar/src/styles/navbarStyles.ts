@@ -166,6 +166,8 @@ export const navbarStyles = makeStyles((theme: Theme) => ({
   },
   mobileSelectedItem: {
     background: `${theme.palette.primary.dark}!important`,
+    padding: "0px!important",
+    margin: "0px!important",
   },
   mobileNavSubItem: {
     paddingLeft: "25px",

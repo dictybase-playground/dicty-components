@@ -20,6 +20,8 @@
     "e2e:firefox": {},
     "e2e:webkit": {},
     "test": {},
-    "create-release": {}
+    "test:coverage": {},
+    "create-release": {},
+    "demo:dev": {}
   }
 }

@@ -19,7 +19,9 @@
     "e2e:firefox": "turbo run e2e:firefox --parallel",
     "e2e:webkit": "turbo run e2e:webkit --parallel",
     "test": "turbo run test --parallel",
-    "create-release": "semantic-release"
+    "test:coverage": "turbo run test:coverage --parallel",
+    "create-release": "semantic-release",
+    "demo:dev": "turbo run demo:dev"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",

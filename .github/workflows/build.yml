@@ -24,8 +24,11 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
+      
       - name: install dependencies
-        run: 
-          yarn install
+        run: yarn install
+      - name: create `packages/authentication/src/clientConfig.ts` file
+        run: cp packages/authentication/src/clientConfig.sample.ts ./packages/authentication/src/clientConfig.ts
+      
       - name: build
         run: yarn build

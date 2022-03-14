@@ -17,6 +17,8 @@ jobs:
         uses: actions/checkout@v2
       - name: install deps
         run: yarn install
+      - name: create `packages/authentication/src/clientConfig.ts` file
+        run: cp packages/authentication/src/clientConfig.sample.ts ./packages/authentication/src/clientConfig.ts
       - name: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
