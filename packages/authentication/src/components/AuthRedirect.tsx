@@ -7,6 +7,10 @@ import {
 import { User } from "dicty-graphql-schema"
 import { Box, CircularProgress, Typography } from "@material-ui/core"
 
+/**
+ * Given a provider and a `LoginMutation` data,
+ * update auth state and render redirect ui.
+ */
 export const AuthRedirect = ({ provider, data }: AuthRedirectProps) => {
   const { dispatch } = useAuthStore()
 
