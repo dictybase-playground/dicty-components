@@ -1,14 +1,11 @@
 import { Box } from "@material-ui/core"
 import { useEffect } from "react"
-import {
-  CallbackProps,
-  AuthActionType,
-} from "@dictyBase/authentication/src/types"
+import { CallbackProps } from "@dictyBase/authentication/src/types"
 import { oauthLoginInput } from "@dictyBase/authentication/src/oauthHelpers"
-import { useLoginMutation, User } from "dicty-graphql-schema"
+import { useLoginMutation } from "dicty-graphql-schema"
 import { AuthLoading } from "@dictyBase/authentication/src/components/AuthLoading"
 import { AuthError } from "@dictyBase/authentication/src/components/AuthError"
-import { useAuthStore } from "@dictyBase/authentication/src/store/hooks"
+import { AuthRedirect } from "@dictyBase/authentication/src/components/AuthRedirect"
 
 /**
  * OAuth callback component. Verifies and dispatches the user login state.
@@ -24,48 +21,39 @@ import { useAuthStore } from "@dictyBase/authentication/src/store/hooks"
  *   const { query, push } = useRouter()
  *   const provider = query.provider as Provider
  *   const code = query.code as string
+ *   const { state } = useAuthStore()
  *
- *   return (
- *     <Callback
- *       provider={provider}
- *       code={code}
- *       callback={() => push("/")}
- *     />
- *   )
+ *   useEffect(() => {
+ *    if (state.isAuthenticated) push("/")
+ *   }, [state, push])
+ *
+ *   return <Callback provider={provider} code={code} />
  * }
  * ```
  *
  */
-export const Callback = ({ provider, code, callback }: CallbackProps) => {
-  const [login, { error }] = useLoginMutation()
-  const { state, dispatch } = useAuthStore()
+export const Callback = ({ provider, code }: CallbackProps) => {
+  const input = oauthLoginInput(provider, code)
+  const [login, { error, loading, data }] = useLoginMutation({
+    variables: { input },
+  })
 
-  // hit callback if user is authenticated
-  useEffect(() => {
-    if (state.isAuthenticated) callback(state)
-  }, [state])
-
-  // call loginMutation and update state
+  // call loginMutation which will result in
+  // 1. loading to be false
+  // 2. if mutation succeeded, set data and render data component
+  // 3. if mutation failed, set error to true and render error component
   useEffect(() => {
     const auth = async () => {
-      const input = oauthLoginInput(provider, code)
-      const { data } = await login({ variables: { input } })
-
-      dispatch({
-        type: AuthActionType.LOGIN,
-        payload: {
-          provider,
-          token: data?.login?.token as string,
-          user: data?.login?.user as User,
-        },
-      })
+      await login()
     }
     auth()
-  }, [code, provider, dispatch])
+  }, [login])
 
   return (
     <Box textAlign="center" mt={10} mb={10}>
-      {!error ? <AuthLoading /> : <AuthError />}
+      {error && <AuthError />}
+      {loading && <AuthLoading />}
+      {data && <AuthRedirect data={data} provider={provider} />}
     </Box>
   )
 }

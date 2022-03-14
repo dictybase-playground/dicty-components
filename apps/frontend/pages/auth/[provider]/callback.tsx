@@ -1,12 +1,16 @@
 import { useRouter } from "next/router"
-import { Provider, Callback } from "@dictyBase/authentication"
+import { Provider, Callback, useAuthStore } from "@dictyBase/authentication"
+import { useEffect } from "react"
 
 export default function OauthCallbackPage() {
   const { query, push } = useRouter()
   const provider = query.provider as Provider
   const code = query.code as string
+  const { state } = useAuthStore()
 
-  return (
-    <Callback provider={provider} code={code} callback={(_) => push("/")} />
-  )
+  useEffect(() => {
+    if (state.isAuthenticated) push("/")
+  }, [state, push])
+
+  return <Callback provider={provider} code={code} />
 }
