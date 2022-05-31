@@ -1,1 +1,0 @@
-# @dictyBase/provider

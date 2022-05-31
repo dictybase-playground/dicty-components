@@ -1,9 +1,9 @@
 import { useEffect } from "react"
-import { useAuthStore } from "@dictyBase/authentication/src/store/hooks"
+import { useAuthStore } from "../store/context"
 import {
   AuthRedirectProps,
   AuthActionType,
-} from "@dictyBase/authentication/src/types"
+} from "../types"
 import { User } from "dicty-graphql-schema"
 import { Box, CircularProgress, Typography } from "@material-ui/core"
 

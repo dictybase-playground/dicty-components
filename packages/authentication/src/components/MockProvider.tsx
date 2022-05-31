@@ -1,8 +1,8 @@
 import { MockedProvider } from "@apollo/client/testing"
 import React from "react"
-import { authReducer } from "@dictyBase/authentication/src/store/reducers"
+import { authReducer } from "../store/reducers"
 import { User } from "dicty-graphql-schema"
-import { AuthContext } from "@dictyBase/authentication/src/components/AuthProvider"
+import { AuthContext } from "./AuthProvider"
 
 export const MockSuperuser = {
   id: "999",

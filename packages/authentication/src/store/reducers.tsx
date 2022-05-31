@@ -3,7 +3,7 @@ import {
   AuthState,
   AuthAction,
   AuthActionType,
-} from "@dictyBase/authentication/src/types"
+} from "../types"
 
 export const authInitialState: AuthState = {
   isAuthenticated: false,

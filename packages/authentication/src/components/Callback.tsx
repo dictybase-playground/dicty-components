@@ -1,11 +1,11 @@
 import { Box } from "@material-ui/core"
 import { useEffect } from "react"
-import { CallbackProps } from "@dictyBase/authentication/src/types"
-import { oauthLoginInput } from "@dictyBase/authentication/src/oauthHelpers"
+import { CallbackProps } from "../types"
+import { oauthLoginInput } from "../oauthHelpers"
 import { useLoginMutation } from "dicty-graphql-schema"
-import { AuthLoading } from "@dictyBase/authentication/src/components/AuthLoading"
-import { AuthError } from "@dictyBase/authentication/src/components/AuthError"
-import { AuthRedirect } from "@dictyBase/authentication/src/components/AuthRedirect"
+import { AuthLoading } from "./AuthLoading"
+import { AuthError } from "./AuthError"
+import { AuthRedirect } from "./AuthRedirect"
 
 /**
  * OAuth callback component. Verifies and dispatches the user login state.

@@ -1,9 +1,9 @@
 import { createContext, ReactNode, useReducer } from "react"
-import { AuthStateContextProps } from "@dictyBase/authentication/src/types"
+import { AuthStateContextProps } from "../types"
 import {
   authInitialState,
   authReducer,
-} from "@dictyBase/authentication/src/store/reducers"
+} from "../store/reducers"
 
 export const AuthContext = createContext({} as AuthStateContextProps)
 

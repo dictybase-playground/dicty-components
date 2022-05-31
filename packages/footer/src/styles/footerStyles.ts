@@ -15,7 +15,7 @@ export const footerStyles = makeStyles((theme) => ({
     "& a": {
       color: "rgb(216, 216, 216)",
       textDecoration: "none",
-      "&:hover": {
+      "&:h,over": {
         textDecoration: "underline",
       },
     },
